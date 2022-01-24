@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\CourseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +19,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('dashboard-admin', function () {
+    return view('admin.dashboard-admin');
+});
+
+Route::resource('/dashboard-admin/category',CategoryController::class);
+Route::resource('/dashboard-admin/instructors',InstructorController::class);
+Route::resource('/dashboard-admin/courses',CourseController::class);
 
 Auth::routes();
 
