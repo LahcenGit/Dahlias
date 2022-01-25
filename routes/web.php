@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\CourseController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,12 @@ use App\Http\Controllers\CourseController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/welcome', function () {
+    return view('welcome2');
+});
+Route::get('/course-detail', function () {
+    return view('course-detail');
 });
 
 Route::get('dashboard-admin', function () {
