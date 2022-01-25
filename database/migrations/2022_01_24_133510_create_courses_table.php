@@ -32,7 +32,7 @@ class CreateCoursesTable extends Migration
             $table->string('certificate')->nullable();
             $table->string('slug')->nullable();
             $table->string('flug')->nullable();
-           
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }

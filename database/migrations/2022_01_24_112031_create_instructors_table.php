@@ -25,6 +25,7 @@ class CreateInstructorsTable extends Migration
             $table->string('date_of_birth')->nullable();
             $table->string('slug')->nullable();
             $table->string('flug')->nullable();
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }
