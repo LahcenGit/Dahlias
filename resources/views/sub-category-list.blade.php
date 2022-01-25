@@ -7,9 +7,12 @@
         <td>{{$subcategory->created_at}}</td>
         <td>{{$subcategory->parent->name}}</td>
         <td>
+            <form action="{{url('dashboard-admin/category/'.$subcategory->id)}}" method="post">
+                {{csrf_field()}}
+                {{method_field('DELETE')}}
             <div class="d-flex">
                 <a href="{{url('dashboard-admin/category/'.$subcategory->id.'/edit')}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                <button data-id = "{{$subcategory->id}}" class=" delete-category btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
+                <button class="  btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
             </div>												
         </td>	
     </tr>

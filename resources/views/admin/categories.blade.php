@@ -35,7 +35,7 @@
                             <table id="example3" class="display" style="min-width: 845px">
                                 <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>#</th>
                                         <th>Name</th>
                                         <th>Date</th>
                                         <th>Parent Categorie</th>
@@ -60,10 +60,14 @@
                                         @endif
                                     </td>
                                     <td>
+                                        <form action="{{url('dashboard-admin/category/'.$category->id)}}" method="post">
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
                                         <div class="d-flex">
                                             <a href="{{url('dashboard-admin/category/'.$category->id.'/edit')}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                            <button data-id = "{{$category->id}}" class=" delete-category btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
-                                        </div>												
+                                            <button class="  btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                        </form>												
                                     </td>	
                                  </tr>
                                  @if(count($category->childCategories))

@@ -53,9 +53,9 @@
                                     
                                     <div class="form-group col-md-6">
                                         <label>Categories* :</label>
-                                        <select class="form-control  @error('category') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="category">
+                                        <select class="form-control  @error('category') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="category" required>
                                        
-                                            <option value=0>Nothing selected</option>
+                                            
                                           
                                                 @foreach($categories as $category)
                                                
@@ -84,9 +84,9 @@
                                          
                                     <div class="form-group col-md-6">
                                         <label>Formateurs* :</label>
-                                        <select class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructor">
+                                        <select class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructor" required>
                                        
-                                            <option value=0>Nothing selected</option>
+                                            
                                           
                                                 @foreach($instructors as $instructor)
                                                
@@ -106,8 +106,8 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>La langue* :</label>
-                                        <select class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language">
-                                            <option value=0>Nothing selected</option>
+                                        <select class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language"required>
+                                           
                                             <option value="arabe"  @if (old('language') == "arabe" ) selected @endif >Arabe</option>
                                             <option value="francais" @if (old('language') == "francais" ) selected @endif >Francais</option>
                                             <option value="anglais" @if (old('language') == "anglais" ) selected @endif >Anglais</option>
@@ -121,8 +121,8 @@
 
                                     <div class="form-group col-md-6">
                                         <label>Niveau* :</label>
-                                        <select class="form-control  @error('level') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="level">
-                                            <option value=0>Nothing selected</option>
+                                        <select class="form-control  @error('level') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="level" required>
+                                            
                                             <option value="debutant" @if (old('level') == "debutant" ) selected @endif >Débutant</option>
                                             <option value="intermediare" @if (old('level') == "i" ) selected @endif>Intermédiare</option>
                                             <option value="avance" @if (old('level') == "avance" ) selected @endif>Avancé</option>
@@ -165,10 +165,10 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Statut* :</label>
-                                    <select class="form-control  @error('status') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status">
-                                        <option value=0>Nothing selected</option>
-                                        <option value="lancee" @if (old('status') == "l" ) selected @endif>Lancée</option>
-                                        <option value="prochainement" @if (old('status') == "p" ) selected @endif>Prochainement</option>
+                                    <select class="form-control  @error('status') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status" required>
+                                       
+                                        <option value="lancee" @if (old('status') == "lancee" ) selected @endif>Lancée</option>
+                                        <option value="prochainement" @if (old('status') == "prochaainement" ) selected @endif>Prochainement</option>
                                        
                                     </select>
                                 </div>
@@ -176,8 +176,8 @@
                            
                                 <div class="form-group col-md-6">
                                     <label>Certifié* :</label>
-                                    <select class="form-control  @error('certificate') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="certificate">
-                                        <option value=0>Nothing selected</option>
+                                    <select class="form-control  @error('certificate') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="certificate" required>
+                                       
                                         <option value="oui" @if (old('status') == "oui" ) selected @endif>Oui</option>
                                         <option value="non" @if (old('status') == "non" ) selected @endif>Non</option>
                                        

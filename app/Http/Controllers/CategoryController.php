@@ -43,4 +43,49 @@ class CategoryController extends Controller
          $category->save();
          return redirect('dashboard-admin/category')->with('success','Category ajouter avec succes');
     }
+
+
+    public function edit($id){
+        $category = Category::find($id);
+        
+        $categories = Category::where('parent_id',null)->get();
+        return view("admin.edit-category",compact('category','categories'));
+    }
+
+
+
+    public function update(Request $request, $id){
+        $category = Category::find($id);
+        
+        $category->name=$request['name'];
+       
+        if($request['category'] == 0){
+           
+         $category->parent_id = NULL;
+        
+         $category->save();
+        }
+        else{
+            $category->parent_id = $request['category'];
+        }
+        $category->save();
+        return redirect('dashboard-admin/category')->with('success','Category updated successfully');
+    }
+
+
+    public function destroy($id){
+
+        $category = Category::find($id);
+        $childCategories = Category::where('parent_id',$id)->get();
+        foreach($childCategories as $childCategory){
+            $childCategory->parent_id = null;
+            $childCategory->save();
+        }
+        $category->delete();
+
+               
+       return redirect('dashboard-admin/category');  
+       
+
+   }
 }
