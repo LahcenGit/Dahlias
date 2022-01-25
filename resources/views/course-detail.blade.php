@@ -3,18 +3,18 @@
 
 <div class="section page-banner">
 
-    <img class="shape-1 animation-round" src="assets/images/shape/shape-8.png" alt="Shape">
+    <img class="shape-1 animation-round" src="{{asset('front/assets/images/shape/shape-8.png')}}" alt="Shape">
 
-    <img class="shape-2" src="assets/images/shape/shape-23.png" alt="Shape">
+    <img class="shape-2" src="{{asset('front/assets/images/shape/shape-23.png')}}" alt="Shape">
 
     <div class="container">
         <!-- Page Banner Start -->
         <div class="page-banner-content">
             <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Courses Details</li>
+                <li><a href="#">Accueil</a></li>
+                <li class="active">{{$course->name}}</li>
             </ul>
-            <h2 class="title">Courses <span> Details</span></h2>
+            <h2 class="title"> <span>{{$course->name}}</span></h2>
         </div>
         <!-- Page Banner End -->
     </div>
@@ -52,7 +52,7 @@
                 <div class="courses-details">
 
                     <div class="courses-details-images">
-                        <img src="{{asset('front/assets/images/courses/courses-details.jpg')}}" alt="Courses Details">
+                        <img src="{{asset('storage/course/iNXFKJIkzpfVWOJDWkJPyiSLGpJ4wUqUHGhtFn3T.png')}}" alt="Courses Details">
                         <span class="tags">Finance</span>
 
                         <div class="courses-play">
@@ -61,26 +61,8 @@
                         </div>
                     </div>
 
-                    <h2 class="title">Finance & Investment Series: Learn to Budget and Calculate Your Net Worth.</h2>
+                    <h2 class="title">{{$course->name}}</h2>
 
-                    <div class="courses-details-admin">
-                        <div class="admin-author">
-                            <div class="author-thumb">
-                                <img src="assets/images/author/author-01.jpg" alt="Author">
-                            </div>
-                            <div class="author-content">
-                                <a class="name" href="#">Pamela Foster</a>
-                                <span class="Enroll">286 Enrolled Students</span>
-                            </div>
-                        </div>
-                        <div class="admin-rating">
-                            <span class="rating-count">4.9</span>
-                            <span class="rating-star">
-                                    <span class="rating-bar" style="width: 80%;"></span>
-                            </span>
-                            <span class="rating-text">(5,764 Rating)</span>
-                        </div>
-                    </div>
 
                     <!-- Courses Details Tab Start -->
                     <div class="courses-details-tab">
@@ -89,8 +71,8 @@
                         <div class="details-tab-menu">
                             <ul class="nav justify-content-center">
                                 <li><button class="active" data-bs-toggle="tab" data-bs-target="#description">Description</button></li>
-                                <li><button data-bs-toggle="tab" data-bs-target="#instructors">Instructors</button></li>
-                                <li><button data-bs-toggle="tab" data-bs-target="#reviews">Reviews</button></li>
+                                <li><button data-bs-toggle="tab" data-bs-target="#instructors">Formateur</button></li>
+                                <li><button data-bs-toggle="tab" data-bs-target="#reviews">Commentaires</button></li>
                             </ul>
                         </div>
                         <!-- Details Tab Menu End -->
@@ -104,17 +86,10 @@
                                     <div class="tab-description">
                                         <div class="description-wrapper">
                                             <h3 class="tab-title">Description:</h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularsed in the 1960 with release containing Lorem Ipsum passages desktop publishing software.</p>
+                                            {!! $course->description !!}
                                         </div>
-                                        <div class="description-wrapper">
-                                            <h3 class="tab-title">Curriculum:</h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularsed in the 1960 with release containing Lorem Ipsum passages desktop publishing software.</p>
-                                        </div>
-                                        <div class="description-wrapper">
-                                            <h3 class="tab-title">Certification:</h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularsed in the 1960 with release containing Lorem Ipsum passages desktop publishing software.</p>
-                                        </div>
+                                       
+                                        
                                     </div>
                                     <!-- Tab Description End -->
 
@@ -123,146 +98,29 @@
 
                                     <!-- Tab Instructors Start -->
                                     <div class="tab-instructors">
-                                        <h3 class="tab-title">Course Instructor:</h3>
+                                        <h3 class="tab-title">Instructeur de formation:</h3>
 
                                         <div class="row">
-                                            <div class="col-md-3 col-6">
+                                            <div class="col-md-12 col-6">
                                                 <!-- Single Team Start -->
                                                 <div class="single-team">
                                                     <div class="team-thumb">
-                                                        <img src="assets/images/author/author-01.jpg" alt="Author">
+                                                        <img src="{{asset('front/assets/images/author/pic1.jpg')}}" alt="Author">
                                                     </div>
                                                     <div class="team-content">
-                                                        <div class="rating">
-                                                            <span class="count">4.9</span>
-                                                            <i class="icofont-star"></i>
-                                                            <span class="text">(rating)</span>
-                                                        </div>
-                                                        <h4 class="name">Margarita James</h4>
-                                                        <span class="designation">MSC, Instructor</span>
+                                                       
+                                                        <h4 class="name">{{$course->instructor->name}}</h4>
+                                                        <span class="designation">{{$course->instructor->function}}</span>
                                                     </div>
                                                 </div>
                                                 <!-- Single Team End -->
                                             </div>
-                                            <div class="col-md-3 col-6">
-                                                <!-- Single Team Start -->
-                                                <div class="single-team">
-                                                    <div class="team-thumb">
-                                                        <img src="assets/images/author/author-02.jpg" alt="Author">
-                                                    </div>
-                                                    <div class="team-content">
-                                                        <div class="rating">
-                                                            <span class="count">4.9</span>
-                                                            <i class="icofont-star"></i>
-                                                            <span class="text">(rating)</span>
-                                                        </div>
-                                                        <h4 class="name">Mitchell Colon</h4>
-                                                        <span class="designation">BBA, Instructor</span>
-                                                    </div>
-                                                </div>
-                                                <!-- Single Team End -->
-                                            </div>
-                                            <div class="col-md-3 col-6">
-                                                <!-- Single Team Start -->
-                                                <div class="single-team">
-                                                    <div class="team-thumb">
-                                                        <img src="assets/images/author/author-03.jpg" alt="Author">
-                                                    </div>
-                                                    <div class="team-content">
-                                                        <div class="rating">
-                                                            <span class="count">4.9</span>
-                                                            <i class="icofont-star"></i>
-                                                            <span class="text">(rating)</span>
-                                                        </div>
-                                                        <h4 class="name">Sonya Gordon</h4>
-                                                        <span class="designation">MBA, Instructor</span>
-                                                    </div>
-                                                </div>
-                                                <!-- Single Team End -->
-                                            </div>
-                                            <div class="col-md-3 col-6">
-                                                <!-- Single Team Start -->
-                                                <div class="single-team">
-                                                    <div class="team-thumb">
-                                                        <img src="assets/images/author/author-04.jpg" alt="Author">
-                                                    </div>
-                                                    <div class="team-content">
-                                                        <div class="rating">
-                                                            <span class="count">4.9</span>
-                                                            <i class="icofont-star"></i>
-                                                            <span class="text">(rating)</span>
-                                                        </div>
-                                                        <h4 class="name">Archie Neal</h4>
-                                                        <span class="designation">BBS, Instructor</span>
-                                                    </div>
-                                                </div>
-                                                <!-- Single Team End -->
-                                            </div>
+                                           
+                                          
+                                           
                                         </div>
 
-                                        <div class="row gx-10">
-                                            <div class="col-lg-6">
-                                                <div class="tab-rating-content">
-                                                    <h3 class="tab-title">Rating:</h3>
-                                                    <p>Lorem Ipsum is simply dummy text of printing and typesetting industry. Lorem Ipsum has been the i dustry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
-                                                    <p>Lorem Ipsum is simply dummy text of printing and typesetting industry text ever since</p>
-                                                    <p>Lorem Ipsum is simply dummy text of printing and dustry's standard dummy text ever since the 1500 unknown printer took a galley of type.</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="tab-rating-box">
-                                                    <span class="count">4.8 <i class="icofont-star"></i></span>
-                                                    <p>Rating (86K+)</p>
-
-                                                    <div class="rating-box-wrapper">
-                                                        <div class="single-rating">
-                                                            <span class="rating-star">
-                                                                    <span class="rating-bar" style="width: 100%;"></span>
-                                                            </span>
-                                                            <div class="rating-progress-bar">
-                                                                <div class="rating-line" style="width: 75%;"></div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="single-rating">
-                                                            <span class="rating-star">
-                                                                    <span class="rating-bar" style="width: 80%;"></span>
-                                                            </span>
-                                                            <div class="rating-progress-bar">
-                                                                <div class="rating-line" style="width: 90%;"></div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="single-rating">
-                                                            <span class="rating-star">
-                                                                    <span class="rating-bar" style="width: 60%;"></span>
-                                                            </span>
-                                                            <div class="rating-progress-bar">
-                                                                <div class="rating-line" style="width: 500%;"></div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="single-rating">
-                                                            <span class="rating-star">
-                                                                    <span class="rating-bar" style="width: 40%;"></span>
-                                                            </span>
-                                                            <div class="rating-progress-bar">
-                                                                <div class="rating-line" style="width: 80%;"></div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="single-rating">
-                                                            <span class="rating-star">
-                                                                    <span class="rating-bar" style="width: 20%;"></span>
-                                                            </span>
-                                                            <div class="rating-progress-bar">
-                                                                <div class="rating-line" style="width: 40%;"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
                                     <!-- Tab Instructors End -->
 
@@ -430,20 +288,20 @@
                     <!-- Sidebar Widget Information Start -->
                     <div class="sidebar-widget widget-information">
                         <div class="info-price">
-                            <span class="price">$420.38</span>
+                            <span class="price">{{ number_format($course->price, 2) }} DA</span>
                         </div>
                         <div class="info-list">
                             <ul>
-                                <li><i class="icofont-man-in-glasses"></i> <strong>Instructor</strong> <span>Pamela Foster</span></li>
-                                <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>08 hr 15 mins</span></li>
-                                <li><i class="icofont-ui-video-play"></i> <strong>Lectures</strong> <span>29</span></li>
-                                <li><i class="icofont-bars"></i> <strong>Level</strong> <span>Secondary</span></li>
-                                <li><i class="icofont-book-alt"></i> <strong>Language</strong> <span>English</span></li>
-                                <li><i class="icofont-certificate-alt-1"></i> <strong>Certificate</strong> <span>Yes</span></li>
+                                <li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>
+                                <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{$course->duration}}</span></li>
+                                
+                                <li><i class="icofont-bars"></i> <strong>Niveau</strong> <span>{{$course->level}}</span></li>
+                                <li><i class="icofont-book-alt"></i> <strong>Langue</strong> <span>{{$course->language}}</span></li>
+                                <li><i class="icofont-certificate-alt-1"></i> <strong>Certifié</strong> <span>{{$course->certificate}}</span></li>
                             </ul>
                         </div>
                         <div class="info-btn">
-                            <a href="#" class="btn btn-primary btn-hover-dark">Enroll Now</a>
+                            <a href="#" class="btn btn-primary btn-hover-dark">S'inscrir</a>
                         </div>
                     </div>
                     <!-- Sidebar Widget Information End -->
@@ -490,13 +348,13 @@
             </div>
             <!-- Section Title End -->
 
-            <img class="shape-1 animation-right" src="assets/images/shape/shape-14.png" alt="Shape">
+            <img class="shape-1 animation-right" src="{{asset('front/assets/images/shape/shape-14.png')}}" alt="Shape">
 
             <!-- Download App Button End -->
             <div class="download-app-btn">
                 <ul class="app-btn">
-                    <li><a href="#"><img src="assets/images/google-play.png" alt="Google Play"></a></li>
-                    <li><a href="#"><img src="assets/images/app-store.png" alt="App Store"></a></li>
+                    <li><a href="#"><img src="{{asset('front/assets/images/google-play.png')}}" alt="Google Play"></a></li>
+                    <li><a href="#"><img src="{{asset('front/assets/images/app-store.png')}}" alt="App Store"></a></li>
                 </ul>
             </div>
             <!-- Download App Button End -->

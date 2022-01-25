@@ -108,9 +108,9 @@
                                         <label>La langue* :</label>
                                         <select class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language"required>
                                            
-                                            <option value="arabe"  @if (old('language') == "arabe" ) selected @endif >Arabe</option>
-                                            <option value="francais" @if (old('language') == "francais" ) selected @endif >Francais</option>
-                                            <option value="anglais" @if (old('language') == "anglais" ) selected @endif >Anglais</option>
+                                            <option value="Arabe"  @if (old('language') == "Arabe" ) selected @endif >Arabe</option>
+                                            <option value="Francais" @if (old('language') == "Francais" ) selected @endif >Francais</option>
+                                            <option value="Anglais" @if (old('language') == "Anglais" ) selected @endif >Anglais</option>
                                             @error('language')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -123,9 +123,9 @@
                                         <label>Niveau* :</label>
                                         <select class="form-control  @error('level') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="level" required>
                                             
-                                            <option value="debutant" @if (old('level') == "debutant" ) selected @endif >Débutant</option>
-                                            <option value="intermediare" @if (old('level') == "i" ) selected @endif>Intermédiare</option>
-                                            <option value="avance" @if (old('level') == "avance" ) selected @endif>Avancé</option>
+                                            <option value="Debutant" @if (old('level') == "Debutant" ) selected @endif >Débutant</option>
+                                            <option value="Intermediare" @if (old('level') == "Intermediare" ) selected @endif>Intermédiare</option>
+                                            <option value="Avance" @if (old('level') == "Avance" ) selected @endif>Avancé</option>
                                             @error('level')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -167,8 +167,8 @@
                                     <label>Statut* :</label>
                                     <select class="form-control  @error('status') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status" required>
                                        
-                                        <option value="lancee" @if (old('status') == "lancee" ) selected @endif>Lancée</option>
-                                        <option value="prochainement" @if (old('status') == "prochaainement" ) selected @endif>Prochainement</option>
+                                        <option value="Lancee" @if (old('status') == "Lancee" ) selected @endif>Lancée</option>
+                                        <option value="Prochainement" @if (old('status') == "Prochaainement" ) selected @endif>Prochainement</option>
                                        
                                     </select>
                                 </div>
@@ -178,8 +178,8 @@
                                     <label>Certifié* :</label>
                                     <select class="form-control  @error('certificate') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="certificate" required>
                                        
-                                        <option value="oui" @if (old('certificate') == "oui" ) selected @endif>Oui</option>
-                                        <option value="non" @if (old('certificate') == "non" ) selected @endif>Non</option>
+                                        <option value="Oui" @if (old('certificate') == "Oui" ) selected @endif>Oui</option>
+                                        <option value="Non" @if (old('certificate') == "Non" ) selected @endif>Non</option>
                                        
                                     </select>
                                 </div>

@@ -23,10 +23,10 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome2');
 });
-Route::get('/course-detail', function () {
+/*Route::get('/course-detail', function () {
     return view('course-detail');
 });
-
+*/
 Route::get('dashboard-admin', function () {
     return view('admin.dashboard-admin');
 });
@@ -34,7 +34,7 @@ Route::get('dashboard-admin', function () {
 Route::resource('/dashboard-admin/category',CategoryController::class);
 Route::resource('/dashboard-admin/instructors',InstructorController::class);
 Route::resource('/dashboard-admin/courses',CourseController::class);
-
+Route::get('/course-detail/{id}',[App\Http\Controllers\CourseController::class,'CourseDetail']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -113,6 +113,14 @@ class CourseController extends Controller
     }
 
 
+    public function courseDetail($id){
+        $course = Course::find($id);
+        $medias = $course->images;
+      
+        return view('course-detail',compact('course','medias'));
+    }
+
+
      public function destroy($id){
 
         $course = Course::find($id);
