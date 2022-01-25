@@ -9,9 +9,9 @@ class Course extends Model
 {
     use HasFactory;
 
-    public function medias()
+    public function images()
     {
-        return $this->hasMany(Media::class);
+        return $this->hasMany(Image::class);
     }
 
     public function category()

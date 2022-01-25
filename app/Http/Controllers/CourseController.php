@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Image;
 use App\Models\Instructor;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Media;
@@ -61,10 +62,10 @@ class CourseController extends Controller
             $name = $path->store('course');
             $lien = Storage::putFile('course',$path); 
            
-            $fileModal = new Media();
+            $fileModal = new Image();
             $fileModal->lien = $lien;
          
-            $course->medias()->save($fileModal);
+            $course->images()->save($fileModal);
          }
         }
         return redirect('dashboard-admin/courses');

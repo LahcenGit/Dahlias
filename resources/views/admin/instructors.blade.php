@@ -55,10 +55,14 @@
                                         <td><strong>{{$instructor->function}} </strong></td>
                                        
                                         <td>
+                                            <form action="{{url('dashboard-admin/instructors/'.$instructor->id)}}" method="post">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
                                             <div class="d-flex">
-                                                <a href=""  class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                <button   class="delete-customer btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
-                                            </div>												
+                                                <a href="{{url('dashboard-admin/instructors/'.$instructor->id.'/edit')}}"  class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                <button   class="delete-customer btn btn-danger shadow btn-xs sharp  "onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
+                                            </div>	
+                                            </form>											
                                         </td>												
                                     </tr>
                                    

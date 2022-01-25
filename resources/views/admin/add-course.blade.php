@@ -207,6 +207,22 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                     @enderror
+
+                                    
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <label>Photos* :</label>
+                                  
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input"  name="photos[]" multiple>
+                                        <label class="custom-file-label">Choose file</label>
+
+                                       
+                                    </div>
                                 </div>
                                
                             </div>

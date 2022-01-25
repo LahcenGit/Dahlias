@@ -37,4 +37,31 @@ class InstructorController extends Controller
         return redirect('dashboard-admin/instructors');
         
     }
+    public function edit($id){
+        $instructor = Instructor::find($id);
+        return view('admin.edit-instructor',compact('instructor'));
+    }
+
+
+    public function update(Request $request , $id){
+
+      
+
+        $instrucor = Instructor::find($id);
+        $instrucor->name = $request->name;
+        $instrucor->email = $request->email;
+        $instrucor->phone = $request->phone;
+        $instrucor->function = $request->function;
+        $instrucor->date_of_birth = $request->date_of_birth;
+        $instrucor->save();
+
+        return redirect('dashboard-admin/instructors');
+        
+    }
+
+    public function destroy($id){
+        $instructor = Instructor::find($id);
+        $instructor->delete();
+        return redirect('dashboard-admin/instructors');
+    }
 }
