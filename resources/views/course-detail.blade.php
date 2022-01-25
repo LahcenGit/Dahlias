@@ -110,7 +110,7 @@
                                                     <div class="team-content">
                                                        
                                                         <h4 class="name">{{$course->instructor->name}}</h4>
-                                                        <span class="designation">{{$course->instructor->function}}</span>
+                                                        <span class="designation">{{$course->instructor->function}} , {{$course->instructor->age()}} ans</span>
                                                     </div>
                                                 </div>
                                                 <!-- Single Team End -->

@@ -17,6 +17,10 @@ class Instructor extends Model
     }
 
     public function age() {
-        return $this->date_of_birth->diffInYears(\Carbon\Carbon::now());
+        $date = $this->date_of_birth;
+        
+        $result = Carbon::today()->diffInYears($date);
+
+        return $result;
          }
 }
