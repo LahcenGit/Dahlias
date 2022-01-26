@@ -14,8 +14,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('Dashboard/images/favicon.png')}}">
     <link href="{{asset('Dashboard/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
 
-	
-
 	<link rel="stylesheet" href="{{asset('Dashboard/vendor/chartist/css/chartist.min.css')}}">
     <link href="{{asset('Dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <link href="{{asset('Dashboard/css/style.css')}}" rel="stylesheet">
@@ -26,7 +24,6 @@
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-
 
 	<link rel="stylesheet" href="{{asset('Dashboard/uploader/pe-icon-7-stroke.css')}}">
 	<link rel="stylesheet" href="{{asset('Dashboard/uploader/drop_uploader.css')}}">
@@ -42,44 +39,44 @@
  
 	}
 	.btn-primary{
-		background-color:#16B4B7;
-		border-color:#16B4B7;
+		background-color:#2B4942;
+		border-color:#2B4942;
 	}
 
 	.light.btn-primary {
     background-color: #EDF9F9;
     border-color: #EDF9F9;
-    color: #16B4B7;
+    color: #2B4942;
 	}
 	.light.btn-primary:hover {
 	background-color: #EDF9F9;
     border-color: #EDF9F9;
-    color: #16B4B7;
+    color: #2B4942;
 	}
 
 	
 
 	.light.btn-primary:hover {
-    background-color: #16B4B7;
-    border-color: #16B4B7;
+    background-color: #2B4942;
+    border-color: #2B4942;
     color: #ffff;
 	}
 
 	.bg-primary{
-		background-color:#16B4B7 !important;
+		background-color:#2B4942 !important;
 	}
 	.page-titles h4{
-		color: #16B4B7;
+		color: #2B4942;
 	}
 	[data-headerbg="color_1"] .nav-header .hamburger.is-active .line, [data-headerbg="color_1"] .nav-header .hamburger .line{
-		background:#16B4B7 !important;
+		background:#2B4942 !important;
 	}
 
 	.total-order {
       background-color: Black; 
       font-family: 'Orbitron', sans-serif;
       font-size:25px; 
-      color:#16B4B7; 
+      color:#2B4942; 
       font-weight : bold;
 	  pointer-events: none;
 	  height: 50px;
@@ -111,7 +108,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header" style="background-color: #16B4B7">
+        <div class="nav-header" style="background-color: #2b4942">
             <a href="{{asset('/dashboard-provider')}}" class="brand-logo">
                 <img class="logo-abbr" src="{{asset('Dashboard/images/logo-white.png')}}" alt="">
                 <img class="logo-compact" src="{{asset('Dashboard/images/logo-text-white.png')}}" alt="">
@@ -390,20 +387,13 @@
     <script src="{{asset('Dashboard/js/plugins-init/summernote-init.js')}}"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	
-	<!-- Add product to boucherie -->
-	<script src="{{asset('Dashboard/js/add-product-store.js')}}"></script>
-	<!-- create sale -->
-	<script src="{{asset('Dashboard/js/create-sale.js')}}"></script>
-
+  
+        
 	<script src="{{asset('Dashboard/uploader/drop_uploader.js')}}"></script>
 
-	
- 
-
-
-
-
 	<script>
+
+
 	(function($) {
 		"use strict"
 

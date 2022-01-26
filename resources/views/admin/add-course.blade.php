@@ -31,7 +31,7 @@
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label>Name* :</label>
+                                        <label>Nom de la formation* :</label>
                                         <input type="text"  class="form-control input-default @error('name') is-invalid @enderror" value=" {{old('name')}} "name="name" placeholder="name" >
                                         @error('name')
                                                 <span class="invalid-feedback" role="alert">
@@ -40,7 +40,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>La durée* :</label>
+                                        <label>La durée * :</label>
                                         <input type="text"  class="form-control input-default @error('duration') is-invalid @enderror" value=" {{old('duration')}}" name="duration"  placeholder="duree" >
                                         @error('duration')
                                                 <span class="invalid-feedback" role="alert">
@@ -83,7 +83,7 @@
                                     </div>
                                          
                                     <div class="form-group col-md-6">
-                                        <label>Formateurs* :</label>
+                                        <label>Formateur * :</label>
                                         <select class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructor" required>
                                        
                                             
@@ -105,7 +105,7 @@
                              
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label>La langue* :</label>
+                                        <label>La langue * :</label>
                                         <select class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language"required>
                                            
                                             <option value="Arabe"  @if (old('language') == "Arabe" ) selected @endif >Arabe</option>
@@ -120,7 +120,7 @@
                                     </div>
 
                                     <div class="form-group col-md-6">
-                                        <label>Niveau* :</label>
+                                        <label>Niveau * :</label>
                                         <select class="form-control  @error('level') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="level" required>
                                             
                                             <option value="Debutant" @if (old('level') == "Debutant" ) selected @endif >Débutant</option>
@@ -139,7 +139,7 @@
                             <div class="form-row">
                               
                                 <div class="form-group col-md-6">
-                                    <label>Date Debut(optionnel) :</label>
+                                    <label>Date Début (optionnel) :</label>
                                     <input type="date"  class="form-control input-default @error('start_date') is-invalid @enderror" value=" {{old('start_date')}} "name="start_date" >
                                     @error('start_date')
                                             <span class="invalid-feedback" role="alert">
@@ -149,7 +149,7 @@
                                 </div>
                                 
                                 <div class="form-group col-md-6">
-                                    <label>Date Fin(optionnel) :</label>
+                                    <label>Date Fin (optionnel) :</label>
                                     <input type="date"  class="form-control input-default @error('end_date') is-invalid @enderror" value="{{old('end_date')}}" name="end_date" >
                                     @error('end_date')
                                             <span class="invalid-feedback" role="alert">
@@ -164,7 +164,7 @@
                            
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>Statut* :</label>
+                                    <label>Statut * :</label>
                                     <select class="form-control  @error('status') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status" required>
                                        
                                         <option value="Lancee" @if (old('status') == "Lancee" ) selected @endif>Lancée</option>
@@ -175,7 +175,7 @@
                            
                            
                                 <div class="form-group col-md-6">
-                                    <label>Certifié* :</label>
+                                    <label>Certificat * :</label>
                                     <select class="form-control  @error('certificate') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="certificate" required>
                                        
                                         <option value="Oui" @if (old('certificate') == "Oui" ) selected @endif>Oui</option>
@@ -190,7 +190,7 @@
                                 
                                 
                                 <div class="form-group col-md-3">
-                                    <label>Nombre d'étudiants(optionnel) :</label>
+                                    <label>Nombre d'étudiants (optionnel) :</label>
                                     <input type="number"  class="form-control input-default @error('nbr_student') is-invalid @enderror" value="{{old('nbr_student')}}" name="nbr_student"  placeholder="0" >
                                     @error('nbr_student')
                                             <span class="invalid-feedback" role="alert">
@@ -200,7 +200,7 @@
                                 </div>
 
                                 <div class="form-group col-md-3">
-                                    <label>Prix* :</label>
+                                    <label>Prix * :</label>
                                     <input type="text"  class="form-control input-default @error('price') is-invalid @enderror" value="{{old('price')}}" name="price"  placeholder="0" >
                                     @error('price')
                                             <span class="invalid-feedback" role="alert">
@@ -208,20 +208,16 @@
                                             </span>
                                     @enderror
 
-                                    
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Photos* :</label>
+                                    <label>Photos * :</label>
                                   
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input"  name="photos[]" multiple>
-                                        <label class="custom-file-label">Choose file</label>
-
-                                       
+                                    <div class="basic-form custom_file_input">
+                                        <div class="input-group mb-3">
+                                                <input type="file" multiple name="photos[]" accept="image/*">
+                                                <input class="button-primary" type="submit" value="Submit">
+                                        </div>
                                     </div>
                                 </div>
                                
@@ -238,7 +234,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">
-                             Description* : </h4>
+                             Description * : </h4>
                     </div>
                     <div class="card-body">
                         <textarea class="summernote" class="form-control input-default @error('description') is-invalid @enderror"  name="description" id="">{{old('description')}}</textarea>
@@ -255,7 +251,7 @@
             <div class="col-xl-12 col-lg-12">
                 <div class="card">
                     <div class="card-body text-center">
-                        <button type="submit" style="background-color:#16B4B7;border-color:#16B4B7;" class="btn btn-primary mt-3">Ajouter</button>
+                        <button type="submit"  class="btn btn-primary mt-3">Ajouter la Formation</button>
                    </div>
                 </div>
             </div>
