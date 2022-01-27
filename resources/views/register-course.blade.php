@@ -95,6 +95,11 @@
                                 </div>
 
                                 <div class="single-form">
+                                    <label>Avez vous quelques chose a dire ? :</label>
+                                    <input type="text" placeholder="..." name="remarque" >
+                                </div>
+
+                                <div class="single-form">
                                    
                                     <input type="hidden"  name="course" value="{{$course->id}}">
                                 </div>

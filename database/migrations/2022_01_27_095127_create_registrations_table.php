@@ -19,7 +19,9 @@ class CreateRegistrationsTable extends Migration
             $table->string('name');
             $table->string('age');
             $table->string('phone');
+            $table->string('remarque')->nullable();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }

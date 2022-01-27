@@ -18,6 +18,7 @@ class RegistrationController extends Controller
          $registration->course_id = $request->course;
          $registration->name = $request->name;
          $registration->age = $request->age;
+         $registration->remarque = $request->remarque;
          $registration->phone = $request->phone;
          $registration->save();
          return redirect('registration-course');
