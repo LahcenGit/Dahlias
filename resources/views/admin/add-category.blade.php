@@ -70,7 +70,7 @@
   
                                     </select>
                                 </div>
-                                <button type="submit" style="background-color:#16B4B7;border-color:#16B4B7;" class="btn btn-primary mt-3">Ajouter</button>
+                                <button type="submit"  class="btn btn-primary mt-3">Ajouter</button>
                             </form>
                         </div>
                     </div>

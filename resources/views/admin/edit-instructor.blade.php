@@ -89,7 +89,7 @@
                                 
                                
                             </div>
-                                <button type="submit" class="btn btn-primary mt-3 text-center" style="background-color:#16B4B7;border-color:#16B4B7;">Modifier</button>
+                                <button type="submit" class="btn btn-primary mt-3 text-center">Modifier</button>
                             </form>
                         </div>
                     </div>

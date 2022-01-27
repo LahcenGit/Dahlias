@@ -27,7 +27,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Table des formations</h4>
-                        <a href="{{url('/dashboard-admin/courses/create')}}" type="button" style="background-color:#16B4B7;border-color:#16B4B7;" class="btn btn-primary mt-3">Ajouter</a>
+                        <a href="{{url('/dashboard-admin/courses/create')}}" type="button"  class="btn btn-primary mt-3">Ajouter</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

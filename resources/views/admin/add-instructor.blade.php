@@ -54,8 +54,8 @@
                              
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label>N°de telephone* :</label>
-                                        <input type="text"  class="form-control input-default @error('phone') is-invalid @enderror" value="{{old('phone')}}" name="phone" placeholder="+213 xx xx xx">
+                                        <label>Téléphone* :</label>
+                                        <input type="text"  class="form-control input-default @error('phone') is-invalid @enderror" value="{{old('phone')}}" name="phone" placeholder="+213 xx xx xx xx xx">
                                         @error('phone')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -89,7 +89,7 @@
                                 
                                
                             </div>
-                                <button type="submit" class="btn btn-primary mt-3 text-center" style="background-color:#16B4B7;border-color:#16B4B7;">Ajouter</button>
+                                <button type="submit" class="btn btn-primary mt-3 text-center" >Ajouter</button>
                             </form>
                         </div>
                     </div>

@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\RegistrationAdminController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -23,17 +26,17 @@ Route::get('/', function () {
 Route::get('/welcome', function () {
     return view('welcome2');
 });
-/*Route::get('/course-detail', function () {
-    return view('course-detail');
-});
-*/
-Route::get('dashboard-admin', function () {
-    return view('admin.dashboard-admin');
-});
 
-Route::resource('/dashboard-admin/category',CategoryController::class);
-Route::resource('/dashboard-admin/instructors',InstructorController::class);
-Route::resource('/dashboard-admin/courses',CourseController::class);
+;
+
+
+Route::resource('/dashboard-admin/category',CategoryController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/regsitrations',RegistrationAdminController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/instructors',InstructorController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/courses',CourseController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
+Route::resource('/registration-course',RegistrationController::class);
+Route::get('/register-course/{id}',[App\Http\Controllers\RegistrationController::class,'register']);
 Route::get('/course-detail/{id}',[App\Http\Controllers\CourseController::class,'CourseDetail']);
 Auth::routes();
 

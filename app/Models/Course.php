@@ -15,6 +15,11 @@ class Course extends Model
         return $this->hasMany(Image::class);
     }
 
+    public function registration()
+    {
+        return $this->hasMany(Registration::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class,'category_id');

@@ -8,10 +8,13 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     //
-    public function create(){
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-      
-        
+    public function create(){
+  
         $categories = Category::where('parent_id',null)->get();
         
         return view('admin.add-category',compact('categories'));

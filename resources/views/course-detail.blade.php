@@ -301,7 +301,7 @@
                             </ul>
                         </div>
                         <div class="info-btn">
-                            <a href="#" class="btn btn-primary btn-hover-dark">S'inscrir</a>
+                            <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary btn-hover-dark">S'inscrir</a>
                         </div>
                     </div>
                     <!-- Sidebar Widget Information End -->

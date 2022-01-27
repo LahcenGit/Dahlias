@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 class InstructorController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function create(){
         return view('admin.add-instructor');
     }

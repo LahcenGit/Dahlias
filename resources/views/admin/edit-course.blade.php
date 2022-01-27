@@ -257,7 +257,7 @@
             <div class="col-xl-12 col-lg-12">
                 <div class="card">
                     <div class="card-body text-center">
-                        <button type="submit" style="background-color:#16B4B7;border-color:#16B4B7;" class="btn btn-primary mt-3">Modifier</button>
+                        <button type="submit"  class="btn btn-primary mt-3">Modifier</button>
                    </div>
                 </div>
             </div>
