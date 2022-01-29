@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Edule - eLearning Website Template</title>
+    <title>Dahlias Institute - Never stop learning</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/icofont.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/font-awesome.min.css')}}">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
 
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/animate.min.css')}}">
@@ -37,6 +39,12 @@
 
 </head>
 
+<style>
+    .header-top{
+       background-color: #2b4942 !important;
+    }
+</style>
+
 <body>
 
     <div class="main-wrapper">
@@ -53,15 +61,15 @@
 
                         <!-- Header Top Left Start -->
                         <div class="header-top-left">
-                            <p>All course 28% off for <a href="#">Liberian people’s.</a></p>
+                            <p>Never Stop <a href="#" style="color: #aa896b">Learning.</a></p>
                         </div>
                         <!-- Header Top Left End -->
 
                         <!-- Header Top Medal Start -->
                         <div class="header-top-medal">
                             <div class="top-info">
-                                <p><i class="flaticon-phone-call"></i> <a href="tel:9702621413">(970) 262-1413</a></p>
-                                <p><i class="flaticon-email"></i> <a href="mailto:address@gmail.com">address@gmail.com</a></p>
+                                <p><i style="color: #aa896b" class="flaticon-phone-call"></i> <a href="tel:9702621413">(213) 0553 007 364</a></p>
+                                <p><i style="color: #aa896b" class="flaticon-email"></i> <a href="mailto:address@gmail.com">contact@dahliasinstitute.com</a></p>
                             </div>
                         </div>
                         <!-- Header Top Medal End -->
@@ -93,23 +101,23 @@
 
                         <!-- Header Logo Start -->
                         <div class="header-logo">
-                            <a href="index.html"><img src="{{asset('front/assets/images/logo.png')}}" alt="Logo"></a>
+                            <a href="{{asset('/welcome')}}"><img src="{{asset('front/assets/images/logo.png')}}" alt="Logo"></a>
                         </div>
                         <!-- Header Logo End -->
 
                         <!-- Header Menu Start -->
                         <div class="header-menu d-none d-lg-block">
                             <ul class="nav-menu">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.html">Accueil</a></li>
                                 <li>
-                                    <a href="#">All Course</a>
+                                    <a href="#">Cours</a>
                                     <ul class="sub-menu">
                                         <li><a href="courses.html">Courses</a></li>
                                         <li><a href="courses-details.html">Courses Details</a></li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Pages </a>
+                                    <a href="#">Catégories </a>
                                     <ul class="sub-menu">
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="register.html">Register</a></li>
@@ -127,7 +135,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">Blog</a>
+                                    <a href="#">A propos</a>
                                     <ul class="sub-menu">
                                         <li>
                                             <a href="#">Blog</a>
@@ -155,8 +163,8 @@
                         <!-- Header Sing In & Up Start -->
                         <div class="header-sign-in-up d-none d-lg-block">
                             <ul>
-                                <li><a class="sign-in" href="login.html">Sign In</a></li>
-                                <li><a class="sign-up" href="register.html">Sign Up</a></li>
+                                <li><a class="sign-in" href="login.html">Connexion</a></li>
+                                <li><a class="sign-up" href="register.html">Inscription</a></li>
                             </ul>
                         </div>
                         <!-- Header Sing In & Up End -->
@@ -288,7 +296,7 @@
             <!-- Footer Widget Section Start -->
             <div class="footer-widget-section">
 
-                <img class="shape-1 animation-down" src="assets/images/shape/shape-21.png" alt="Shape">
+                <img class="shape-1 animation-down" src="{{asset('front/assets/images/shape/shape-21.png')}}" alt="Shape">
 
                 <div class="container">
                     <div class="row">
@@ -297,20 +305,20 @@
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
                                 <div class="widget-logo">
-                                    <a href="#"><img src="assets/images/logo.png" alt="Logo"></a>
+                                    <a href="#"><img src="{{asset('front/assets/images/logo.png')}}" alt="Logo"></a>
                                 </div>
 
                                 <div class="widget-address">
-                                    <h4 class="footer-widget-title">Caribbean Ct</h4>
-                                    <p>Haymarket, Virginia (VA).</p>
+                                    <h4 class="footer-widget-title"> Algerie, Tlemcen</h4>
+                                    <p>1026 Les Dahlias, Kiffan Tlemcen, Algérie</p>
                                 </div>
 
                                 <ul class="widget-info">
                                     <li>
-                                        <p> <i class="flaticon-email"></i> <a href="mailto:address@gmail.com">address@gmail.com</a> </p>
+                                        <p> <i class="flaticon-email"></i> <a href="mailto:address@gmail.com">contact@dahliasinstitute.com</a> </p>
                                     </li>
                                     <li>
-                                        <p> <i class="flaticon-phone-call"></i> <a href="tel:9702621413">(970) 262-1413</a> </p>
+                                        <p> <i class="flaticon-phone-call"></i> <a href="tel:9702621413">(213) 0553 007 364</a> </p>
                                     </li>
                                 </ul>
 
@@ -331,15 +339,14 @@
 
                                 <!-- Footer Widget Start -->
                                 <div class="footer-widget">
-                                    <h4 class="footer-widget-title">Category</h4>
+                                    <h4 class="footer-widget-title">Rubriques</h4>
 
                                     <ul class="widget-link">
-                                        <li><a href="#">Creative Writing</a></li>
-                                        <li><a href="#">Film & Video</a></li>
-                                        <li><a href="#">Graphic Design</a></li>
-                                        <li><a href="#">UI/UX Design</a></li>
-                                        <li><a href="#">Business Analytics</a></li>
-                                        <li><a href="#">Marketing</a></li>
+                                        <li><a href="#">Informatique </a></li>
+                                        <li><a href="#">Young Developer </a></li>
+                                        <li><a href="#">3D Arts </a></li>
+                                        <li><a href="#">Energie Créative</a></li>
+                                        <li><a href="#">Langues </a></li>
                                     </ul>
 
                                 </div>
@@ -347,14 +354,12 @@
 
                                 <!-- Footer Widget Start -->
                                 <div class="footer-widget">
-                                    <h4 class="footer-widget-title">Quick Links</h4>
+                                    <h4 class="footer-widget-title">Liens rapides</h4>
 
                                     <ul class="widget-link">
-                                        <li><a href="#">Privacy Policy</a></li>
-                                        <li><a href="#">Discussion</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Customer Support</a></li>
-                                        <li><a href="#">Course FAQ’s</a></li>
+                                        <li><a href="#">Formations </a></li>
+                                        <li><a href="#">A propos de nous</a></li>
+                                        <li><a href="#">Contactez-nous</a></li>
                                     </ul>
 
                                 </div>
@@ -368,15 +373,15 @@
 
                             <!-- Footer Widget Start -->
                             <div class="footer-widget">
-                                <h4 class="footer-widget-title">Subscribe</h4>
+                                <h4 class="footer-widget-title">S'abonner</h4>
 
                                 <div class="widget-subscribe">
-                                    <p>Lorem Ipsum has been them an industry printer took a galley make book.</p>
+                                    <p>N'hésitez pas à vous inscrire à notre newsletter</p>
 
                                     <div class="widget-form">
                                         <form action="#">
                                             <input type="text" placeholder="Email here">
-                                            <button class="btn btn-primary btn-hover-dark">Subscribe Now</button>
+                                            <button class="btn btn-primary btn-hover-dark">Je m'inscris</button>
                                         </form>
                                     </div>
                                 </div>
@@ -387,7 +392,7 @@
                     </div>
                 </div>
 
-                <img class="shape-2 animation-left" src="assets/images/shape/shape-22.png" alt="Shape">
+                <img class="shape-2 animation-left" src="{{asset('front/assets/images/shape/shape-22.png')}}" alt="Shape">
 
             </div>
             <!-- Footer Widget Section End -->
@@ -398,14 +403,9 @@
 
                     <!-- Footer Copyright Start -->
                     <div class="copyright-wrapper">
-                        <div class="copyright-link">
-                            <a href="#">Terms of Service</a>
-                            <a href="#">Privacy Policy</a>
-                            <a href="#">Sitemap</a>
-                            <a href="#">Security</a>
-                        </div>
+                      
                         <div class="copyright-text">
-                            <p>&copy; 2021 <span> Edule </span> Made with <i class="icofont-heart-alt"></i> by <a href="#">Codecarnival</a></p>
+                            <p>&copy; 2022 <span style="color: #aa896b"> Dahlias institute </span> </p>
                         </div>
                     </div>
                     <!-- Footer Copyright End -->

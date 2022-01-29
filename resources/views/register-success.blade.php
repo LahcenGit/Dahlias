@@ -16,7 +16,6 @@
                 <li><a href="#">Accueil</a></li>
                 <li class="active">Inscription</li>
             </ul>
-            <h2 class="title"><span>S'inscrire : </span>{{$course->name}} </h2>
         </div>
         <!-- Page Banner End -->
     </div>
@@ -69,49 +68,12 @@
                 </div>
                 <div class="col-lg-6">
 
-                    <!-- Register & Login Form Start -->
-                    <div class="register-login-form">
-                        <h3 class="title">Merci de remplir le<span> formulaire</span></h3>
-
-                        <div class="form-wrapper">
-                            <form action="{{url('registration-course')}}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <!-- Single Form Start -->
-                                <div class="single-form">
-                                    <label>Nom et Prenom* :</label>
-                                    <input type="text" placeholder="Nom et prénom" name="name" required>
-                                </div>
-                                <!-- Single Form End -->
-                                <!-- Single Form Start -->
-                                <div class="single-form">
-                                    <label>Téléphone* :</label>
-                                    <input type="text" placeholder="+213 xx xx xx xx xx " name="phone" required>
-                                </div>
-                                <!-- Single Form End -->
-                                <!-- Single Form Start -->
-                                <div class="single-form">
-                                    <label>Age* :</label>
-                                    <input type="text" placeholder="Age" name="age" required>
-                                </div>
-
-                                <div class="single-form">
-                                    <label>Avez vous quelques chose a dire ? :</label>
-                                    <input type="text" placeholder="..." name="remarque" >
-                                </div>
-
-                                <div class="single-form">
-                                   
-                                    <input type="hidden"  name="course" value="{{$course->id}}">
-                                </div>
-                                
-                                <div class="single-form">
-                                    <button type="submit" class="btn btn-primary btn-hover-dark w-100">Envoyer</button>
-                                </div>
-                                <!-- Single Form End -->
-                            </form>
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Parfait ! {{$name}}</h4>
+                        <p>Nous avons bien reçu votre préinscription</p>
+                        <hr>
+                        <p class="mb-0">Nous vous contacterons dans les plus brefs délais</p>
                     </div>
-                    <!-- Register & Login Form End -->
 
                 </div>
             </div>

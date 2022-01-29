@@ -13,10 +13,10 @@
 
         <!-- Slider Content Start -->
         <div class="slider-content">
-            <h4 class="sub-title">Start your favourite course</h4>
-            <h2 class="main-title">Now learning from anywhere, and build your <span>bright career.</span></h2>
-            <p>It has survived not only five centuries but also the leap into electronic typesetting.</p>
-            <a class="btn btn-primary btn-hover-dark" href="#">Start A Course</a>
+            <h4 class="sub-title">Institut de formation pluridisciplinaire</h4>
+            <h2 class="main-title">Aussi bien en sciences et techniques appliquées qu’en culture et arts</h2>
+            <p>Dahlias Institute est dédié aux apprenants de tout âge, tous niveaux et domaines .</p>
+            <a class="btn btn-primary btn-hover-dark" href="#">Découvrir</a>
         </div>
         <!-- Slider Content End -->
 
@@ -30,8 +30,8 @@
         <div class="box-content">
             <div class="box-wrapper">
                 <i class="flaticon-open-book"></i>
-                <span class="count">1,235</span>
-                <p>courses</p>
+                <span class="count">+ 50</span>
+                <p>Formations</p>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
         <div class="box-rating">
             <div class="box-wrapper">
                 <span class="count">4.8 <i class="flaticon-star"></i></span>
-                <p>Rating (86K)</p>
+                <p>Avis (30)</p>
             </div>
         </div>
 
@@ -86,14 +86,14 @@
 
             <!-- Section Title Start -->
             <div class="section-title shape-01">
-                <h2 class="main-title">All <span>Courses</span> of Edule</h2>
+                <h2 class="main-title"><span>Formations de</span> Dahlias Institute </h2>
             </div>
             <!-- Section Title End -->
 
             <!-- Courses Search Start -->
             <div class="courses-search">
                 <form action="#">
-                    <input type="text" placeholder="Search your course">
+                    <input type="text" placeholder="Chercher une formation">
                     <button><i class="flaticon-magnifying-glass"></i></button>
                 </form>
             </div>
@@ -106,13 +106,12 @@
         <div class="courses-tabs-menu courses-active">
             <div class="swiper-container">
                 <ul class="swiper-wrapper nav">
-                    <li class="swiper-slide"><button class="active" data-bs-toggle="tab" data-bs-target="#tabs1">UI/UX Design</button></li>
-                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs2">Development</button></li>
-                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs3">Data Science</button></li>
-                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs4">Business</button></li>
-                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs5">Financial</button></li>
-                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs6">Marketing</button></li>
-                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs7">Design</button></li>
+                 
+                    <li class="swiper-slide"><button class="active" data-bs-toggle="tab" data-bs-target="#tabs1">Young Developer</button></li>
+                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs2">Informatique</button></li>
+                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs3">3D Arts</button></li>
+                    <li class="swiper-slide"><button data-bs-toggle="tab" data-bs-target="#tabs4">Energie Créative</button></li>
+                
                 </ul>
             </div>
 
@@ -133,32 +132,32 @@
                             <!-- Single Courses Start -->
                             <div class="single-courses">
                                 <div class="courses-images">
-                                    <a href="courses-details.html"><img src="{{asset('front/assets/images/courses/courses-01.jpg')}}" alt="Courses"></a>
+                                    <a href="courses-details.html"><img src="{{asset('/course.png')}}" alt="Courses"></a>
                                 </div>
                                 <div class="courses-content">
                                     <div class="courses-author">
                                         <div class="author">
                                             <div class="author-thumb">
-                                                <a href="#"><img src="assets/images/author/author-01.jpg" alt="Author"></a>
+                                                <a href="#"><img src="{{asset('front/assets/images/author/author-01.jpg')}}" alt="Author"></a>
                                             </div>
                                             <div class="author-name">
-                                                <a class="name" href="#">Jason Williams</a>
+                                                <a class="name" href="#">Formateur</a>
                                             </div>
                                         </div>
                                         <div class="tag">
-                                            <a href="#">Science</a>
+                                            <a href="#">Youg developer</a>
                                         </div>
                                     </div>
 
-                                    <h4 class="title"><a href="courses-details.html">Data Science and Machine Learning with Python - Hands On!</a></h4>
+                                    <h4 class="title"><a href="{{asset('course-detail/1')}}">1, 2, 3 Codez ! Scratch à partir de 8 ans</a></h4>
                                     <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
+                                        <span> <i class="icofont-clock-time"></i> 1 mois</span>
                                         <span> <i class="icofont-read-book"></i> 29 Lectures </span>
                                     </div>
                                     <div class="courses-price-review">
                                         <div class="courses-price">
-                                            <span class="sale-parice">$385.00</span>
-                                            <span class="old-parice">$440.00</span>
+                                            <span class="sale-parice">4.500 Da</span>
+                                            <span class="old-parice">5.500 da</span>
                                         </div>
                                         <div class="courses-review">
                                             <span class="rating-count">4.9</span>
@@ -171,212 +170,8 @@
                             </div>
                             <!-- Single Courses End -->
                         </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="{{asset('front/assets/images/courses/courses-02.jpg')}}" alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="author">
-                                            <div class="author-thumb">
-                                                <a href="#"><img src="{{asset('front/assets/images/author/author-02.jpg')}}" alt="Author"></a>
-                                            </div>
-                                            <div class="author-name">
-                                                <a class="name" href="#">Pamela Foster</a>
-                                            </div>
-                                        </div>
-                                        <div class="tag">
-                                            <a href="#">Science</a>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="title"><a href="courses-details.html">Create Amazing Color Schemes for Your UX Design Projects</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review">
-                                        <div class="courses-price">
-                                            <span class="sale-parice">$420.00</span>
-                                        </div>
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                    <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Courses End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="assets/images/courses/courses-03.jpg" alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="author">
-                                            <div class="author-thumb">
-                                                <a href="#"><img src="assets/images/author/author-03.jpg" alt="Author"></a>
-                                            </div>
-                                            <div class="author-name">
-                                                <a class="name" href="#">Rose Simmons</a>
-                                            </div>
-                                        </div>
-                                        <div class="tag">
-                                            <a href="#">Science</a>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="title"><a href="courses-details.html">Culture & Leadership: Strategies for a Successful Business</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review">
-                                        <div class="courses-price">
-                                            <span class="sale-parice">$295.00</span>
-                                            <span class="old-parice">$340.00</span>
-                                        </div>
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                    <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Courses End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="assets/images/courses/courses-04.jpg" alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="author">
-                                            <div class="author-thumb">
-                                                <a href="#"><img src="assets/images/author/author-04.jpg" alt="Author"></a>
-                                            </div>
-                                            <div class="author-name">
-                                                <a class="name" href="#">Jason Williams</a>
-                                            </div>
-                                        </div>
-                                        <div class="tag">
-                                            <a href="#">Finance</a>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="title"><a href="courses-details.html">Finance Series: Learn to Budget and Calculate your Net Worth.</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review">
-                                        <div class="courses-price">
-                                            <span class="sale-parice">Free</span>
-                                        </div>
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                    <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Courses End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="assets/images/courses/courses-05.jpg" alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="author">
-                                            <div class="author-thumb">
-                                                <a href="#"><img src="assets/images/author/author-05.jpg" alt="Author"></a>
-                                            </div>
-                                            <div class="author-name">
-                                                <a class="name" href="#">Jason Williams</a>
-                                            </div>
-                                        </div>
-                                        <div class="tag">
-                                            <a href="#">Marketing</a>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="title"><a href="courses-details.html">Build Brand Into Marketing: Tackling the New Marketing Landscape</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review">
-                                        <div class="courses-price">
-                                            <span class="sale-parice">$136.00</span>
-                                        </div>
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                    <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Courses End -->
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <!-- Single Courses Start -->
-                            <div class="single-courses">
-                                <div class="courses-images">
-                                    <a href="courses-details.html"><img src="assets/images/courses/courses-06.jpg" alt="Courses"></a>
-                                </div>
-                                <div class="courses-content">
-                                    <div class="courses-author">
-                                        <div class="author">
-                                            <div class="author-thumb">
-                                                <a href="#"><img src="assets/images/author/author-06.jpg" alt="Author"></a>
-                                            </div>
-                                            <div class="author-name">
-                                                <a class="name" href="#">Jason Williams</a>
-                                            </div>
-                                        </div>
-                                        <div class="tag">
-                                            <a href="#">Design</a>
-                                        </div>
-                                    </div>
-
-                                    <h4 class="title"><a href="courses-details.html">Graphic Design: Illustrating Badges and Icons with Geometric Shapes</a></h4>
-                                    <div class="courses-meta">
-                                        <span> <i class="icofont-clock-time"></i> 08 hr 15 mins</span>
-                                        <span> <i class="icofont-read-book"></i> 29 Lectures </span>
-                                    </div>
-                                    <div class="courses-price-review">
-                                        <div class="courses-price">
-                                            <span class="sale-parice">$237.00</span>
-                                        </div>
-                                        <div class="courses-review">
-                                            <span class="rating-count">4.9</span>
-                                            <span class="rating-star">
-                                                    <span class="rating-bar" style="width: 80%;"></span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single Courses End -->
-                        </div>
+                       
+                      
                     </div>
                 </div>
                 <!-- All Courses Wrapper End -->
@@ -1935,7 +1730,7 @@
 
         <!-- All Courses BUtton Start -->
         <div class="courses-btn text-center">
-            <a href="courses.html" class="btn btn-secondary btn-hover-primary">Other Course</a>
+            <a href="courses.html" class="btn btn-secondary btn-hover-primary">Autres</a>
         </div>
         <!-- All Courses BUtton End -->
 
@@ -1950,24 +1745,24 @@
         <!-- Call to Action Wrapper Start -->
         <div class="call-to-action-wrapper">
 
-            <img class="cat-shape-01 animation-round" src="assets/images/shape/shape-12.png" alt="Shape">
-            <img class="cat-shape-02" src="assets/images/shape/shape-13.svg" alt="Shape">
-            <img class="cat-shape-03 animation-round" src="assets/images/shape/shape-12.png" alt="Shape">
+            <img class="cat-shape-01 animation-round" src="{{asset('front/assets/images/shape/shape-12.png')}}" alt="Shape">
+            <img class="cat-shape-02" src="{{asset('front/assets/images/shape/shape-13.svg')}}" alt="Shape">
+            <img class="cat-shape-03 animation-round" src="{{asset('front/assets/images/shape/shape-12.png')}}" alt="Shape">
 
             <div class="row align-items-center">
                 <div class="col-md-6">
 
                     <!-- Section Title Start -->
                     <div class="section-title shape-02">
-                        <h5 class="sub-title">Become A Instructor</h5>
-                        <h2 class="main-title">You can join with Edule as <span>a instructor?</span></h2>
+                        <h5 class="sub-title">Devenir formateur</h5>
+                        <h2 class="main-title">Vous pouvez rejoindre Dahlias intitute en tant que<span> formateur</span></h2>
                     </div>
                     <!-- Section Title End -->
 
                 </div>
                 <div class="col-md-6">
                     <div class="call-to-action-btn">
-                        <a class="btn btn-primary btn-hover-dark" href="contact.html">Drop Information</a>
+                        <a class="btn btn-primary btn-hover-dark" href="contact.html">Contacter-nous</a>
                     </div>
                 </div>
             </div>
@@ -1984,8 +1779,8 @@
 
         <!-- Section Title Start -->
         <div class="section-title shape-03 text-center">
-            <h5 class="sub-title">Over 1,235+ Course</h5>
-            <h2 class="main-title">How It <span> Work?</span></h2>
+            <h5 class="sub-title">Plus de 50+ Formations</h5>
+            <h2 class="main-title">Comment ça  <span> marche?</span></h2>
         </div>
         <!-- Section Title End -->
 
@@ -1994,33 +1789,33 @@
 
             <!-- Single Work Start -->
             <div class="single-work">
-                <img class="shape-1" src="assets/images/shape/shape-15.png" alt="Shape">
+                <img class="shape-1" src="{{asset('front/assets/images/shape/shape-15.png')}}" alt="Shape">
 
                 <div class="work-icon">
                     <i class="flaticon-transparency"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Find Your Course</h3>
-                    <p>It has survived not only centurie also leap into electronic.</p>
+                    <h3 class="title">Trouver votre formation</h3>
+                    <p>Choisir une formation </p>
                 </div>
             </div>
             <!-- Single Work End -->
 
             <!-- Single Work Start -->
             <div class="work-arrow">
-                <img class="arrow" src="assets/images/shape/shape-17.png" alt="Shape">
+                <img class="arrow" src="{{asset('front/assets/images/shape/shape-17.png')}}" alt="Shape">
             </div>
             <!-- Single Work End -->
 
             <!-- Single Work Start -->
             <div class="single-work">
-                <img class="shape-2" src="assets/images/shape/shape-15.png" alt="Shape">
+                <img class="shape-2" src="{{asset('front/assets/images/shape/shape-15.png')}}" alt="Shape">
 
                 <div class="work-icon">
                     <i class="flaticon-forms"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Book A Seat</h3>
+                    <h3 class="title">Inscrez-vous</h3>
                     <p>It has survived not only centurie also leap into electronic.</p>
                 </div>
             </div>
@@ -2028,7 +1823,7 @@
 
             <!-- Single Work Start -->
             <div class="work-arrow">
-                <img class="arrow" src="assets/images/shape/shape-17.png" alt="Shape">
+                <img class="arrow" src="{{asset('front/assets/images/shape/shape-17.png')}}" alt="Shape">
             </div>
             <!-- Single Work End -->
 
@@ -2040,7 +1835,7 @@
                     <i class="flaticon-badge"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Get Certificate</h3>
+                    <h3 class="title">venir à l'intitut</h3>
                     <p>It has survived not only centurie also leap into electronic.</p>
                 </div>
             </div>
@@ -2065,20 +1860,20 @@
         <!-- Download App Wrapper Start -->
         <div class="download-app-wrapper mt-n6">
 
-            <!-- Section Title Start -->
-            <div class="section-title section-title-white">
-                <h5 class="sub-title">Ready to start?</h5>
-                <h2 class="main-title">Download our mobile app. for easy to start your course.</h2>
+             <!-- Section Title Start -->
+             <div class="section-title section-title-white">
+                <h5 class="sub-title">Besoin de plus d'information?</h5>
+                <h2 class="main-title">N'hésitez pas à nous contacter </h2>
             </div>
             <!-- Section Title End -->
 
-            <img class="shape-1 animation-right" src="assets/images/shape/shape-14.png" alt="Shape">
+            <img class="shape-1 animation-right" src="{{asset('front/assets/images/shape/shape-14.png')}}" alt="Shape">
 
             <!-- Download App Button End -->
             <div class="download-app-btn">
                 <ul class="app-btn">
-                    <li><a href="#"><img src="assets/images/google-play.png" alt="Google Play"></a></li>
-                    <li><a href="#"><img src="assets/images/app-store.png" alt="App Store"></a></li>
+                    <li style="color: white"> <i class="fas fa-phone-volume fa-5x"></i></li>
+                    <li ><h3 style="color: #aa896b"> (213) 0553 007 364</h3></li>
                 </ul>
             </div>
             <!-- Download App Button End -->
@@ -2096,8 +1891,8 @@
 
         <!-- Section Title Start -->
         <div class="section-title shape-03 text-center">
-            <h5 class="sub-title">Student Testimonial</h5>
-            <h2 class="main-title">Feedback From <span> Student</span></h2>
+            <h5 class="sub-title">Témoignage d'étudiant</h5>
+            <h2 class="main-title">Commentaires des <span> étudiants</span></h2>
         </div>
         <!-- Section Title End -->
 
@@ -2105,11 +1900,13 @@
         <div class="testimonial-wrapper testimonial-active">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
+                  
+
                     <!-- Single Testimonial Start -->
                     <div class="single-testimonial swiper-slide">
                         <div class="testimonial-author">
                             <div class="author-thumb">
-                                <img src="assets/images/author/author-06.jpg" alt="Author">
+                                <img src="{{asset('front/assets/images/author/author-02.jpg')}}" alt="Author">
 
                                 <i class="icofont-quote-left"></i>
                             </div>
@@ -2120,8 +1917,8 @@
                         </div>
                         <div class="testimonial-content">
                             <p>Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make type specimen book has survived not five centuries but also the leap into electronic.</p>
-                            <h4 class="name">Sara Alexander</h4>
-                            <span class="designation">Product Designer, USA</span>
+                            <h4 class="name">Lahcene Benmouloud</h4>
+                            <span class="designation">Etudiant en informatique</span>
                         </div>
                     </div>
                     <!-- Single Testimonial End -->
@@ -2130,7 +1927,7 @@
                     <div class="single-testimonial swiper-slide">
                         <div class="testimonial-author">
                             <div class="author-thumb">
-                                <img src="assets/images/author/author-07.jpg" alt="Author">
+                                <img src="{{asset('front/assets/images/author/author-03.jpg')}}" alt="Author">
 
                                 <i class="icofont-quote-left"></i>
                             </div>
@@ -2141,29 +1938,8 @@
                         </div>
                         <div class="testimonial-content">
                             <p>Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make type specimen book has survived not five centuries but also the leap into electronic.</p>
-                            <h4 class="name">Melissa Roberts</h4>
-                            <span class="designation">Product Designer, USA</span>
-                        </div>
-                    </div>
-                    <!-- Single Testimonial End -->
-
-                    <!-- Single Testimonial Start -->
-                    <div class="single-testimonial swiper-slide">
-                        <div class="testimonial-author">
-                            <div class="author-thumb">
-                                <img src="assets/images/author/author-03.jpg" alt="Author">
-
-                                <i class="icofont-quote-left"></i>
-                            </div>
-
-                            <span class="rating-star">
-                                    <span class="rating-bar" style="width: 80%;"></span>
-                            </span>
-                        </div>
-                        <div class="testimonial-content">
-                            <p>Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make type specimen book has survived not five centuries but also the leap into electronic.</p>
-                            <h4 class="name">Sara Alexander</h4>
-                            <span class="designation">Product Designer, USA</span>
+                            <h4 class="name">Benallal Narimen</h4>
+                            <span class="designation">Etudiante en chimie</span>
                         </div>
                     </div>
                     <!-- Single Testimonial End -->
@@ -2179,198 +1955,6 @@
 </div>
 <!-- Testimonial End -->
 
-<!-- Brand Logo Start -->
-<div class="section section-padding-02">
-    <div class="container">
-
-        <!-- Brand Logo Wrapper Start -->
-        <div class="brand-logo-wrapper">
-
-            <img class="shape-1" src="assets/images/shape/shape-19.png" alt="Shape">
-
-            <img class="shape-2 animation-round" src="assets/images/shape/shape-20.png" alt="Shape">
-
-            <!-- Section Title Start -->
-            <div class="section-title shape-03">
-                <h2 class="main-title">Best Supporter of <span> Edule.</span></h2>
-            </div>
-            <!-- Section Title End -->
-
-            <!-- Brand Logo Start -->
-            <div class="brand-logo brand-active">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper">
-
-                        <!-- Single Brand Start -->
-                        <div class="single-brand swiper-slide">
-                            <img src="assets/images/brand/brand-01.png" alt="Brand">
-                        </div>
-                        <!-- Single Brand End -->
-
-                        <!-- Single Brand Start -->
-                        <div class="single-brand swiper-slide">
-                            <img src="assets/images/brand/brand-02.png" alt="Brand">
-                        </div>
-                        <!-- Single Brand End -->
-
-                        <!-- Single Brand Start -->
-                        <div class="single-brand swiper-slide">
-                            <img src="assets/images/brand/brand-03.png" alt="Brand">
-                        </div>
-                        <!-- Single Brand End -->
-
-                        <!-- Single Brand Start -->
-                        <div class="single-brand swiper-slide">
-                            <img src="assets/images/brand/brand-04.png" alt="Brand">
-                        </div>
-                        <!-- Single Brand End -->
-
-                        <!-- Single Brand Start -->
-                        <div class="single-brand swiper-slide">
-                            <img src="assets/images/brand/brand-05.png" alt="Brand">
-                        </div>
-                        <!-- Single Brand End -->
-
-                        <!-- Single Brand Start -->
-                        <div class="single-brand swiper-slide">
-                            <img src="assets/images/brand/brand-06.png" alt="Brand">
-                        </div>
-                        <!-- Single Brand End -->
-
-                    </div>
-                </div>
-            </div>
-            <!-- Brand Logo End -->
-
-        </div>
-        <!-- Brand Logo Wrapper End -->
-
-    </div>
-</div>
-<!-- Brand Logo End -->
-
-<!-- Blog Start -->
-<div class="section section-padding mt-n1">
-    <div class="container">
-
-        <!-- Section Title Start -->
-        <div class="section-title shape-03 text-center">
-            <h5 class="sub-title">Latest News</h5>
-            <h2 class="main-title">Educational Tips & <span> Tricks</span></h2>
-        </div>
-        <!-- Section Title End -->
-
-        <!-- Blog Wrapper Start -->
-        <div class="blog-wrapper">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-
-                    <!-- Single Blog Start -->
-                    <div class="single-blog">
-                        <div class="blog-image">
-                            <a href="blog-details-left-sidebar.html"><img src="assets/images/blog/blog-01.jpg" alt="Blog"></a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-author">
-                                <div class="author">
-                                    <div class="author-thumb">
-                                        <a href="#"><img src="assets/images/author/author-01.jpg" alt="Author"></a>
-                                    </div>
-                                    <div class="author-name">
-                                        <a class="name" href="#">Jason Williams</a>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <a href="#">Science</a>
-                                </div>
-                            </div>
-
-                            <h4 class="title"><a href="blog-details-left-sidebar.html">Data Science and Machine Learning with Python - Hands On!</a></h4>
-
-                            <div class="blog-meta">
-                                <span> <i class="icofont-calendar"></i> 21 March, 2021</span>
-                                <span> <i class="icofont-heart"></i> 2,568+ </span>
-                            </div>
-
-                            <a href="blog-details-left-sidebar.html" class="btn btn-secondary btn-hover-primary">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-
-                </div>
-                <div class="col-lg-4 col-md-6">
-
-                    <!-- Single Blog Start -->
-                    <div class="single-blog">
-                        <div class="blog-image">
-                            <a href="blog-details-left-sidebar.html"><img src="assets/images/blog/blog-02.jpg" alt="Blog"></a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-author">
-                                <div class="author">
-                                    <div class="author-thumb">
-                                        <a href="#"><img src="assets/images/author/author-02.jpg" alt="Author"></a>
-                                    </div>
-                                    <div class="author-name">
-                                        <a class="name" href="#">Pamela Foster</a>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <a href="#">UX Design</a>
-                                </div>
-                            </div>
-
-                            <h4 class="title"><a href="blog-details-left-sidebar.html">Create Amazing Color Schemes for Your UX Design Projects</a></h4>
-
-                            <div class="blog-meta">
-                                <span> <i class="icofont-calendar"></i> 21 March, 2021</span>
-                                <span> <i class="icofont-heart"></i> 2,568+ </span>
-                            </div>
-
-                            <a href="blog-details-left-sidebar.html" class="btn btn-secondary btn-hover-primary">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-
-                </div>
-                <div class="col-lg-4 col-md-6">
-
-                    <!-- Single Blog Start -->
-                    <div class="single-blog">
-                        <div class="blog-image">
-                            <a href="blog-details-left-sidebar.html"><img src="assets/images/blog/blog-03.jpg" alt="Blog"></a>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-author">
-                                <div class="author">
-                                    <div class="author-thumb">
-                                        <a href="#"><img src="assets/images/author/author-03.jpg" alt="Author"></a>
-                                    </div>
-                                    <div class="author-name">
-                                        <a class="name" href="#">Patricia Collins</a>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <a href="#">Business</a>
-                                </div>
-                            </div>
-
-                            <h4 class="title"><a href="blog-details-left-sidebar.html">Culture & Leadership: Strategies for a Successful Business</a></h4>
-
-                            <div class="blog-meta">
-                                <span> <i class="icofont-calendar"></i> 21 March, 2021</span>
-                                <span> <i class="icofont-heart"></i> 2,568+ </span>
-                            </div>
-
-                            <a href="blog-details-left-sidebar.html" class="btn btn-secondary btn-hover-primary">Read More</a>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-
-                </div>
-            </div>
-        </div>
-        <!-- Blog Wrapper End -->
 
     </div>
 </div>

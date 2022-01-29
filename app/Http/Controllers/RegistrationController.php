@@ -21,10 +21,18 @@ class RegistrationController extends Controller
          $registration->remarque = $request->remarque;
          $registration->phone = $request->phone;
          $registration->save();
-         return redirect('registration-course');
+
+         $name = $request->name;
+         return view('register-success',compact('name'));
     }
 
     public function register($id){
+        $course = Course::find($id);
+        return view('register-course',compact('course'));
+    }
+
+
+    public function registerSuccess($id,$name){
         $course = Course::find($id);
         return view('register-course',compact('course'));
     }

@@ -12,7 +12,7 @@
         <div class="page-banner-content">
             <ul class="breadcrumb">
                 <li><a href="#">Accueil</a></li>
-                <li class="active">{{$course->name}}</li>
+                <li class="active">{{$course->category->name}}</li>
             </ul>
             <h2 class="title"> <span>{{$course->name}}</span></h2>
         </div>
@@ -52,13 +52,10 @@
                 <div class="courses-details">
 
                     <div class="courses-details-images">
-                        <img src="{{asset('storage/course/iNXFKJIkzpfVWOJDWkJPyiSLGpJ4wUqUHGhtFn3T.png')}}" alt="Courses Details">
-                        <span class="tags">Finance</span>
+                        <img src="{{asset('course.png')}}" alt="Courses Details">
+                        <span class="tags">{{$course->category->name}}</span>
 
-                        <div class="courses-play">
-                            <img src="{{asset('front/assets/images/courses/circle-shape.png')}}" alt="Play">
-                            <a class="play video-popup" href="https://www.youtube.com/watch?v=Wif4ZkwC0AM"><i class="flaticon-play"></i></a>
-                        </div>
+                   
                     </div>
 
                     <h2 class="title">{{$course->name}}</h2>
@@ -293,7 +290,7 @@
                         <div class="info-list">
                             <ul>
                                 <li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>
-                                <li><i class="icofont-clock-time"></i> <strong>Duration</strong> <span>{{$course->duration}}</span></li>
+                                <li><i class="icofont-clock-time"></i> <strong>Durée</strong> <span>{{$course->duration}}</span></li>
                                 
                                 <li><i class="icofont-bars"></i> <strong>Niveau</strong> <span>{{$course->level}}</span></li>
                                 <li><i class="icofont-book-alt"></i> <strong>Langue</strong> <span>{{$course->language}}</span></li>
@@ -301,18 +298,17 @@
                             </ul>
                         </div>
                         <div class="info-btn">
-                            <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary btn-hover-dark">S'inscrir</a>
+                            <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary btn-hover-dark">S'inscrire</a>
                         </div>
                     </div>
                     <!-- Sidebar Widget Information End -->
 
                     <!-- Sidebar Widget Share Start -->
                     <div class="sidebar-widget">
-                        <h4 class="widget-title">Share Course:</h4>
+                        <h4 class="widget-title">Suivez-nous :</h4>
 
                         <ul class="social">
                             <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                            <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
                             <li><a href="#"><i class="flaticon-twitter"></i></a></li>
                             <li><a href="#"><i class="flaticon-skype"></i></a></li>
                             <li><a href="#"><i class="flaticon-instagram"></i></a></li>
@@ -343,8 +339,8 @@
 
             <!-- Section Title Start -->
             <div class="section-title section-title-white">
-                <h5 class="sub-title">Ready to start?</h5>
-                <h2 class="main-title">Download our mobile app. for easy to start your course.</h2>
+                <h5 class="sub-title">Besoin de plus d'information?</h5>
+                <h2 class="main-title">N'hésitez pas à nous contacter </h2>
             </div>
             <!-- Section Title End -->
 
@@ -353,8 +349,8 @@
             <!-- Download App Button End -->
             <div class="download-app-btn">
                 <ul class="app-btn">
-                    <li><a href="#"><img src="{{asset('front/assets/images/google-play.png')}}" alt="Google Play"></a></li>
-                    <li><a href="#"><img src="{{asset('front/assets/images/app-store.png')}}" alt="App Store"></a></li>
+                    <li style="color: white"> <i class="fas fa-phone-volume fa-5x"></i></li>
+                    <li ><h3 style="color: #aa896b"> (213) 0553 007 364</h3></li>
                 </ul>
             </div>
             <!-- Download App Button End -->

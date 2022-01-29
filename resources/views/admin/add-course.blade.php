@@ -1,6 +1,12 @@
 @extends('layouts.dashboard-admin')
 @section('content')
 
+@if ($errors->any())
+@foreach ($errors->all() as $error)
+    <div>{{$error}}</div>
+@endforeach
+@endif
+
 <div class="content-body">
     <div class="container-fluid">
         <div class="row page-titles mx-0">

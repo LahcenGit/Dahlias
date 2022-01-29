@@ -13,10 +13,7 @@ use Illuminate\Http\Request;
 class CourseController extends Controller
 {
     //
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+  
     public function create(){
 
         $categories = Category::where('parent_id',null)->get();
@@ -31,18 +28,7 @@ class CourseController extends Controller
     }
     
     public function store(Request $request){
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'category' => ['required', 'string', 'max:255'],
-            'instructor' => ['required', 'string', 'max:255'],
-            'language' => ['required', 'string', 'max:255'],
-            'level' => ['required', 'string', 'max:255'],
-            'duration' => ['required', 'string', 'max:255'],
-            'price' => ['required', 'string', 'max:255'],
-            'description' => ['required', 'string', 'max:255'],
-            'certificate' => ['required', 'string', 'max:255'],
-   
-           ]);
+       
         $course = new Course();
         $hasFile = $request->hasFile('photos');
         $lien = [];

@@ -37,6 +37,7 @@ Route::resource('/dashboard-admin/courses',CourseController::class)->middleware(
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
 Route::resource('/registration-course',RegistrationController::class);
 Route::get('/register-course/{id}',[App\Http\Controllers\RegistrationController::class,'register']);
+Route::get('/register-success/{id}/{name}',[App\Http\Controllers\RegistrationController::class,'registerSuccess']);
 Route::get('/course-detail/{id}',[App\Http\Controllers\CourseController::class,'CourseDetail']);
 Auth::routes();
 
