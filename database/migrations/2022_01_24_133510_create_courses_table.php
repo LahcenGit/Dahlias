@@ -17,8 +17,6 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->unsignedBigInteger('instructor_id')->nullable();
-            $table->foreign('instructor_id')->references('id')->on('instructors')->onDelete('cascade');
             $table->text('description')->nullable();
             $table->string('name');
             $table->string('price')->nullable();
@@ -28,7 +26,6 @@ class CreateCoursesTable extends Migration
             $table->string('nbr_student')->nullable();
             $table->string('duration')->nullable();
             $table->string('level')->nullable();
-            $table->string('language')->nullable();
             $table->string('certificate')->nullable();
             $table->string('slug')->nullable();
             $table->string('flug')->nullable();

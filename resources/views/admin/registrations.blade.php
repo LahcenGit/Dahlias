@@ -41,6 +41,7 @@
                                         <th>Téléphone</th>
                                         <th>Age</th>
                                         <th>Date</th>
+                                        <th>Statut</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -53,6 +54,16 @@
                                         <td><strong>{{$registration->phone}} </strong></td>
                                         <td><strong>{{$registration->age}} ans </strong></td>
                                         <td><strong>{{$registration->created_at}} </strong></td>
+                                        @if ($registration->statut == 1 )
+                                        <td><span class="badge bg-warning">En Attente</span></td>
+                                        @elseif($registration->statut == 2)
+                                        <td><span class="badge bg-success">Validé</span></td>
+                                        @elseif($registration->statut == 3)
+                                        <td><span class="badge bg-success">Rembourser</span></td>
+                                        @else
+                                        <td><span class="badge bg-danger">Annulé</span></td>
+                                        
+                                        @endif
                                        
                                         <td>
                                             <form action="{{url('dashboard-admin/registrations/'.$registration->id)}}" method="post">

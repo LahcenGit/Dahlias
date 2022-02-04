@@ -20,6 +20,7 @@ class RegistrationController extends Controller
          $registration->age = $request->age;
          $registration->remarque = $request->remarque;
          $registration->phone = $request->phone;
+         $registration->status = 1;
          $registration->save();
 
          $name = $request->name;

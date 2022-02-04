@@ -20,13 +20,12 @@ class Course extends Model
         return $this->hasMany(Registration::class);
     }
 
+ 
+
     public function category()
     {
         return $this->belongsTo(Category::class,'category_id');
     }
 
-    public function instructor()
-    {
-        return $this->belongsTo(Instructor::class,'instructor_id');
-    }
+   
 }

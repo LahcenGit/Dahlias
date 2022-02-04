@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegistrationsTable extends Migration
+class CreateCourselanguagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateRegistrationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('registrations', function (Blueprint $table) {
+        Schema::create('courselanguages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('course_id')->nullable();
-            $table->string('name');
-            $table->string('age');
-            $table->string('phone');
-            $table->integer('status');
-            $table->string('remarque')->nullable();
+            $table->string('language')->nullable();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
@@ -34,6 +30,6 @@ class CreateRegistrationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registrations');
+        Schema::dropIfExists('courselanguages');
     }
 }

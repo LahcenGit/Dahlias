@@ -46,7 +46,7 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>La durée * :</label>
+                                        <label>La durée (Par Heure) * :</label>
                                         <input type="text"  class="form-control input-default @error('duration') is-invalid @enderror" value=" {{old('duration')}}" name="duration"  placeholder="duree" >
                                         @error('duration')
                                                 <span class="invalid-feedback" role="alert">
@@ -89,8 +89,8 @@
                                     </div>
                                          
                                     <div class="form-group col-md-6">
-                                        <label>Formateur * :</label>
-                                        <select class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructor" required>
+                                        <label>Formateur (optionnel) :</label>
+                                        <select  multiple class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructors[]">
                                        
                                             
                                           
@@ -112,7 +112,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>La langue * :</label>
-                                        <select class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language"required>
+                                        <select  multiple class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="languages[]"required>
                                            
                                             <option value="Arabe"  @if (old('language') == "Arabe" ) selected @endif >Arabe</option>
                                             <option value="Francais" @if (old('language') == "Francais" ) selected @endif >Francais</option>
@@ -184,8 +184,9 @@
                                     <label>Certificat * :</label>
                                     <select class="form-control  @error('certificate') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="certificate" required>
                                        
-                                        <option value="Oui" @if (old('certificate') == "Oui" ) selected @endif>Oui</option>
-                                        <option value="Non" @if (old('certificate') == "Non" ) selected @endif>Non</option>
+                                        <option value="Attestation" @if (old('certificate') == "Attestation" ) selected @endif>Attestation</option>
+                                        <option value="Certificat" @if (old('certificate') == "Certificat" ) selected @endif>Certificat</option>
+                                        <option value="Diplome" @if (old('certificate') == "Diplome" ) selected @endif>Diplome</option>
                                        
                                     </select>
                                 </div>

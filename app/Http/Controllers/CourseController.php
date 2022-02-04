@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\Courseinstructor;
+use App\Models\Courselanguage;
 use App\Models\Image;
 use App\Models\Instructor;
 use Illuminate\Support\Facades\Storage;
@@ -35,8 +37,7 @@ class CourseController extends Controller
         $course->name = $request->name;
         $course->price = $request->price;
         $course->category_id = $request->category;
-        $course->instructor_id = $request->instructor;
-        $course->language = $request->language;
+       
         $course->level = $request->level;
         $course->start_date = $request->start_date;
         $course->end_date = $request->end_date;
@@ -45,7 +46,22 @@ class CourseController extends Controller
         $course->status = $request->status;
         $course->description = $request->description;
         $course->certificate = $request->certificate;
+       
         $course->save();
+
+        foreach($request->instructors as $instructor){
+            $course_instructor = new Courseinstructor();
+            $course_instructor->course_id = $course->id;
+            $course_instructor->instructor_id = $instructor;
+            $course_instructor->save();
+        }
+
+        foreach($request->languages as $language){
+            $course_language = new Courselanguage();
+            $course_language->course_id = $course->id;
+            $course_language->language = $language;
+            $course_language->save();
+        }
         if($hasFile){
             foreach($request->file('photos') as $file){
             $path =  $file;
