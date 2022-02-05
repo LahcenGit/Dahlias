@@ -37,4 +37,22 @@ class RegistrationController extends Controller
         $course = Course::find($id);
         return view('register-course',compact('course'));
     }
+
+
+    public function registrationApprouve($id){
+
+        $registration = Registration::find($id);
+        $registration->status = 2 ; 
+        $registration->save();
+        return redirect('/dashboard-admin/registrations');
+
+    }
+    public function registrationCancel($id){
+
+        $registration = Registration::find($id);
+        $registration->status = 3 ; 
+        $registration->save();
+        return redirect('/dashboard-admin/registrations');
+
+    }
 }

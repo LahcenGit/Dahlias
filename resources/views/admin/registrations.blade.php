@@ -54,11 +54,11 @@
                                         <td><strong>{{$registration->phone}} </strong></td>
                                         <td><strong>{{$registration->age}} ans </strong></td>
                                         <td><strong>{{$registration->created_at}} </strong></td>
-                                        @if ($registration->statut == 1 )
+                                        @if ($registration->status == 1 )
                                         <td><span class="badge bg-warning">En Attente</span></td>
-                                        @elseif($registration->statut == 2)
+                                        @elseif($registration->status == 2)
                                         <td><span class="badge bg-success">Validé</span></td>
-                                        @elseif($registration->statut == 3)
+                                        @elseif($registration->status == 3)
                                         <td><span class="badge bg-success">Rembourser</span></td>
                                         @else
                                         <td><span class="badge bg-danger">Annulé</span></td>
@@ -70,8 +70,17 @@
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
                                             <div class="d-flex">
-                                                <a href="{{url('dashboard-admin/registrations/'.$registration->id.'/edit')}}"  class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                <button   class="delete-customer btn btn-danger shadow btn-xs sharp  "onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
+                                                @if ($registration->status == 1)
+                                                <a href="{{url('dashboard-admin/registration-approuve/'.$registration->id)}}" onclick=" return confirm('Voulez-vous valider la commande ?')" class="btn  btn-primary  show-order" style="margin-right: 3px;"><i class="mdi mdi-check"></i></a>
+                                                <a href="{{url('dashboard-admin/registration-cancel/'.$registration->id)}}" onclick="return confirm('Voulez-vous annuler la commande ?')" class="btn  btn-danger  show-order" style="margin-right: 3px;"><i class="mdi mdi-close"></i></a>
+                                                @endif
+                                                @if ($registration->status == 2)
+                                                <a href="{{url('dashboard-admin/registration-cancel/'.$registration->id)}}" onclick="return confirm('Voulez-vous annuler la commande ?')" class="btn  btn-danger  show-order" style="margin-right: 3px;"><i class="mdi mdi-close"></i></a>
+                                                @endif
+                                                @if ($registration->status == 3)
+                                                <a href="{{url('dashboard-admin/registration-approuve/'.$registration->id)}}" onclick=" return confirm('Voulez-vous valider la commande ?')" class="btn  btn-primary  show-order" style="margin-right: 3px;"><i class="mdi mdi-check"></i></a>
+                                                @endif
+                                                
                                             </div>	
                                             </form>											
                                         </td>												

@@ -35,6 +35,8 @@ Route::resource('/dashboard-admin/regsitrations',RegistrationAdminController::cl
 Route::resource('/dashboard-admin/instructors',InstructorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/courses',CourseController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
+Route::get('dashboard-admin/registration-approuve/{id}', [App\Http\Controllers\RegistrationController::class, 'registrationApprouve'])->middleware('can:admin');
+Route::get('dashboard-admin/registration-cancel/{id}', [App\Http\Controllers\RegistrationController::class, 'registrationCancel'])->middleware('can:admin');
 Route::resource('/registration-course',RegistrationController::class);
 Route::get('/register-course/{id}',[App\Http\Controllers\RegistrationController::class,'register']);
 Route::get('/register-success/{id}/{name}',[App\Http\Controllers\RegistrationController::class,'registerSuccess']);
