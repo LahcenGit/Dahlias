@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Course;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,6 +23,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('welcome2',compact('categories'));
+        $courses = Course::all();
+        return view('welcome2',compact('categories','courses'));
     }
 }

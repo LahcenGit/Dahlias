@@ -429,6 +429,8 @@
 
 
 
+   
+
 
     <!-- JS
     ============================================ -->
@@ -440,6 +442,17 @@
     <!-- Bootstrap JS -->
     <script src="{{asset('front/assets/js/plugins/popper.min.js')}}"></script>
     <script src="{{asset('front/assets/js/plugins/bootstrap.min.js')}}"></script>
+
+    <script src="{{asset('slick.js')}}"></script>
+
+    <script>
+        $('.multiple-items').slick({
+  infinite: false,
+  slidesToShow: 3,
+  slidesToScroll: 3
+});
+		
+    </script>
 
     <!-- Plugins JS -->
     <script src="{{asset('front/assets/js/plugins/swiper-bundle.min.js')}}"></script>
@@ -454,6 +467,10 @@
 
     <!-- Main JS -->
     <script src="{{asset('front/assets/js/main.js')}}"></script>
+
+    <script>
+        $(".swiper-slide").css({"width": "100px"});
+    </script>
 
 </body>
 
