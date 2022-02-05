@@ -37,7 +37,6 @@
                                         <th>#</th>
                                         <th>Name</th> 
                                         <th>Categorie</th>
-                                        <th>Formateur</th>
                                         <th>Durée</th>
                                         <th>Niveau</th>
                                         <th>Prix</th>
@@ -51,7 +50,6 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$course->name}}</td>
                                         <td><strong>{{$course->category->name}}</strong></td>
-                                        <td><strong>{{$course->instructor->name}} </strong></td>
                                         <td><strong>{{$course->duration}} </strong></td>
                                         <td><strong>{{$course->level}} </strong></td>
                                         <td><strong>{{$course->price}} DA </strong></td>
@@ -62,7 +60,7 @@
                                                 {{method_field('DELETE')}}
                                             <div class="d-flex">
                                                 <a href="{{url('dashboard-admin/courses/'.$course->id.'/edit')}}"  class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                <button   class="delete-customer btn btn-danger shadow btn-xs sharp"onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
+                                                <button   class=" btn btn-danger shadow btn-xs sharp"onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                             </div>
                                             </form>												
                                         </td>												

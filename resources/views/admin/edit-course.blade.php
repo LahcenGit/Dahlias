@@ -86,7 +86,7 @@
                                          
                                     <div class="form-group col-md-6">
                                         <label>Formateurs* :</label>
-                                        <select class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructor" required>
+                                        <select class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructor[]" required>
                                        
                                             
                                           
@@ -108,16 +108,16 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>La langue* :</label>
-                                        <select class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language"required>
+                                        <select multiple class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language[]"required>
                                            
-                                            <option value="arabe"  @if ($course->language == "arabe" ) selected @endif >Arabe</option>
+                                            <option value="arabe"  @if ($language == "arabe" ) selected @endif >Arabe</option>
                                             <option value="francais" @if ($course->language == "francais" ) selected @endif >Francais</option>
                                             <option value="anglais" @if ($course->language == "anglais" ) selected @endif >Anglais</option>
                                             @error('language')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                    @enderror
+                                            @enderror
                                         </select>
                                     </div>
 
@@ -125,9 +125,9 @@
                                         <label>Niveau* :</label>
                                         <select class="form-control  @error('level') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="level" required>
                                             
-                                            <option value="debutant" @if ($course->level == "debutant" ) selected @endif >Débutant</option>
-                                            <option value="intermediare" @if ($course->level == "i" ) selected @endif>Intermédiare</option>
-                                            <option value="avance" @if ($course->level == "avance" ) selected @endif>Avancé</option>
+                                            <option value="Debutant" @if ($course->level == "Debutant" ) selected @endif >Débutant</option>
+                                            <option value="Intermediare" @if ($course->level == "Intermediare" ) selected @endif>Intermédiare</option>
+                                            <option value="Avance" @if ($course->level == "Avance" ) selected @endif>Avancé</option>
                                             @error('level')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

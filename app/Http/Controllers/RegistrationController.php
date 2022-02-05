@@ -39,20 +39,5 @@ class RegistrationController extends Controller
     }
 
 
-    public function registrationApprouve($id){
-
-        $registration = Registration::find($id);
-        $registration->status = 2 ; 
-        $registration->save();
-        return redirect('/dashboard-admin/registrations');
-
-    }
-    public function registrationCancel($id){
-
-        $registration = Registration::find($id);
-        $registration->status = 3 ; 
-        $registration->save();
-        return redirect('/dashboard-admin/registrations');
-
-    }
+  
 }

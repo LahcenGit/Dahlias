@@ -11,6 +11,7 @@ use App\Models\Instructor;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Media;
 use Illuminate\Http\Request;
+use App\Models\Language;
 
 class CourseController extends Controller
 {
@@ -20,12 +21,12 @@ class CourseController extends Controller
 
         $categories = Category::where('parent_id',null)->get();
         $instructors = Instructor::all();
-        
-        return view('admin.add-course',compact('categories','instructors'));
+        $languages = Language::all();
+        return view('admin.add-course',compact('categories','instructors','languages'));
     }
 
     public function index(){
-        $courses = Course::with('instructor','category')->get();
+        $courses = Course::with('category')->get();
         return view ('admin.courses',compact('courses'));
     }
     
@@ -81,7 +82,9 @@ class CourseController extends Controller
         $course = Course::find($id);
         $categories = Category::where('parent_id',null)->get();
         $instructors = Instructor::all();
-        return view('admin.edit-course',compact('course','categories','instructors'));
+        $languages = Courselanguage::where('course_id',$id)->get();
+        $courseinstructors = Courseinstructor::where('course_id',$id)->get();
+        return view('admin.edit-course',compact('course','categories','instructors','languages','courseinstructors'));
     }
 
     public function update(Request $request,$id){
@@ -130,6 +133,15 @@ class CourseController extends Controller
      public function destroy($id){
 
         $course = Course::find($id);
+        $instructors = CourseInstructor::where('course_id',$id)->get();
+        $languages = Courselanguage::where('course_id',$id)->get();
+        foreach($instructors as $instructor){
+            $instructor->delete();
+        }
+        foreach($languages as $language){
+            $language->delete();
+        }
+
         $course->delete();
         return redirect('dashboard-admin/courses');
 

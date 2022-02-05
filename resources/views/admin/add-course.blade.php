@@ -114,9 +114,12 @@
                                         <label>La langue * :</label>
                                         <select  multiple class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="languages[]"required>
                                            
-                                            <option value="Arabe"  @if (old('language') == "Arabe" ) selected @endif >Arabe</option>
-                                            <option value="Francais" @if (old('language') == "Francais" ) selected @endif >Francais</option>
-                                            <option value="Anglais" @if (old('language') == "Anglais" ) selected @endif >Anglais</option>
+                                            @foreach($languages as $language)
+                                               
+                                            <option value="{{$language->id}}" @if (old('language') == $language->id ) selected @endif >{{$language->language}}</option>
+                          
+                                            @endforeach
+                                            
                                             @error('language')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -187,6 +190,7 @@
                                         <option value="Attestation" @if (old('certificate') == "Attestation" ) selected @endif>Attestation</option>
                                         <option value="Certificat" @if (old('certificate') == "Certificat" ) selected @endif>Certificat</option>
                                         <option value="Diplome" @if (old('certificate') == "Diplome" ) selected @endif>Diplome</option>
+                                        <option value="Indisponible" @if (old('certificate') == "Indisponible" ) selected @endif>Indisponible</option>
                                        
                                     </select>
                                 </div>
