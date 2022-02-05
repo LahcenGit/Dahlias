@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('icon.png')}}">
 
     <!-- CSS
 	============================================ -->
@@ -32,16 +32,45 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="{{asset('front/assets/css/style.css')}}">
 
+    <link rel="stylesheet" href="{{asset('owl/css/owl.carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('owl/css/owl.theme.default')}}">
 
-    <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
-    <!-- <link rel="stylesheet" href="assets/css/vendor/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css"> -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
 </head>
 
 <style>
     .header-top{
        background-color: #2b4942 !important;
+    }
+    .owl-nav{
+        text-align: center;
+    }
+    .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, .owl-carousel button.owl-dot {
+        height:40px;
+        width: 40px;
+        color: azure;
+        background-color: #aa896b;
+        margin: 5px;
+    }
+    .owl-dots{
+        display: none;
+    }
+
+    .owl-nav button.owl-prev:hover{
+    color: #2b4942;
+    border: solid 1px;
+    border-color: #2b4942;
+    background-color: #f4f4f4;
+    }
+
+    .owl-nav button.owl-next:hover{
+        color: #2b4942;
+        border: solid 1px;
+    border-color: #2b4942;
+    background-color: #f4f4f4;
+
     }
 </style>
 
@@ -68,8 +97,8 @@
                         <!-- Header Top Medal Start -->
                         <div class="header-top-medal">
                             <div class="top-info">
-                                <p><i style="color: #aa896b" class="flaticon-phone-call"></i> <a href="tel:9702621413">(213) 0553 007 364</a></p>
-                                <p><i style="color: #aa896b" class="flaticon-email"></i> <a href="mailto:address@gmail.com">contact@dahliasinstitute.com</a></p>
+                                <p><i style="color: #aa896b" class="flaticon-phone-call"></i> (213) 0553 007 364</p>
+                                <p><i style="color: #aa896b" class="flaticon-email"></i> contact@dahliasinstitute.com</p>
                             </div>
                         </div>
                         <!-- Header Top Medal End -->
@@ -77,9 +106,7 @@
                         <!-- Header Top Right Start -->
                         <div class="header-top-right">
                             <ul class="social">
-                                <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                                <li><a href="#"><i class="flaticon-skype"></i></a></li>
+                                <li><a href="https://www.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
                                 <li><a href="#"><i class="flaticon-instagram"></i></a></li>
                             </ul>
                         </div>
@@ -101,60 +128,27 @@
 
                         <!-- Header Logo Start -->
                         <div class="header-logo">
-                            <a href="{{asset('/welcome')}}"><img src="{{asset('front/assets/images/logo.png')}}" alt="Logo"></a>
+                            <a href="{{asset('/')}}"><img src="{{asset('front/assets/images/logo.png')}}" alt="Logo"></a>
                         </div>
                         <!-- Header Logo End -->
 
                         <!-- Header Menu Start -->
                         <div class="header-menu d-none d-lg-block">
                             <ul class="nav-menu">
-                                <li><a href="index.html">Accueil</a></li>
+                                <li><a href="{{asset('/')}}">Accueil</a></li>
                                 <li>
-                                    <a href="#">Cours</a>
+                                    <a href="#">ٌRubriques</a>
                                     <ul class="sub-menu">
-                                        <li><a href="courses.html">Courses</a></li>
-                                        <li><a href="courses-details.html">Courses Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Catégories </a>
-                                    <ul class="sub-menu">
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="register.html">Register</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="faq.html">FAQ</a></li>
-                                        <li><a href="404-error.html">404 Error</a></li>
-                                        <li><a href="after-enroll.html">After Enroll</a></li>
-                                        <li><a href="courses-admin.html">Instructor Dashboard (Course List)</a></li>
-                                        <li><a href="overview.html">Instructor Dashboard (Performance)</a></li>
-                                        <li><a href="students.html">Students</a></li>
-                                        <li><a href="reviews.html">Reviews</a></li>
-                                        <li><a href="engagement.html">Course engagement</a></li>
-                                        <li><a href="traffic-conversion.html">Traffic & conversion</a></li>
-                                        <li><a href="messages.html">Messages</a></li>
+                                        @foreach ($categories as $categorie)
+                                        <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
+                                        @endforeach
+                                      
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#">A propos</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="#">Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog-grid.html">Blog</a></li>
-                                                <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                                <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="#">Blog Details</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
-                                                <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
                                 </li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{{asset('/contact')}}">Contact</a></li>
                             </ul>
 
                         </div>
@@ -163,8 +157,7 @@
                         <!-- Header Sing In & Up Start -->
                         <div class="header-sign-in-up d-none d-lg-block">
                             <ul>
-                                <li><a class="sign-in" href="login.html">Connexion</a></li>
-                                <li><a class="sign-up" href="register.html">Inscription</a></li>
+                                <li><a class="sign-up" href="{{asset('/login')}}">Connexion</a></li>
                             </ul>
                         </div>
                         <!-- Header Sing In & Up End -->
@@ -200,16 +193,15 @@
 
             <!-- Mobile Top Medal Start -->
             <div class="mobile-top">
-                <p><i class="flaticon-phone-call"></i> <a href="tel:9702621413">(970) 262-1413</a></p>
-                <p><i class="flaticon-email"></i> <a href="mailto:address@gmail.com">address@gmail.com</a></p>
+                <p><i class="flaticon-phone-call"></i> (213) 0553 007 364</p>
+                <p><i class="flaticon-email"></i>contact@dahliasinstitute.com</p>
             </div>
             <!-- Mobile Top Medal End -->
 
             <!-- Mobile Sing In & Up Start -->
             <div class="mobile-sign-in-up">
                 <ul>
-                    <li><a class="sign-in" href="login.html">Sign In</a></li>
-                    <li><a class="sign-up" href="register.html">Sign Up</a></li>
+                    <li><a class="sign-Up" href="{{asset('/login')}}">Connexion</a></li>
                 </ul>
             </div>
             <!-- Mobile Sing In & Up End -->
@@ -217,53 +209,22 @@
             <!-- Mobile Menu Start -->
             <div class="mobile-menu-items">
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{asset('/')}}">Accueil</a></li>
                     <li>
-                        <a href="#">All Course</a>
+                        <a href="#">Rubriques</a>
                         <ul class="sub-menu">
-                            <li><a href="courses.html">Courses</a></li>
-                            <li><a href="courses-details.html">Courses Details</a></li>
+                            @foreach ($categories as $categorie)
+                            <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
+                            @endforeach
+                          
                         </ul>
                     </li>
                     <li>
-                        <a href="#">Pages </a>
-                        <ul class="sub-menu">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="register.html">Register</a></li>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="404-error.html">404 Error</a></li>
-                            <li><a href="after-enroll.html">After Enroll</a></li>
-                            <li><a href="courses-admin.html">Instructor Dashboard (Course List)</a></li>
-                            <li><a href="overview.html">Instructor Dashboard (Performance)</a></li>
-                            <li><a href="students.html">Students</a></li>
-                            <li><a href="reviews.html">Reviews</a></li>
-                            <li><a href="engagement.html">Course engagement</a></li>
-                            <li><a href="traffic-conversion.html">Traffic & conversion</a></li>
-                            <li><a href="messages.html">Messages</a></li>
-                        </ul>
+                        <a href="#">A propos </a>
+                      
                     </li>
-                    <li>
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a href="#">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog-grid.html">Blog</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#">Blog Details</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
-                                    <li><a href="blog-details-right-sidebar.html">Blog Details Right Sidebar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    
+                    <li><a href="{{asset('/contact')}}">Contact</a></li>
                 </ul>
 
             </div>
@@ -273,8 +234,6 @@
             <div class="mobile-social">
                 <ul class="social">
                     <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                    <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                    <li><a href="#"><i class="flaticon-skype"></i></a></li>
                     <li><a href="#"><i class="flaticon-instagram"></i></a></li>
                 </ul>
             </div>
@@ -315,17 +274,15 @@
 
                                 <ul class="widget-info">
                                     <li>
-                                        <p> <i class="flaticon-email"></i> <a href="mailto:address@gmail.com">contact@dahliasinstitute.com</a> </p>
+                                        <p> <i class="flaticon-email"></i> <span style="margin-left: 5px;">contact@dahliasinstitute.com </span> </p>
                                     </li>
                                     <li>
-                                        <p> <i class="flaticon-phone-call"></i> <a href="tel:9702621413">(213) 0553 007 364</a> </p>
+                                        <p> <i class="flaticon-phone-call "></i> <span style="margin-left: 5px;">(213) 0553 007 364</span>  </p>
                                     </li>
                                 </ul>
 
                                 <ul class="widget-social">
-                                    <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="flaticon-skype"></i></a></li>
+                                    <li><a href="https://www.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
                                     <li><a href="#"><i class="flaticon-instagram"></i></a></li>
                                 </ul>
                             </div>
@@ -443,15 +400,29 @@
     <script src="{{asset('front/assets/js/plugins/popper.min.js')}}"></script>
     <script src="{{asset('front/assets/js/plugins/bootstrap.min.js')}}"></script>
 
-    <script src="{{asset('slick.js')}}"></script>
+    <script src="{{asset('owl/js/owl.carousel.js')}}"></script>
 
     <script>
-        $('.multiple-items').slick({
-  infinite: false,
-  slidesToShow: 3,
-  slidesToScroll: 3
-});
-		
+                $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:10,
+            responsiveClass:true,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                600:{
+                    items:3,
+                    nav:true
+                },
+                1000:{
+                    items:4,
+                    nav:true,
+                    loop:false
+                }
+            }
+        })
     </script>
 
     <!-- Plugins JS -->
@@ -468,9 +439,8 @@
     <!-- Main JS -->
     <script src="{{asset('front/assets/js/main.js')}}"></script>
 
-    <script>
-        $(".swiper-slide").css({"width": "100px"});
-    </script>
+    @stack('contact-scripts')
+
 
 </body>
 

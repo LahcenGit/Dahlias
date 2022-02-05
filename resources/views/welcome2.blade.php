@@ -1,4 +1,5 @@
 @extends('layouts.front')
+
 @section('content')
   <!-- Slider Start -->
 <div class="section slider-section">
@@ -16,7 +17,9 @@
             <h4 class="sub-title">Institut de formation pluridisciplinaire</h4>
             <h2 class="main-title">Aussi bien en sciences et techniques appliquées qu’en culture et arts</h2>
             <p>Dahlias Institute est dédié aux apprenants de tout âge, tous niveaux et domaines .</p>
-            <a class="btn btn-primary btn-hover-dark" href="#">Découvrir</a>
+           {{--<a class="btn btn-primary btn-hover-dark" href="#">Découvrir</a>--}} 
+
+
         </div>
         <!-- Slider Content End -->
 
@@ -43,12 +46,12 @@
     <!-- Slider Rating Box Start -->
     <div class="slider-rating-box">
 
-        <div class="box-rating">
+       {{--<div class="box-rating">
             <div class="box-wrapper">
                 <span class="count">4.8 <i class="flaticon-star"></i></span>
                 <p>Avis (30)</p>
             </div>
-        </div>
+        </div>--}} 
 
         <img class="shape animation-up" src="{{asset('front/assets/images/shape/shape-7.png')}}" alt="Shape">
 
@@ -86,7 +89,7 @@
 
             <!-- Section Title Start -->
             <div class="section-title shape-01">
-                <h2 class="main-title"><span>Formations de</span> Dahlias Institute </h2>
+                <h2 class="main-title"><span>Nouvelles</span> Formations </h2>
             </div>
             <!-- Section Title End -->
 
@@ -102,89 +105,38 @@
         </div>
         <!-- All Courses Top End -->
 
-        <div class="testimonial-wrapper testimonial-active">
-            <div class="swiper-container">
                
-                <div class="swiper-wrapper">
+                <div class="owl-carousel">
                     @foreach ($courses as $course)
-                    <div class="col-lg-4 col-md-6 swiper-slide" style="width: 100px;">
+                    <div>
                         <!-- Single Courses Start -->
                         <div class="single-courses">
                             <div class="courses-images">
                                 <a href="courses-details.html"><img src="{{asset('/course.png')}}" alt="Courses"></a>
                             </div>
                             <div class="courses-content">
-                                <div class="courses-author">
-                                    <div class="author">
-                                        <div class="author-thumb">
-                                            <a href="#"><img src="{{asset('front/assets/images/author/author-01.jpg')}}" alt="Author"></a>
-                                        </div>
-                                        <div class="author-name">
-                                            <a class="name" href="#">Formateur</a>
-                                        </div>
-                                    </div>
-                                    <div class="tag">
-                                        <a href="#">Youg developer</a>
-                                    </div>
-                                </div>
+                                
 
-                                <h4 class="title"><a href="{{asset('course-detail/1')}}">{{$course->name}}</a></h4>
+                                <h4 class="title"><a href="{{asset('course-detail/'.$course->id)}}">{{$course->name}}</a></h4>
                                 <div class="courses-meta">
-                                    <span> <i class="icofont-clock-time"></i> 1 mois</span>
-                                    <span> <i class="icofont-read-book"></i> 29 Lectures </span>
+                                    <span> <i class="icofont-clock-time"></i>{{$course->duration}} h</span>
+                                    <span> <i class="icofont-read-book"></i> {{$course->nbr_student}} apprenant </span>
                                 </div>
                                 <div class="courses-price-review">
                                     <div class="courses-price">
-                                        <span class="sale-parice">4.500 Da</span>
-                                        <span class="old-parice">7.500 da</span>
+                                        <span class="sale-parice">{{$course->price}}Da/h</span>
+                                        <span class="old-parice">750 Da/h</span>
                                     </div>
-                                    <div class="courses-review">
-                                        <span class="rating-count">4.9</span>
-                                        <span class="rating-star">
-                                                <span class="rating-bar" style="width: 80%;"></span>
-                                        </span>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
-                        <!-- Single Courses End -->
+                     
                     </div>
                     @endforeach
-                    
-                    <!-- Single Testimonial End -->
+                  
                 </div>
 
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-        <!-- Testimonial Wrapper End -->
-
-      
-
-        <!-- All Courses tab content Start -->
-        <div class="tab-content courses-tab-content">
-                <div class="tab-pane fade show active" >
-                    <!-- All Courses Wrapper Start -->
-                    <div class="courses-wrapper">
-                        <div class="row">
-
-                            
-                         
-                          
-                        </div>
-                    </div>
-                    <!-- All Courses Wrapper End -->
-
-            </div>
-        </div>
-        <!-- All Courses tab content End -->
-
-        <!-- All Courses BUtton Start -->
-        <div class="courses-btn text-center">
-            <a href="courses.html" class="btn btn-secondary btn-hover-primary">Autres</a>
-        </div>
-        <!-- All Courses BUtton End -->
 
     </div>
 </div>
@@ -214,7 +166,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="call-to-action-btn">
-                        <a class="btn btn-primary btn-hover-dark" href="contact.html">Contacter-nous</a>
+                        <a class="btn btn-primary btn-hover-dark" href="{{asset('/contact')}}">Contacter-nous</a>
                     </div>
                 </div>
             </div>
@@ -248,7 +200,7 @@
                 </div>
                 <div class="work-content">
                     <h3 class="title">Trouver votre formation</h3>
-                    <p>Choisir une formation </p>
+                    <p>Choisissez une formation parmi nos différentes formations </p>
                 </div>
             </div>
             <!-- Single Work End -->
@@ -268,7 +220,7 @@
                 </div>
                 <div class="work-content">
                     <h3 class="title">Inscrez-vous</h3>
-                    <p>It has survived not only centurie also leap into electronic.</p>
+                    <p>Remplir le formulaire de préinscription de votre formation.</p>
                 </div>
             </div>
             <!-- Single Work End -->
@@ -287,8 +239,8 @@
                     <i class="flaticon-badge"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">venir à l'intitut</h3>
-                    <p>It has survived not only centurie also leap into electronic.</p>
+                    <h3 class="title">Venir à l'intitut</h3>
+                    <p>Aprés la confirmation vous pouvez venir pour compléter votre inscription.</p>
                 </div>
             </div>
             <!-- Single Work End -->
@@ -358,7 +310,7 @@
                     <div class="single-testimonial swiper-slide">
                         <div class="testimonial-author">
                             <div class="author-thumb">
-                                <img src="{{asset('front/assets/images/author/author-02.jpg')}}" alt="Author">
+                                <img src="{{asset('profile-vide.jpg')}}" alt="Author">
 
                                 <i class="icofont-quote-left"></i>
                             </div>
@@ -368,9 +320,9 @@
                             </span>
                         </div>
                         <div class="testimonial-content">
-                            <p>Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make type specimen book has survived not five centuries but also the leap into electronic.</p>
-                            <h4 class="name">Lahcene Benmouloud</h4>
-                            <span class="designation">Etudiant en informatique</span>
+                            <p>DI c'est la chance d'apprendre autrement, d'avoir un avenir même quand on n'aime pas l'école. C'est apprendre un métier passionnant avec beaucoup de pratique et peu de cours théoriques.</p>
+                            <h4 class="name">Mohammed kharbouch</h4>
+                            <span class="designation">Etudiant</span>
                         </div>
                     </div>
                     <!-- Single Testimonial End -->
@@ -379,7 +331,7 @@
                     <div class="single-testimonial swiper-slide">
                         <div class="testimonial-author">
                             <div class="author-thumb">
-                                <img src="{{asset('front/assets/images/author/author-03.jpg')}}" alt="Author">
+                                <img src="{{asset('profile-vide.jpg')}}" alt="Author">
 
                                 <i class="icofont-quote-left"></i>
                             </div>
@@ -389,9 +341,9 @@
                             </span>
                         </div>
                         <div class="testimonial-content">
-                            <p>Lorem Ipsum has been the industry's standard dummy text since the 1500s, when an unknown printer took a galley of type and scrambled it to make type specimen book has survived not five centuries but also the leap into electronic.</p>
+                            <p>Dahlias institute m'a apporté beaucoup de connaissances techniques et cela m'a également permis de m'ouvrir beaucoup plus aux autres. Ce qui m'a plu à DI c'est notamment l'ambiance et surtout le fait d'être souvent à l'atelier et d'avoir un peu moins de cours théoriques.</p>
                             <h4 class="name">Benallal Narimen</h4>
-                            <span class="designation">Etudiante en chimie</span>
+                            <span class="designation">Etudiante </span>
                         </div>
                     </div>
                     <!-- Single Testimonial End -->

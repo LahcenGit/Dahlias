@@ -7,6 +7,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RegistrationAdminController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -30,6 +31,8 @@ Route::get('/welcome', function () {
 
 
 
+
+
 Route::resource('/dashboard-admin/category',CategoryController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/regsitrations',RegistrationAdminController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/instructors',InstructorController::class)->middleware('can:admin');
@@ -39,6 +42,11 @@ Route::resource('/registration-course',RegistrationController::class);
 Route::get('/register-course/{id}',[App\Http\Controllers\RegistrationController::class,'register']);
 Route::get('/register-success/{id}/{name}',[App\Http\Controllers\RegistrationController::class,'registerSuccess']);
 Route::get('/course-detail/{id}',[App\Http\Controllers\CourseController::class,'CourseDetail']);
+Route::resource('/contact',ContactController::class);
+
+Route::get('/category-courses/{id}',[App\Http\Controllers\CourseController::class,'categoryCourses']);
+
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

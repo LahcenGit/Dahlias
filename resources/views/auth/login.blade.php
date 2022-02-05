@@ -11,10 +11,10 @@
         <!-- Page Banner Start -->
         <div class="page-banner-content">
             <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Login</li>
+                <li><a href="#">Accueil</a></li>
+                <li class="active">Connexion</li>
             </ul>
-            <h2 class="title">Login <span>Form</span></h2>
+            <h2 class="title">Se <span>Connecter</span></h2>
         </div>
         <!-- Page Banner End -->
     </div>
@@ -69,7 +69,7 @@
 
                     <!-- Register & Login Form Start -->
                     <div class="register-login-form">
-                        <h3 class="title">Login <span>Now</span></h3>
+                        <h3 class="title">Se connecter <span>maintenant</span></h3>
 
                         <div class="form-wrapper">
                             <form method="POST" action="{{ route('login') }}">
@@ -98,8 +98,7 @@
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->
                                 <div class="single-form">
-                                    <button class="btn btn-primary btn-hover-dark w-100">Login</button>
-                                    <a class="btn btn-secondary btn-outline w-100" href="#">Login with Google</a>
+                                    <button class="btn btn-primary btn-hover-dark w-100">Entrer</button>
                                 </div>
                                 <!-- Single Form End -->
                             </form>
@@ -116,41 +115,5 @@
 </div>
 <!-- Register & Login End -->
 
-<!-- Download App Start -->
-<div class="section section-padding download-section">
-
-    <div class="app-shape-1"></div>
-    <div class="app-shape-2"></div>
-    <div class="app-shape-3"></div>
-    <div class="app-shape-4"></div>
-
-    <div class="container">
-
-        <!-- Download App Wrapper Start -->
-        <div class="download-app-wrapper mt-n6">
-
-            <!-- Section Title Start -->
-            <div class="section-title section-title-white">
-                <h5 class="sub-title">Ready to start?</h5>
-                <h2 class="main-title">Download our mobile app. for easy to start your course.</h2>
-            </div>
-            <!-- Section Title End -->
-
-            <img class="shape-1 animation-right" src="{{asset('front/assets/images/shape/shape-14.png')}}" alt="Shape">
-
-            <!-- Download App Button End -->
-            <div class="download-app-btn">
-                <ul class="app-btn">
-                    <li><a href="#"><img src="{{asset('front/assets/images/google-play.png')}}" alt="Google Play"></a></li>
-                    <li><a href="#"><img src="{{asset('front/assets/images/app-store.png')}}" alt="App Store"></a></li>
-                </ul>
-            </div>
-            <!-- Download App Button End -->
-
-        </div>
-        <!-- Download App Wrapper End -->
-
-    </div>
-</div>
 
 @endsection

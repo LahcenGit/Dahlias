@@ -135,5 +135,14 @@ class CourseController extends Controller
 
      }
 
+     public function categoryCourses($id){
+
+        $courses = Course::where('category_id',$id)->get();
+        $categories = Category::all();
+        $category = Category::find($id);
+        return view('category-courses',compact('courses','categories','category'));
+
+     }
+
     
 }
