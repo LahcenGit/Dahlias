@@ -71,10 +71,10 @@
                                         <label>Statut :</label>
                                         <select class="form-control  @error('statut') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status" >
                                        
-                                            <option value="1" @if (old('status') == 1 ) selected @endif>En Attente</option>
-                                            <option value="2" @if (old('status') == 2 ) selected @endif>Validé</option>
-                                            <option value="3" @if (old('status') == 3 ) selected @endif>Rembourser</option>
-                                            <option value="4" @if (old('status') == 4 ) selected @endif>Annulé</option>
+                                            <option value="1" @if ($registration->status == 1 ) selected @endif>En Attente</option>
+                                            <option value="2" @if ($registration->status == 2 ) selected @endif>Validé</option>
+                                            <option value="3" @if ($registration->status == 3 ) selected @endif>Rembourser</option>
+                                            <option value="4" @if ($registration->status == 4 ) selected @endif>Annulé</option>
                                            
                                         </select>
                                         

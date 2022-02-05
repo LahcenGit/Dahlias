@@ -16,8 +16,10 @@ class CreateCourselanguagesTable extends Migration
         Schema::create('courselanguages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('course_id')->nullable();
+            $table->unsignedBigInteger('language_id')->nullable();
             $table->string('language')->nullable();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });

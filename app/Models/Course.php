@@ -13,10 +13,23 @@ class Course extends Model
     use SoftDeletes,CascadeSoftDeletes;
     protected $cascadeDeletes = ['images'];
     protected $dates = ['deleted_at'];
+
+
     public function images()
     {
         return $this->hasMany(Image::class);
     }
+
+    public function courseLanguage(){
+        return $this->hasMany(Courselanguage::class);
+
+    }
+
+    public function courseInstructor(){
+        return $this->hasMany(Courseinstructor::class);
+
+    }
+
 
     public function registration()
     {

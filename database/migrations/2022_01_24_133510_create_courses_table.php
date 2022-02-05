@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->text('description')->nullable();
             $table->string('name');
-            $table->string('price')->nullable();
+            $table->integer('price')->nullable();
             $table->string('status')->nullable();
             $table->string('start_date')->nullable();
             $table->string('end_date')->nullable();
@@ -27,6 +27,8 @@ class CreateCoursesTable extends Migration
             $table->string('duration')->nullable();
             $table->string('level')->nullable();
             $table->string('certificate')->nullable();
+            $table->integer('old_price')->nullable();
+            $table->string('type_duration')->nullable();
             $table->string('slug')->nullable();
             $table->string('flug')->nullable();
             $table->softDeletes($column = 'deleted_at', $precision = 0);

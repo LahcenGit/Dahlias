@@ -86,13 +86,13 @@
                                          
                                     <div class="form-group col-md-6">
                                         <label>Formateurs* :</label>
-                                        <select class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructor[]" required>
+                                        <select multiple class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructors[]" required>
                                        
                                             
                                           
                                                 @foreach($instructors as $instructor)
                                                
-                                                <option value="{{$instructor->id}}" @if ($course->instructor_id == $instructor->id ) selected @endif >{{$instructor->name}}</option>
+                                                <option value="{{$instructor->id}}" @foreach($courseinstructors as $courseinstructor) @if ($courseinstructor->instructor_id == $instructor->id ) selected @endif @endforeach >{{$instructor->name}}</option>
                               
                                                 @endforeach
                                                 @error('instructor')
@@ -108,16 +108,19 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>La langue* :</label>
-                                        <select multiple class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="language[]"required>
+                                        <select multiple class="form-control  @error('language') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="languages[]"required>
                                            
-                                            <option value="arabe"  @if ($language == "arabe" ) selected @endif >Arabe</option>
-                                            <option value="francais" @if ($course->language == "francais" ) selected @endif >Francais</option>
-                                            <option value="anglais" @if ($course->language == "anglais" ) selected @endif >Anglais</option>
+                                            @foreach($languages as $language)
+                                               
+                                            <option value="{{$language->id}}" @foreach($courselanguages as $courselanguage) @if ($courselanguage->language_id == $language->id) selected @endif @endforeach >{{$language->language}}</option>
+                          
+                                            @endforeach
+                                            
                                             @error('language')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
-                                            @enderror
+                                    @enderror
                                         </select>
                                     </div>
 
@@ -180,8 +183,10 @@
                                     <label>Certifié* :</label>
                                     <select class="form-control  @error('certificate') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="certificate" required>
                                        
-                                        <option value="oui" @if ($course->certificate == "oui" ) selected @endif>Oui</option>
-                                        <option value="non" @if ($course->certificate == "non" ) selected @endif>Non</option>
+                                        <option value="Attestation" @if ($course->certificate == "Attestation" ) selected @endif>Attestation</option>
+                                        <option value="Certificat" @if ($course->certificate == "Certificat" ) selected @endif>Certificat</option>
+                                        <option value="Diplome" @if ($course->certificate == "Diplome" ) selected @endif>Diplome</option>
+                                        <option value="Indisponible" @if ($course->certificate == "Indisponible" ) selected @endif>Indisponible</option>
                                        
                                     </select>
                                 </div>
@@ -214,16 +219,13 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                    <label>Photos* :</label>
+                                    <label>Photos * :</label>
                                   
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
-                                    <div class="custom-file">
-                                        <input type="file" class="custom-file-input"  name="photos[]" multiple>
-                                        <label class="custom-file-label">Choose file</label>
-
-                                       
+                                    <div class="basic-form custom_file_input">
+                                        <div class="input-group mb-3">
+                                                <input type="file" multiple name="photos[]" accept="image/*">
+                                                <input class="button-primary" type="submit" value="Submit">
+                                        </div>
                                     </div>
                                 </div>
                                
