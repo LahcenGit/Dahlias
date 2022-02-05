@@ -37,4 +37,7 @@ class RegistrationController extends Controller
         $course = Course::find($id);
         return view('register-course',compact('course'));
     }
+
+
+  
 }

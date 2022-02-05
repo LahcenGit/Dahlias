@@ -29,12 +29,9 @@ Route::get('/welcome', function () {
 });
 
 
-
-
-
+Route::resource('/dashboard-admin/registrations',RegistrationAdminController::class)->middleware('can:admin');
 
 Route::resource('/dashboard-admin/category',CategoryController::class)->middleware('can:admin');
-Route::resource('/dashboard-admin/regsitrations',RegistrationAdminController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/instructors',InstructorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/courses',CourseController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
