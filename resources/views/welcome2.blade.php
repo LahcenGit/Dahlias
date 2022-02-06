@@ -112,7 +112,9 @@
                         <!-- Single Courses Start -->
                         <div class="single-courses">
                             <div class="courses-images">
-                                <a href="courses-details.html"><img src="{{asset('/course.png')}}" alt="Courses"></a>
+                                @foreach ($course->images as $img)
+                                <a href="{{asset('course-detail/'.$course->id)}}"><img src="{{asset('storage/'.$img->lien)}}" alt="Courses"></a>
+                                @endforeach
                             </div>
                             <div class="courses-content">
                                 
@@ -120,7 +122,7 @@
                                 <h4 class="title"><a href="{{asset('course-detail/'.$course->id)}}">{{$course->name}}</a></h4>
                                 <div class="courses-meta">
                                     <span> <i class="icofont-clock-time"></i>{{$course->duration}} h</span>
-                                    <span> <i class="icofont-read-book"></i> {{$course->nbr_student}} apprenant </span>
+                                    <span> <i class="icofont-read-book"></i> {{$course->nbr_student}} apprenants </span>
                                 </div>
                                 <div class="courses-price-review">
                                     <div class="courses-price">

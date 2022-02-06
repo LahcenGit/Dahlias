@@ -50,12 +50,17 @@ class CourseController extends Controller
        
         $course->save();
 
-        foreach($request->instructors as $instructor){
-            $course_instructor = new Courseinstructor();
-            $course_instructor->course_id = $course->id;
-            $course_instructor->instructor_id = $instructor;
-            $course_instructor->save();
+
+        if($request->instructors){
+            foreach($request->instructors as $instructor){
+                $course_instructor = new Courseinstructor();
+                $course_instructor->course_id = $course->id;
+                $course_instructor->instructor_id = $instructor;
+                $course_instructor->save();
+            }
+
         }
+     
 
         foreach($request->languages as $language){
             $course_language = new Courselanguage();
@@ -142,8 +147,9 @@ class CourseController extends Controller
     public function courseDetail($id){
         $course = Course::find($id);
         $medias = $course->images;
+        $categories = Category::all();
       
-        return view('course-detail',compact('course','medias'));
+        return view('course-detail',compact('course','medias','categories'));
     }
 
 

@@ -52,10 +52,10 @@
                 <div class="courses-details">
 
                     <div class="courses-details-images">
-                        <img src="{{asset('course.png')}}" alt="Courses Details">
+                        @foreach ($course->images as $img)
+                        <img src="{{asset('storage/'.$img->lien)}}" alt="Courses Details">
+                        @endforeach
                         <span class="tags">{{$course->category->name}}</span>
-
-                   
                     </div>
 
                     <h2 class="title">{{$course->name}}</h2>
@@ -94,7 +94,7 @@
                                 <div class="tab-pane fade" id="instructors">
 
                                     <!-- Tab Instructors Start -->
-                                    <div class="tab-instructors">
+                               {{--  <div class="tab-instructors">
                                         <h3 class="tab-title">Instructeur de formation:</h3>
 
                                         <div class="row">
@@ -119,10 +119,10 @@
 
                                         
                                     </div>
-                                    <!-- Tab Instructors End -->
+                                    <!-- Tab Instructors End -->--}} 
 
                                 </div>
-                                <div class="tab-pane fade" id="reviews">
+                            {{--  <div class="tab-pane fade" id="reviews">
 
                                     <!-- Tab Reviews Start -->
                                     <div class="tab-reviews">
@@ -265,8 +265,8 @@
 
                                     </div>
                                     <!-- Tab Reviews End -->
-
-                                </div>
+                                     
+                                </div>   --}}  
                             </div>
                         </div>
                         <!-- Details Tab Content End -->
@@ -285,11 +285,11 @@
                     <!-- Sidebar Widget Information Start -->
                     <div class="sidebar-widget widget-information">
                         <div class="info-price">
-                            <span class="price">{{ number_format($course->price, 2) }} DA</span>
+                            <span class="price">{{ $course->price }}DA/h</span>
                         </div>
                         <div class="info-list">
                             <ul>
-                                <li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>
+                               {{--<li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>--}} 
                                 <li><i class="icofont-clock-time"></i> <strong>Durée</strong> <span>{{$course->duration}}</span></li>
                                 
                                 <li><i class="icofont-bars"></i> <strong>Niveau</strong> <span>{{$course->level}}</span></li>

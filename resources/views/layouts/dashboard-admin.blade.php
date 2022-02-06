@@ -11,7 +11,7 @@
 	<link href="{{asset('Dashboard/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('Dashboard/images/favicon.png')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('icon.png')}}">
     <link href="{{asset('Dashboard/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
 
 	<link rel="stylesheet" href="{{asset('Dashboard/vendor/chartist/css/chartist.min.css')}}">
@@ -341,12 +341,12 @@
         ***********************************-->
         <div class="footer">
             <div class="copyright">
-                <p>Copyright © Developed by <a href="#" target="_blank">Partix <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                <p>Copyright © Developed by <a href="#" target="_blank">DI <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
 					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 						<polygon points="0 0 24 0 24 24 0 24"/>
 						<path d="M16.5,4.5 C14.8905,4.5 13.00825,6.32463215 12,7.5 C10.99175,6.32463215 9.1095,4.5 7.5,4.5 C4.651,4.5 3,6.72217984 3,9.55040872 C3,12.6834696 6,16 12,19.5 C18,16 21,12.75 21,9.75 C21,6.92177112 19.349,4.5 16.5,4.5 Z" fill="#000000" fill-rule="nonzero"/>
 					</g>
-				</svg> Dev team</a> 2021</p>
+				</svg> Dev team</a> 2022</p>
             </div>
         </div>
         <!--**********************************
