@@ -142,6 +142,15 @@
                                         @foreach ($categories as $categorie)
                                         <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
                                         @endforeach
+                                        @foreach ($categories as $categorie)
+                                        <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
+                                        @endforeach
+                                        @foreach ($categories as $categorie)
+                                        <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
+                                        @endforeach
+                                        @foreach ($categories as $categorie)
+                                        <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
+                                        @endforeach
                                       
                                     </ul>
                                 </li>
@@ -393,7 +402,7 @@
     ============================================ -->
 
     <!-- Modernizer & jQuery JS -->
-    <script src="{{asset('front/assets/js/vendor/modernizr-3.11.2.min.js')}}"></script>
+    <script src="{{asset('front/assets/js/vendor/modernizr-3.11.2.min.js')}}" ></script>
     <script src="{{asset('front/assets/js/vendor/jquery-3.5.1.min.js')}}"></script>
 
     <!-- Bootstrap JS -->
