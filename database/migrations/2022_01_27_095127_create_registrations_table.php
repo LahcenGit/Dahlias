@@ -21,6 +21,7 @@ class CreateRegistrationsTable extends Migration
             $table->string('phone');
             $table->integer('status');
             $table->string('remarque')->nullable();
+            $table->string('accept')->nullable();
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();

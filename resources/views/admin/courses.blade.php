@@ -51,9 +51,34 @@
                                         <td>{{$course->name}}</td>
                                         <td><strong>{{$course->category->name}}</strong></td>
                                         <td><strong>{{$course->duration}} </strong></td>
-                                        <td><strong>{{$course->level}} </strong></td>
+                                        
+                                        <td>
+                                            @if($course->level == 'Debutant')
+                                            <strong>
+                                            Débutant 
+                                            </strong>
+                                            @elseif($course->level == 'Intermediare')
+                                            <strong>
+                                            Intermédiare 
+                                            </strong>
+                                            @else
+                                            <strong>
+                                            Avancé
+                                            </strong>
+                                            @endif
+                                            </td>
                                         <td><strong>{{$course->price}} DA </strong></td>
-                                        <td><strong>{{$course->status}} </strong></td>
+                                        <td>
+                                            @if($course->status == 'lancee')
+                                            <strong>
+                                            Lancée
+                                            </strong>
+                                            @else
+                                            <strong>
+                                            Prochainement
+                                            </strong>
+                                            @endif
+                                        </td>
                                         <td>
                                             <form action="{{url('dashboard-admin/courses/'.$course->id)}}" method="post">
                                                 {{csrf_field()}}

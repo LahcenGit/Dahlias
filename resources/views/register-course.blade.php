@@ -93,7 +93,25 @@
                                     <label>Age* :</label>
                                     <input type="text" placeholder="Age" name="age" required>
                                 </div>
+                                
+                                <div class="single-form">
+                                <label>Acceptez-vous d'être filmé ou photographié?:</label>
+                               
+                                </div>
 
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"  id="flexRadioDefault1" value="Oui" name="accept" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                      Oui
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio"  id="flexRadioDefault2" value="Non" name="accept">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                     Non
+                                    </label>
+                                  </div>
+                                
                                 <div class="single-form">
                                     <label>Avez vous quelques chose a dire ? :</label>
                                     <input type="text" placeholder="..." name="remarque" >

@@ -292,9 +292,28 @@
                                {{--<li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>--}} 
                                 <li><i class="icofont-clock-time"></i> <strong>Durée</strong> <span>{{$course->duration}}</span></li>
                                 
-                                <li><i class="icofont-bars"></i> <strong>Niveau</strong> <span>{{$course->level}}</span></li>
+                                <li><i class="icofont-bars"></i> <strong>Niveau</strong> 
+                                    @if($course->level == 'Debutant' )
+                                    <span>
+                                     Débutant
+                                   </span>
+                                   @elseif($course->level == 'Intermediare')
+                                   <span>
+                                    Intermédiare
+                                  </span>
+                                  @else
+                                  <span>
+                                   Avancé
+                                  </span>
+                                  @endif
+                                </li>
                                 <li><i class="icofont-book-alt"></i> <strong>Langue</strong> <span>{{$course->language}}</span></li>
-                                <li><i class="icofont-certificate-alt-1"></i> <strong>Certifié</strong> <span>{{$course->certificate}}</span></li>
+                                <li><i class="icofont-certificate-alt-1"></i> <strong>Certifié</strong>
+                                    @if($course->certificate == 'Diplome')
+                                    <span>Diplôme</span></li>
+                                    @else
+                                   <span>{{$course->certificate}}</span></li>
+                                   @endif
                             </ul>
                         </div>
                         <div class="info-btn">

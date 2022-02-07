@@ -56,7 +56,7 @@ class CourseController extends Controller
                 $course_instructor = new Courseinstructor();
                 $course_instructor->course_id = $course->id;
                 $course_instructor->instructor_id = $instructor;
-                $course_instructor->save();
+                $course->courseInstructor()->save($course_instructor);
             }
 
         }
@@ -66,7 +66,7 @@ class CourseController extends Controller
             $course_language = new Courselanguage();
             $course_language->course_id = $course->id;
             $course_language->language_id = $language;
-            $course_language->save();
+            $course->courseLanguage()->save($course_language);
         }
         if($hasFile){
             foreach($request->file('photos') as $file){
@@ -97,6 +97,8 @@ class CourseController extends Controller
 
         $course = Course::find($id);
         $hasFile = $request->hasFile('photos');
+        $countLigneInstructor = Courseinstructor::where('course_id',$id)->count();
+        $countLigneLanguage = Courselanguage::where('course_id',$id)->count();
         $lien = [];
         $course->name = $request->name;
         $course->price = $request->price;
@@ -110,22 +112,40 @@ class CourseController extends Controller
         $course->description = $request->description;
         $course->certificate = $request->certificate;
         $course->save();
-
-        foreach($request->instructors as $instructor){
-            $course_instructor = Courseinstructor::where('course_id',$id)->get();
-            $course_instructor->course_id = $course->id;
+       
+        if($request->instructors){
+            $course_instructors = Courseinstructor::where('course_id',$id)->get();
+            foreach($course_instructors as $course_instructor){
+                $course_instructor->delete();
+            }
+            
+          foreach($request->instructors as $instructor){
+            
+            $course_instructor = new Courseinstructor();
+           
+            $course_instructor->course_id = $id;
             $course_instructor->instructor_id = $instructor;
+            $course->courseInstructor()->save($course_instructor);
             
         }
-        $course_instructor->save();
-
-        foreach($request->languages as $language){
-            $course_language = Courselanguage::where('course_id',$id)->get();
-            $course_language->course_id = $course->id;
-            $course_language->language_id = $language;
-           
+       
         }
-        $course_language->save();
+       
+        if($request->languages){
+
+            $course_languages = Courselanguage::where('course_id',$id)->get();
+            foreach($course_languages as $course_language){
+
+                $course_language->delete();
+             }
+            foreach($request->languages as $language){
+            $course_language = new Courselanguage();
+            $course_language->course_id = $id;
+            $course_language->language_id = $language;
+            $course->courseLanguage()->save($course_language);
+        }
+    }
+       
 
         if($hasFile){
             foreach($request->file('photos') as $file){
@@ -133,7 +153,7 @@ class CourseController extends Controller
             $name = $path->store('course');
             $lien = Storage::putFile('course',$path); 
            
-            $fileModal = Image::where('course_id',$id)->get();
+            $fileModal = Image::where('course_id',$id)->first();
             $fileModal->lien = $lien;
          
             

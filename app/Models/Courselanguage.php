@@ -10,4 +10,9 @@ class Courselanguage extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
 }
