@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
+use App\Models\Instructor;
+use App\Models\Registration;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,6 +15,14 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        return view('admin.dashboard-admin');
+        $courses = Course::count();
+        $instructors = Instructor::count();
+        $allRegistrations = Registration::count();
+        $registrationsWaiting = Registration::where('status','1')->count();
+        $registrations = Registration::limit('5')->get();
+        $registrationValid = Registration::where('status','2')->count();
+        $registrationReimburse = Registration::where('status','3')->count();
+        $registrationCancel = Registration::where('status','4')->count();
+        return view('admin.dashboard-admin',compact('courses','instructors','registrations','registrationsWaiting','allRegistrations','registrationValid','registrationReimburse','registrationCancel'));
     }
 }

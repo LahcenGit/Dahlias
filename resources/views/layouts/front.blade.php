@@ -166,7 +166,16 @@
                         <!-- Header Sing In & Up Start -->
                         <div class="header-sign-in-up d-none d-lg-block">
                             <ul>
-                                <li><a class="sign-up" href="{{asset('/login')}}">Connexion</a></li>
+                                @auth
+					            @if (Auth::User())
+                                <li><a class="sign-up" href="{{url('/dashboard-admin')}}">Dashboard</a></li>
+                               
+                               
+                                @endauth
+                                @else
+                                <li><a class="sign-up" href="{{url('/login')}}">Connexion</a></li>
+                                @endif
+                               
                             </ul>
                         </div>
                         <!-- Header Sing In & Up End -->

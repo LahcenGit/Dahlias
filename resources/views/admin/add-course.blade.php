@@ -38,7 +38,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>Nom de la formation* :</label>
-                                        <input type="text"  class="form-control input-default @error('name') is-invalid @enderror" value=" {{old('name')}} "name="name" placeholder="name" >
+                                        <input type="text"  class="form-control input-default @error('name') is-invalid @enderror" value=" {{old('name')}} "name="name" placeholder="name" required>
                                         @error('name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>La durée (Par Heure) * :</label>
-                                        <input type="text"  class="form-control input-default @error('duration') is-invalid @enderror" value=" {{old('duration')}}" name="duration"  placeholder="duree" >
+                                        <input type="text"  class="form-control input-default @error('duration') is-invalid @enderror" value=" {{old('duration')}}" name="duration"  placeholder="durée" required >
                                         @error('duration')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
                                 <div class="form-row">
                                     
                                     <div class="form-group col-md-6">
-                                        <label>Categories* :</label>
+                                        <label>Catégories* :</label>
                                         <select class="form-control  @error('category') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="category" required>
                                        
                                             
@@ -90,7 +90,7 @@
                                          
                                     <div class="form-group col-md-6">
                                         <label>Formateur (optionnel) :</label>
-                                        <select  multiple class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructors[]">
+                                        <select  multiple class="form-control  @error('instructor') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="instructors[]" >
                                        
                                             
                                           
@@ -132,9 +132,9 @@
                                         <label>Niveau * :</label>
                                         <select class="form-control  @error('level') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="level" required>
                                             
-                                            <option value="Debutant" @if (old('level') == "Debutant" ) selected @endif >Débutant</option>
-                                            <option value="Intermediare" @if (old('level') == "Intermediare" ) selected @endif>Intermédiare</option>
-                                            <option value="Avance" @if (old('level') == "Avance" ) selected @endif>Avancé</option>
+                                            <option value="Débutant" @if (old('level') == "Débutant" ) selected @endif >Débutant</option>
+                                            <option value="Intermédiare" @if (old('level') == "Intermédiare" ) selected @endif>Intermédiare</option>
+                                            <option value="Avancé" @if (old('level') == "Avancé" ) selected @endif>Avancé</option>
                                             @error('level')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -176,7 +176,7 @@
                                     <label>Statut * :</label>
                                     <select class="form-control  @error('status') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status" required>
                                        
-                                        <option value="Lancee" @if (old('status') == "Lancee" ) selected @endif>Lancée</option>
+                                        <option value="Lancée" @if (old('status') == "Lancée" ) selected @endif>Lancée</option>
                                         <option value="Prochainement" @if (old('status') == "Prochaainement" ) selected @endif>Prochainement</option>
                                        
                                     </select>
@@ -189,7 +189,7 @@
                                        
                                         <option value="Attestation" @if (old('certificate') == "Attestation" ) selected @endif>Attestation</option>
                                         <option value="Certificat" @if (old('certificate') == "Certificat" ) selected @endif>Certificat</option>
-                                        <option value="Diplome" @if (old('certificate') == "Diplome" ) selected @endif>Diplome</option>
+                                        <option value="Diplôme" @if (old('certificate') == "Diplôme" ) selected @endif>Diplôme</option>
                                         <option value="Indisponible" @if (old('certificate') == "Indisponible" ) selected @endif>Indisponible</option>
                                        
                                     </select>
@@ -212,7 +212,7 @@
 
                                 <div class="form-group col-md-3">
                                     <label>Prix * :</label>
-                                    <input type="text"  class="form-control input-default @error('price') is-invalid @enderror" value="{{old('price')}}" name="price"  placeholder="0" >
+                                    <input type="text"  class="form-control input-default @error('price') is-invalid @enderror" value="{{old('price')}}" name="price"  placeholder="0" required >
                                     @error('price')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -248,7 +248,7 @@
                              Description * : </h4>
                     </div>
                     <div class="card-body">
-                        <textarea class="summernote" class="form-control input-default @error('description') is-invalid @enderror"  name="description" id="">{{old('description')}}</textarea>
+                        <textarea class="summernote" class="form-control input-default @error('description') is-invalid @enderror"  name="description"  required>{{old('description')}}</textarea>
                         @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

@@ -31,7 +31,7 @@
                                 @csrf
                                 <div class="form-row">
                                    
-                                        <h5 class="card-title">Inscription de la Formation : {{$registration->course->name}}</h5>
+                                        <h5 class="card-title">{{$registration->course->name}}</h5>
                                    
                                 </div>
                                 <div class="form-row">

@@ -7,7 +7,7 @@
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
                     <h4>Bonjour, Bienvenue!</h4>
-                    <span>Formateurs</span>
+                    <span>Inscriptions</span>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
@@ -41,6 +41,7 @@
                                         <th>Téléphone</th>
                                         <th>Age</th>
                                         <th>Date</th>
+                                        <th>Accepter</th>
                                         <th>Statut</th>
                                         <th>Action</th>
                                     </tr>
@@ -54,6 +55,7 @@
                                         <td><strong>{{$registration->phone}} </strong></td>
                                         <td><strong>{{$registration->age}} ans </strong></td>
                                         <td><strong>{{$registration->created_at}} </strong></td>
+                                        <td><strong>{{$registration->accept}} </strong></td>
                                         @if ($registration->status == 1 )
                                         <td><span class="badge badge-warning">En Attente</span></td>
                                         @elseif($registration->status == 2)
