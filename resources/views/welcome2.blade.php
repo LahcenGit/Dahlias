@@ -2,172 +2,6 @@
 
 @section('content')
 
-<!-- Header Section Start -->
-<div class="header-section">
-
-    <!-- Header Top Start -->
-    <div class="header-top d-none d-lg-block">
-        <div class="container">
-
-            <!-- Header Top Wrapper Start -->
-            <div class="header-top-wrapper">
-
-                <!-- Header Top Left Start -->
-                <div class="header-top-left">
-                    <p>Never Stop <a href="#" style="color: #aa896b">Learning.</a></p>
-                </div>
-                <!-- Header Top Left End -->
-
-                <!-- Header Top Medal Start -->
-                <div class="header-top-medal">
-                    <div class="top-info">
-                        <p><i style="color: #aa896b" class="flaticon-phone-call"></i> (213) 0553 007 364</p>
-                        <p><i style="color: #aa896b" class="flaticon-email"></i> contact@dahliasinstitute.com</p>
-                    </div>
-                </div>
-                <!-- Header Top Medal End -->
-
-                <!-- Header Top Right Start -->
-                <div class="header-top-right">
-                    <ul class="social">
-                        <li><a href="https://www.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
-                        <li><a href="#"><i class="flaticon-instagram"></i></a></li>
-                    </ul>
-                </div>
-                <!-- Header Top Right End -->
-
-            </div>
-            <!-- Header Top Wrapper End -->
-
-        </div>
-    </div>
-    <!-- Header Top End -->
-
-    <!-- Header Main Start -->
-    <div class="header-main">
-        <div class="container">
-
-            <!-- Header Main Start -->
-            <div class="header-main-wrapper">
-
-                <!-- Header Logo Start -->
-                <div class="header-logo">
-                    <a href="{{asset('/')}}"><img src="{{asset('front/assets/images/logo.png')}}" alt="Logo"></a>
-                </div>
-                <!-- Header Logo End -->
-
-                <!-- Header Menu Start -->
-                <div class="header-menu d-none d-lg-block">
-                    <ul class="nav-menu">
-                        <li><a href="{{asset('/')}}">Accueil</a></li>
-                        <li>
-                            <a href="#">ٌRubriques</a>
-                            <ul class="sub-menu">
-                                @foreach ($categories as $categorie)
-                                <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
-                                @endforeach
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">A propos</a>
-                        </li>
-                        <li><a href="{{asset('/contact')}}">Contact</a></li>
-                    </ul>
-
-                </div>
-                <!-- Header Menu End -->
-
-                <!-- Header Sing In & Up Start -->
-                <div class="header-sign-in-up d-none d-lg-block">
-                    <ul>
-                        <li><a class="sign-up" href="{{asset('/login')}}">Connexion</a></li>
-                    </ul>
-                </div>
-                <!-- Header Sing In & Up End -->
-
-                <!-- Header Mobile Toggle Start -->
-                <div class="header-toggle d-lg-none">
-                    <a class="menu-toggle" href="javascript:void(0)">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                </div>
-                <!-- Header Mobile Toggle End -->
-
-            </div>
-            <!-- Header Main End -->
-
-        </div>
-    </div>
-    <!-- Header Main End -->
-
-</div>
-<!-- Header Section End -->
-
-<!-- Mobile Menu Start -->
-<div class="mobile-menu">
-
-    <!-- Menu Close Start -->
-    <a class="menu-close" href="javascript:void(0)">
-        <i class="icofont-close-line"></i>
-    </a>
-    <!-- Menu Close End -->
-
-    <!-- Mobile Top Medal Start -->
-    <div class="mobile-top">
-        <p><i class="flaticon-phone-call"></i> (213) 0553 007 364</p>
-        <p><i class="flaticon-email"></i>contact@dahliasinstitute.com</p>
-    </div>
-    <!-- Mobile Top Medal End -->
-
-    <!-- Mobile Sing In & Up Start -->
-    <div class="mobile-sign-in-up">
-        <ul>
-            <li><a class="sign-Up" href="{{asset('/login')}}">Connexion</a></li>
-        </ul>
-    </div>
-    <!-- Mobile Sing In & Up End -->
-
-    <!-- Mobile Menu Start -->
-    <div class="mobile-menu-items">
-        <ul class="nav-menu">
-            <li><a href="{{asset('/')}}">Accueil</a></li>
-            <li>
-                <a href="#">Rubriques</a>
-                <ul class="sub-menu">
-                    @foreach ($categories as $categorie)
-                    <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
-                    @endforeach
-                  
-                </ul>
-            </li>
-            <li>
-                <a href="#">A propos </a>
-              
-            </li>
-            
-            <li><a href="{{asset('/contact')}}">Contact</a></li>
-        </ul>
-
-    </div>
-    <!-- Mobile Menu End -->
-
-    <!-- Mobile Menu End -->
-    <div class="mobile-social">
-        <ul class="social">
-            <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-            <li><a href="#"><i class="flaticon-instagram"></i></a></li>
-        </ul>
-    </div>
-    <!-- Mobile Menu End -->
-
-</div>
-<!-- Mobile Menu End -->
-
-<!-- Overlay Start -->
-<div class="overlay"></div>
-<!-- Overlay End -->
 
   <!-- Slider Start -->
 <div class="section slider-section">
@@ -294,8 +128,8 @@
                                 </div>
                                 <div class="courses-price-review">
                                     <div class="courses-price">
-                                        <span class="sale-parice">{{$course->price}}Da/h</span>
-                                        <span class="old-parice">750 Da/h</span>
+                                        <span class="sale-parice">{{$course->price}} Da/séance</span>
+                                        <span class="old-parice">750 Da</span>
                                     </div>
                                    
                                 </div>
@@ -336,7 +170,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="call-to-action-btn">
-                        <a class="btn btn-primary btn-hover-dark" href="{{asset('/contact')}}">Contacter-nous</a>
+                        <a class="btn btn-primary btn-hover-dark" href="{{asset('/contact')}}">Contactez-nous</a>
                     </div>
                 </div>
             </div>
@@ -389,7 +223,7 @@
                     <i class="flaticon-forms"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Inscrez-vous</h3>
+                    <h3 class="title">Inscrivez-vous</h3>
                     <p>Remplir le formulaire de préinscription de votre formation.</p>
                 </div>
             </div>
@@ -403,13 +237,13 @@
 
             <!-- Single Work Start -->
             <div class="single-work">
-                <img class="shape-3" src="assets/images/shape/shape-16.png" alt="Shape">
+                <img class="shape-3" src="{{asset('front/assets/images/shape/shape-16.png')}}" alt="Shape">
 
                 <div class="work-icon">
                     <i class="flaticon-badge"></i>
                 </div>
                 <div class="work-content">
-                    <h3 class="title">Venir à l'intitut</h3>
+                    <h3 class="title">Venir à l’institut</h3>
                     <p>Aprés la confirmation vous pouvez venir pour compléter votre inscription.</p>
                 </div>
             </div>
@@ -436,7 +270,7 @@
 
              <!-- Section Title Start -->
              <div class="section-title section-title-white">
-                <h5 class="sub-title">Besoin de plus d'information?</h5>
+                <h5 class="sub-title">Besoin de plus d'informations?</h5>
                 <h2 class="main-title">N'hésitez pas à nous contacter </h2>
             </div>
             <!-- Section Title End -->
@@ -490,9 +324,10 @@
                             </span>
                         </div>
                         <div class="testimonial-content">
-                            <p>DI c'est la chance d'apprendre autrement, d'avoir un avenir même quand on n'aime pas l'école. C'est apprendre un métier passionnant avec beaucoup de pratique et peu de cours théoriques.</p>
-                            <h4 class="name">Mohammed kharbouch</h4>
-                            <span class="designation">Etudiant</span>
+                            <p>Hey,hope you are all doing fine! 
+                                I just wanted to wish you luck and success, because what you have done is really amazing also when you opened the door for us to have sessions and to learn more i really enjoyed time being there! and i hope others will have the chance too to discover your Wonderful programs and your institut and to get more help best of luck dahlias institute.</p>
+                            <h4 class="name">Chaimaa Aissi</h4>
+                            <span class="designation">Etudiante</span>
                         </div>
                     </div>
                     <!-- Single Testimonial End -->
@@ -511,9 +346,31 @@
                             </span>
                         </div>
                         <div class="testimonial-content">
-                            <p>Dahlias institute m'a apporté beaucoup de connaissances techniques et cela m'a également permis de m'ouvrir beaucoup plus aux autres. Ce qui m'a plu à DI c'est notamment l'ambiance et surtout le fait d'être souvent à l'atelier et d'avoir un peu moins de cours théoriques.</p>
-                            <h4 class="name">Benallal Narimen</h4>
-                            <span class="designation">Etudiante </span>
+                            <p>Good evening, I am Hassimi Guindo from AIESEC in Tlemcen. I'm in charge of the Marketing team in our project Dzair School Winter Edition. We want to thank you so much for today's session at your institute. I would like to share with you some pictures and videos that we took during the session. I will send you another email with the videos attached. Thank you once again.</p>
+                            <h4 class="name"> Hassimi Guindo</h4>
+                            <span class="designation">AIESEC in Tlemcen</span>
+                        </div>
+                    </div>
+                    <!-- Single Testimonial End -->
+                    <!-- Single Testimonial Start -->
+                    <div class="single-testimonial swiper-slide">
+                        <div class="testimonial-author">
+                            <div class="author-thumb">
+                                <img src="{{asset('profile-vide.jpg')}}" alt="Author">
+
+                                <i class="icofont-quote-left"></i>
+                            </div>
+
+                            <span class="rating-star">
+                                    <span class="rating-bar" style="width: 80%;"></span>
+                            </span>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>  I highly recommend ''LES DAHLIAS INSTITUTE'' to everyone interested in a very flexible and informative learning experience.
+                                without forgetting to mention that the institute provides a safe, professional, and friendly learning environment.
+                                   so, if you planning to take extra courses. I suggest you join this excellent institute and best of luck everyone! </p>
+                            <h4 class="name"> Sara Belmokhtar</h4>
+                            <span class="designation">Etudiante</span>
                         </div>
                     </div>
                     <!-- Single Testimonial End -->

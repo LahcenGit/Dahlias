@@ -109,7 +109,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header" style="background-color: #2b4942">
-            <a href="{{asset('/dashboard-provider')}}" class="brand-logo">
+            <a href="{{asset('/dashboard-admin')}}" class="brand-logo">
                 <img class="logo-abbr" src="{{asset('Dashboard/images/logo-white.png')}}" alt="">
                 <img class="logo-compact" src="{{asset('Dashboard/images/logo-text-white.png')}}" alt="">
                 <img class="brand-title" src="{{asset('Dashboard/images/logo-text-white.png')}}" alt="">

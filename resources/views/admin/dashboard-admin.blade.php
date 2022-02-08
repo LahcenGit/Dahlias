@@ -1,18 +1,22 @@
 @extends('layouts.dashboard-admin')
 @section('content')
-    
+<style>
+    .card-body{
+        padding: 20px !important;
+    }
+</style>
 <div class="content-body">
     <!-- row -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-9 col-xxl-12">
+            <div class="col-md-9 col-lg-12">
                 <div class="row">
                     <div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
                         <div class="card overflow-hidden">
                             <div class="card-body pb-0 px-3 pt-2">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="mb-1">{{$courses}}</h5>
+                                        <h3 class="mb-1">{{$courses}}</h3>
                                         <span class="text-success">Formations</span>
                                     </div>
                                 </div>
@@ -25,7 +29,7 @@
                             <div class="card-body pb-0 px-3 pt-2">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="mb-1">{{$instructors}}</h5>
+                                        <h3 class="mb-1">{{$instructors}}</h3>
                                         <span class="text-success">Formateurs</span>
                                     </div>
                                 </div>
@@ -38,7 +42,7 @@
                             <div class="card-body pb-0 px-3 pt-2">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="mb-1">{{$allRegistrations}}</h5>
+                                        <h3 class="mb-1">{{$allRegistrations}}</h3>
                                         <span class="text-success">Inscrits</span>
                                     </div>
                                 </div>
@@ -51,7 +55,7 @@
                             <div class="card-body pb-0 px-3 pt-2">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="mb-1">{{$registrationsWaiting}}</h5>
+                                        <h3 class="mb-1">{{$registrationsWaiting}}</h3>
                                         <span class="text-success">Inscriptions en attentes</span>
                                     </div>
                                 </div>

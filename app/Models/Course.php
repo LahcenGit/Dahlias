@@ -49,7 +49,16 @@ class Course extends Model
        //dd($instructorcourse);
        $instructor = Instructor::where('id',$instructorcourse->instructor_id)->get();
        return $instructor->name;
-
-
    }
+
+
+   public function getLanguages(){
+       $languages = null;
+       $languages = CourseLanguage::
+       join('languages', 'courseLanguages.language_id', '=', 'languages.id')
+       ->where('course_id',$this->id)->get();
+       return $languages;
+   }
+
+
 }

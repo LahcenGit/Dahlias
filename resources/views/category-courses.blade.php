@@ -1,9 +1,6 @@
 @extends('layouts.front')
 @section('content')
 
-<!-- Overlay Start -->
-<div class="overlay"></div>
-<!-- Overlay End -->
 
 <!-- Page Banner Start -->
 <div class="section page-banner">
@@ -71,20 +68,22 @@
                     <div class="col-lg-4 col-md-6">
                         <!-- Single Courses Start -->
                         <div class="single-courses">
+                            
                             <div class="courses-images">
-                                <a href="courses-details.html"><img src="assets/images/courses/courses-01.jpg" alt="Courses"></a>
+                                @foreach ($course->images as $img)
+                                <a href="{{asset('course-detail/'.$course->id)}}"><img src="{{asset('storage/'.$img->lien)}}" alt="Courses"></a>
+                                @endforeach
                             </div>
-                            <div class="courses-content">
-                                
 
-                                <h4 class="title"><a href="courses-details.html">{{$course->name}}</a></h4>
+                            <div class="courses-content">
+                                <h4 class="title"><a href="{{asset('course-detail/'.$course->id)}}">{{$course->name}}</a></h4>
                                 <div class="courses-meta">
-                                    <span> <i class="icofont-clock-time"></i> h</span>
-                                    <span> <i class="icofont-read-book"></i> 29 Lectures </span>
+                                    <span> <i class="icofont-clock-time"></i> {{$course->duration}} h</span>
+                                    <span> <i class="icofont-read-book"></i> {{$course->nbr_student}} apprenants </span>
                                 </div>
                                 <div class="courses-price-review">
                                     <div class="courses-price">
-                                        <span class="sale-parice">{{$course->price}} Da/h</span>
+                                        <span class="sale-parice">{{$course->price}} Da/séance</span>
                                         <span class="old-parice">750 Da</span>
                                     </div>
                                 </div>

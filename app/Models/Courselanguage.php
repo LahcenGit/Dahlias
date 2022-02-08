@@ -15,4 +15,9 @@ class Courselanguage extends Model
     {
         return $this->belongsTo(Course::class);
     }
+
+    public function language()
+    {
+        return $this->belongsTo(Language::class ,'language_id');
+    }
 }

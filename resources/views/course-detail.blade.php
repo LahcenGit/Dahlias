@@ -1,6 +1,16 @@
 @extends('layouts.front')
 @section('content')
 
+<style>
+    .price-detail{
+        font-size: 15px;
+    }
+    .old-price-detail{
+        font-size: 19px;
+        text-decoration: line-through;
+    }
+</style>
+
 <div class="section page-banner">
 
     <img class="shape-1 animation-round" src="{{asset('front/assets/images/shape/shape-8.png')}}" alt="Shape">
@@ -82,7 +92,7 @@
                                     <!-- Tab Description Start -->
                                     <div class="tab-description">
                                         <div class="description-wrapper">
-                                            <h3 class="tab-title">Description:</h3>
+                                            <h3 class="tab-title mb-4">Description:</h3>
                                             {!! $course->description !!}
                                         </div>
                                        
@@ -285,36 +295,47 @@
                     <!-- Sidebar Widget Information Start -->
                     <div class="sidebar-widget widget-information">
                         <div class="info-price">
-                            <span class="price">{{ $course->price }}DA/h</span>
+                            <span class="price">{{ $course->price }}DA <span><span class="price-detail">/séance</span>
+                        </div>
+                        <div class="info-price">
+                            <span class="old-price-detail">750DA</span>
                         </div>
                         <div class="info-list">
                             <ul>
-                               {{--<li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>--}} 
-                                <li><i class="icofont-clock-time"></i> <strong>Durée</strong> <span>{{$course->duration}}</span></li>
-                                
+                                {{--<li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>--}} 
+                                 <li><i class="icofont-clock-time"></i> <strong>Durée</strong> <span>{{$course->duration}} heures</span></li>
+                                 
                                 <li><i class="icofont-bars"></i> <strong>Niveau</strong> 
-                                    @if($course->level == 'Debutant' )
+                                     @if($course->level == 'Debutant' )
+                                     <span>
+                                      Débutant
+                                    </span>
+                                    @elseif($course->level == 'Intermediare')
                                     <span>
-                                     Débutant
+                                     Intermédiaire
                                    </span>
-                                   @elseif($course->level == 'Intermediare')
+                                   @else
                                    <span>
-                                    Intermédiare
-                                  </span>
-                                  @else
-                                  <span>
-                                   Avancé
-                                  </span>
-                                  @endif
-                                </li>
-                                <li><i class="icofont-book-alt"></i> <strong>Langue</strong> <span>{{$course->language}}</span></li>
-                                <li><i class="icofont-certificate-alt-1"></i> <strong>Certifié</strong>
-                                    @if($course->certificate == 'Diplome')
-                                    <span>Diplôme</span></li>
-                                    @else
-                                   <span>{{$course->certificate}}</span></li>
+                                    Avancé
+                                   </span>
                                    @endif
-                            </ul>
+                                </li>
+
+                                <li>
+                                     <i class="icofont-book-alt"></i> <strong>Langue</strong> 
+                                     @foreach ($course->getLanguages() as $item)
+                                     <span >{{$item->language }} </span> <span> &nbsp;</span>
+                                     @endforeach
+                                
+                                </li>
+
+                                 <li><i class="icofont-certificate-alt-1"></i> <strong>Type certificat</strong>
+                                     @if($course->certificate == 'Diplome')
+                                     <span>Diplôme</span></li>
+                                     @else
+                                    <span>{{$course->certificate}}</span></li>
+                                    @endif
+                             </ul>
                         </div>
                         <div class="info-btn">
                             <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary btn-hover-dark">S'inscrire</a>
@@ -327,9 +348,7 @@
                         <h4 class="widget-title">Suivez-nous :</h4>
 
                         <ul class="social">
-                            <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-                            <li><a href="#"><i class="flaticon-twitter"></i></a></li>
-                            <li><a href="#"><i class="flaticon-skype"></i></a></li>
+                            <li><a href="https://www.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
                             <li><a href="#"><i class="flaticon-instagram"></i></a></li>
                         </ul>
                     </div>
