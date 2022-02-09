@@ -70,6 +70,14 @@
   
                                     </select>
                                 </div>
+
+                                <div class="form-group">
+                                    <label >Description : </label>
+                                    <textarea class="form-control" name="description" rows="3"></textarea>
+                                </div>
+                       
+                                
+
                                 <button type="submit"  class="btn btn-primary mt-3">Ajouter</button>
                             </form>
                         </div>

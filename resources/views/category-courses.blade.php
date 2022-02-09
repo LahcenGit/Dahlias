@@ -48,6 +48,8 @@
 <div class="section section-padding">
     <div class="container">
 
+        <h6 class="mb-4" style="font-weight: 400">{{$category->description}}</h6>
+
         <!-- Courses Category Wrapper Start  -->
         <div class="courses-category-wrapper">
             <div class="courses-search search-2">

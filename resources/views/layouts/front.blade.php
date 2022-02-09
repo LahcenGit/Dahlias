@@ -75,6 +75,19 @@
     background-color: #f4f4f4;
 
     }
+    .header-menu .sub-menu li a {
+            padding: 7px 20px;
+            color: #212832;
+            border: 0;
+            font-size: 15px;
+            font-weight: 400;
+    }
+
+    .header-menu .sub-menu {
+  
+  width: 300px !important;
+
+}
 </style>
 
 <body>
@@ -237,7 +250,7 @@
                     @foreach ($categories as $categorie)
                         @if( $categorie->parent_id == NULL)
                             <li>
-                                <a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a>
+                                <a href="{{asset('category-courses/'.$categorie->id)}}" class="cat-text">{{$categorie->name}}</a>
                             
                             @if( count($categorie->childCategories) != 0)
                             <ul class="sub-menu">

@@ -67,6 +67,12 @@
   
                                     </select>
                                 </div>
+
+                                <div class="form-group">
+                                    <label >Description : </label>
+                                    <textarea class="form-control" name="description" rows="3">{{$category->description}}</textarea>
+                                </div>
+
                                 <button type="submit"  class="btn btn-primary mt-3">Modifier</button>
                             </form>
                         </div>

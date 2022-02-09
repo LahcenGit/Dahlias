@@ -36,6 +36,7 @@ class CategoryController extends Controller
         ]);
          $category = new Category();
          $category->name=$request['name'];
+         $category->description = $request['description'];
 
          if($request['category'] == 0){
           $category->parent_id == NULL;
@@ -61,6 +62,7 @@ class CategoryController extends Controller
         $category = Category::find($id);
         
         $category->name=$request['name'];
+        $category->description = $request['description'];
        
         if($request['category'] == 0){
            
