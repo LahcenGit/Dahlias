@@ -52,12 +52,9 @@ class Course extends Model
    }
 
 
-   public function getLanguages(){
-       $languages = null;
-       $languages = CourseLanguage::
-       join('languages', 'courseLanguages.language_id', '=', 'languages.id')
-       ->where('course_id',$this->id)->get();
-       return $languages;
+   public function languages()
+   {
+       return $this->belongsToMany(Language::class, 'courselanguages');
    }
 
 

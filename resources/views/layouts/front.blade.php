@@ -144,7 +144,20 @@
                             <a href="#">ٌRubriques</a>
                             <ul class="sub-menu">
                                 @foreach ($categories as $categorie)
-                                <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
+                                    @if( $categorie->parent_id == NULL)
+                                        <li>
+                                            <a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a>
+                                        
+                                        @if( count($categorie->childCategories) != 0)
+                                        <ul class="sub-menu">
+                                            @foreach ($categorie->childCategories as $item)
+                                                    <li><a href="{{asset('category-courses/'.$item->id)}}">{{$item->name}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                        @endif
+                                        </li>
+                                    
+                                    @endif
                                 @endforeach
                             </ul>
                         </li>
@@ -222,9 +235,21 @@
                 <a href="#">Rubriques</a>
                 <ul class="sub-menu">
                     @foreach ($categories as $categorie)
-                    <li><a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a></li>
+                        @if( $categorie->parent_id == NULL)
+                            <li>
+                                <a href="{{asset('category-courses/'.$categorie->id)}}">{{$categorie->name}}</a>
+                            
+                            @if( count($categorie->childCategories) != 0)
+                            <ul class="sub-menu">
+                                @foreach ($categorie->childCategories as $item)
+                                        <li><a href="{{asset('category-courses/'.$item->id)}}">{{$item->name}}</a></li>
+                                @endforeach
+                            </ul>
+                            @endif
+                            </li>
+                        
+                        @endif
                     @endforeach
-                  
                 </ul>
             </li>
             <li>

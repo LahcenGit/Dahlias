@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Language extends Model
 {
     use HasFactory;
+
+
+    public function courses()
+   {
+       return $this->belongsToMany(Course::class, 'courselanguages');
+   }
 }

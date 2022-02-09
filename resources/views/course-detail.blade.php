@@ -323,7 +323,7 @@
 
                                 <li>
                                      <i class="icofont-book-alt"></i> <strong>Langue</strong> 
-                                     @foreach ($course->getLanguages() as $item)
+                                     @foreach ($course->languages as $item)
                                      <span >{{$item->language }} </span> <span> &nbsp;</span>
                                      @endforeach
                                 

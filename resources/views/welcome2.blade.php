@@ -163,7 +163,7 @@
                     <!-- Section Title Start -->
                     <div class="section-title shape-02">
                         <h5 class="sub-title">Devenir formateur</h5>
-                        <h2 class="main-title">Vous pouvez rejoindre Dahlias intitute en tant que<span> formateur</span></h2>
+                        <h2 class="main-title">Vous pouvez rejoindre Dahlias institute en tant que<span> formateur</span></h2>
                     </div>
                     <!-- Section Title End -->
 
@@ -244,7 +244,7 @@
                 </div>
                 <div class="work-content">
                     <h3 class="title">Venir à l’institut</h3>
-                    <p>Aprés la confirmation vous pouvez venir pour compléter votre inscription.</p>
+                    <p>Après la pré-inscription vous devez venir sur place pour confirmer votre inscription.</p>
                 </div>
             </div>
             <!-- Single Work End -->
