@@ -226,7 +226,7 @@
                                   
                                     <div class="basic-form custom_file_input">
                                         <div class="input-group mb-3">
-                                                <input type="file" multiple name="photos[]" accept="image/*">
+                                                <input type="file" multiple name="photos[]" accept="image/*" required>
                                                 <input class="button-primary" type="submit" value="Submit">
                                         </div>
                                     </div>

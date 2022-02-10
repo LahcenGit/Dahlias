@@ -294,12 +294,19 @@
 
                     <!-- Sidebar Widget Information Start -->
                     <div class="sidebar-widget widget-information">
+                        @if($course->price == 0)
+
+                        <div class="info-price">
+                            <span class="price">Gratuite </span>
+                        </div>
+                        @else
                         <div class="info-price">
                             <span class="price">{{ $course->price }}DA <span><span class="price-detail">/séance</span>
                         </div>
                         <div class="info-price">
                             <span class="old-price-detail">750DA</span>
                         </div>
+                        @endif
                         <div class="info-list">
                             <ul>
                                 {{--<li><i class="icofont-man-in-glasses"></i> <strong>Formateur</strong> <span>{{$course->instructor->name}}</span></li>--}} 
@@ -328,13 +335,17 @@
                                      @endforeach
                                 
                                 </li>
-
+                                @if($course->certificate != 'Indisponible')
                                  <li><i class="icofont-certificate-alt-1"></i> <strong>Type certificat</strong>
-                                     @if($course->certificate == 'Diplome')
-                                     <span>Diplôme</span></li>
-                                     @else
-                                    <span>{{$course->certificate}}</span></li>
+                                    @if($course->certificate == 'Diplome')
+                                    <span>Diplôme</span>
+                                    @else
+                                    <span>{{$course->certificate}}</span>
                                     @endif
+                                </li>
+                                    
+                                 </li>
+                                @endif
                              </ul>
                         </div>
                         <div class="info-btn">
