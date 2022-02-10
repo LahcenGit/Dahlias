@@ -335,13 +335,17 @@
                                      @endforeach
                                 
                                 </li>
-
+                                @if($course->certificate != 'Indisponible')
                                  <li><i class="icofont-certificate-alt-1"></i> <strong>Type certificat</strong>
-                                     @if($course->certificate == 'Diplome')
-                                     <span>Diplôme</span></li>
-                                     @else
-                                    <span>{{$course->certificate}}</span></li>
+                                    @if($course->certificate == 'Diplome')
+                                    <span>Diplôme</span>
+                                    @else
+                                    <span>{{$course->certificate}}</span>
                                     @endif
+                                </li>
+                                    
+                                 </li>
+                                @endif
                              </ul>
                         </div>
                         <div class="info-btn">

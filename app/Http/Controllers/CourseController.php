@@ -148,17 +148,37 @@ class CourseController extends Controller
        
 
         if($hasFile){
-            foreach($request->file('photos') as $file){
-            $path =  $file;
-            $name = $path->store('course');
-            $lien = Storage::putFile('course',$path); 
-           
-            $fileModal = Image::where('course_id',$id)->first();
-            $fileModal->lien = $lien;
-         
+            $image = Image::where('course_id',$id)->count();
+            if($image == 0){
+                foreach($request->file('photos') as $file){
+                    $path =  $file;
+                    $name = $path->store('course');
+                    $lien = Storage::putFile('course',$path); 
+                   
+                   
+                    $fileModal = new Image();
+                    $fileModal->lien = $lien;
+                 
+                    
+                 }
+                  $course->images()->save($fileModal);
+
+            }
+            else{
+                foreach($request->file('photos') as $file){
+                    $path =  $file;
+                    $name = $path->store('course');
+                    $lien = Storage::putFile('course',$path); 
+                   
+                   
+                    $fileModal = Image::where('course_id',$id)->first();
+                    $fileModal->lien = $lien;
+                 
+                    
+                 }
+                  $course->images()->save($fileModal);
+            }
             
-         }
-          $course->images()->save($fileModal);
         }
         return redirect('dashboard-admin/courses');
     }
