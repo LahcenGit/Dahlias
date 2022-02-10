@@ -13,7 +13,8 @@
             <div class="d-flex">
                 <a href="{{url('dashboard-admin/category/'.$subcategory->id.'/edit')}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                 <button class="  btn btn-danger shadow btn-xs sharp" onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
-            </div>												
+            </div>		
+            </form>										
         </td>	
     </tr>
     @if(count($subcategory->childCategories))

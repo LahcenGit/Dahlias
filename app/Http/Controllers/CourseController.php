@@ -37,7 +37,7 @@ class CourseController extends Controller
         $lien = [];
         $course->name = $request->name;
         $course->price = $request->price;
-        $course->category_id = $request->category;
+        $course->categorie_id = $request->category;
        
         $course->level = $request->level;
         $course->start_date = $request->start_date;
@@ -102,7 +102,7 @@ class CourseController extends Controller
         $lien = [];
         $course->name = $request->name;
         $course->price = $request->price;
-        $course->category_id = $request->category;
+        $course->categorie_id = $request->category;
         $course->level = $request->level;
         $course->start_date = $request->start_date;
         $course->end_date = $request->end_date;
@@ -192,7 +192,7 @@ class CourseController extends Controller
 
      public function categoryCourses($id){
 
-        $courses = Course::where('category_id',$id)->get();
+        $courses = Course::where('categorie_id',$id)->get();
         $categories = Category::all();
         $category = Category::find($id);
         return view('category-courses',compact('courses','categories','category'));
