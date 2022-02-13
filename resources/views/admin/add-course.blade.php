@@ -176,8 +176,8 @@
                                     <label>Statut * :</label>
                                     <select class="form-control  @error('status') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status" required>
                                        
-                                        <option value="Lancée" @if (old('status') == "Lancée" ) selected @endif>Lancée</option>
-                                        <option value="Prochainement" @if (old('status') == "Prochaainement" ) selected @endif>Prochainement</option>
+                                        <option value="Lancee" @if (old('status') == "Lancee" ) selected @endif>Lancée</option>
+                                        <option value="Prochainement" @if (old('status') == "Prochainement" ) selected @endif>Prochainement</option>
                                        
                                     </select>
                                 </div>
@@ -189,7 +189,7 @@
                                        
                                         <option value="Attestation" @if (old('certificate') == "Attestation" ) selected @endif>Attestation</option>
                                         <option value="Certificat" @if (old('certificate') == "Certificat" ) selected @endif>Certificat</option>
-                                        <option value="Diplôme" @if (old('certificate') == "Diplôme" ) selected @endif>Diplôme</option>
+                                        <option value="Diplome" @if (old('certificate') == "Diplôme" ) selected @endif>Diplôme</option>
                                         <option value="Indisponible" @if (old('certificate') == "Indisponible" ) selected @endif>Indisponible</option>
                                        
                                     </select>

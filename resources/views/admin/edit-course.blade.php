@@ -61,16 +61,16 @@
                                           
                                                 @foreach($categories as $category)
                                                
-                                                <option value="{{$category->id}}" @if ($course->category_id == $category->id ) selected @endif >{{$category->name}}</option>
+                                                <option value="{{$category->id}}" @if ($course->categorie_id == $category->id ) selected @endif >{{$category->name}}</option>
                                                 @foreach($category->childCategories as $sub)
                                                
-                                                <option  value="{{$sub->id}}" @if ($course->category_id == $sub->id ) selected @endif> &nbsp &nbsp{{$sub->name}}</option>
+                                                <option  value="{{$sub->id}}" @if ($course->categorie_id == $sub->id ) selected @endif> &nbsp &nbsp{{$sub->name}}</option>
                                                 @foreach($sub->childCategories as $subsub)
-                                                    <option value="{{$subsub->id}}"  @if ($course->category_id == $subsub->id ) selected @endif>  &nbsp  &nbsp  &nbsp &nbsp{{$subsub->name}}</option>
+                                                    <option value="{{$subsub->id}}"  @if ($course->categorie_id == $subsub->id ) selected @endif>  &nbsp  &nbsp  &nbsp &nbsp{{$subsub->name}}</option>
                                                
     
                                                 @foreach($subsub->childCategories as $subsubsub)
-                                                <option value="{{$subsubsub->id}}"  @if ($course->category_id == $subsubsub->id  ) selected @endif>  &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp{{$subsubsub->name}}</option>
+                                                <option value="{{$subsubsub->id}}"  @if ($course->categorie_id == $subsubsub->id  ) selected @endif>  &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp{{$subsubsub->name}}</option>
                                                 @endforeach 
                                                 @endforeach 
                                                 @endforeach 
@@ -172,8 +172,8 @@
                                     <label>Statut* :</label>
                                     <select class="form-control  @error('status') is-invalid @enderror" id="sel1"  class="selectpicker" data-live-search="true" name="status" required>
                                        
-                                        <option value="lancee" @if ($course->status == "lancee" ) selected @endif>Lancée</option>
-                                        <option value="prochainement" @if ($course->status == "prochaainement" ) selected @endif>Prochainement</option>
+                                        <option value="Lancee" @if ($course->status == "Lancee" ) selected @endif>Lancée</option>
+                                        <option value="Prochainement" @if ($course->status == "Prochainement" ) selected @endif>Prochainement</option>
                                        
                                     </select>
                                 </div>
@@ -185,7 +185,7 @@
                                        
                                         <option value="Attestation" @if ($course->certificate == "Attestation" ) selected @endif>Attestation</option>
                                         <option value="Certificat" @if ($course->certificate == "Certificat" ) selected @endif>Certificat</option>
-                                        <option value="Diplome" @if ($course->certificate == "Diplome" ) selected @endif>Diplome</option>
+                                        <option value="Diplome" @if ($course->certificate == "Diplome" ) selected @endif>Diplôme</option>
                                         <option value="Indisponible" @if ($course->certificate == "Indisponible" ) selected @endif>Indisponible</option>
                                        
                                     </select>
