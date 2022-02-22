@@ -57,5 +57,10 @@ class Course extends Model
        return $this->belongsToMany(Language::class, 'courselanguages');
    }
 
+   public function instructors()
+   {
+       return $this->belongsToMany(Instructor::class, 'courseinstructors');
+   }
+
 
 }

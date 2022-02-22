@@ -11,10 +11,7 @@ class Instructor extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    public function courses()
-    {
-        return $this->hasMany(Course::class);
-    }
+    
 
     public function age() {
         $date = $this->date_of_birth;
@@ -22,5 +19,10 @@ class Instructor extends Model
         $result = Carbon::today()->diffInYears($date);
 
         return $result;
+    }
+
+         public function courses()
+         {
+             return $this->belongsToMany(Course::class, 'courselanguages');
          }
 }

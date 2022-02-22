@@ -137,14 +137,26 @@
                                     <span> <i class="icofont-clock-time"></i>{{$course->duration}} h</span>
                                     <span> <i class="icofont-read-book"></i> {{$course->nbr_student}} apprenants </span>
                                 </div>
-                                <div class="courses-price-review">
-                                    <div class="courses-price">
-                                        <span class="sale-parice">{{$course->price}} Da/séance</span>
-                                        <span class="old-parice">750 Da</span>
+
+                             
+                                @if($course->price == 0)
+                                    <div class="courses-price-review">
+                                        <div class="courses-price">
+                                            <span class="sale-parice">Gratuite</span>
+                                        </div>
                                     </div>
-                                   
-                                </div>
+                                @else
+                                    <div class="courses-price-review">
+                                        <div class="courses-price">
+                                            <span class="sale-parice">{{$course->price}} Da/2h</span>
+                                            <span class="old-parice">750 Da</span>
+                                        </div>
+                                    </div>
+                                @endif
+                                
                             </div>
+                               
+
                         </div>
                      
                     </div>
