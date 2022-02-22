@@ -179,7 +179,11 @@
                                 <div class="courses-price-review">
                                     <div class="courses-price">
                                         <span class="sale-parice">{{$course->price}} Da/2h</span>
+                                        @if($course->old_price == Null)
                                         <span class="old-parice">750 Da</span>
+                                        @else
+                                        <span class="old-parice">{{$course->old_price}} Da</span>
+                                        @endif
                                     </div>
                                 </div>
                             @endif

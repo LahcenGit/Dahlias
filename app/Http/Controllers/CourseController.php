@@ -49,6 +49,7 @@ class CourseController extends Controller
         $course->certificate = $request->certificate;
         $course->check = $request->check;
         $course->filiere = $request->filiere;
+        $course->old_price = $request->old_price;
         $course->save();
 
 
@@ -114,6 +115,7 @@ class CourseController extends Controller
         $course->certificate = $request->certificate;
         $course->check = $request->check;
         $course->filiere = $request->filiere;
+        $course->old_price = $request->old_price;
         $course->save();
        
         if($request->instructors){

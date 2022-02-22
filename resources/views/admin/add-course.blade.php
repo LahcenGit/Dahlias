@@ -200,7 +200,7 @@
                               
                                 
                                 
-                                <div class="form-group col-md-3">
+                                <div class="form-group col-md-6">
                                     <label>Nombre d'étudiants (optionnel) :</label>
                                     <input type="number"  class="form-control input-default @error('nbr_student') is-invalid @enderror" value="{{old('nbr_student')}}" name="nbr_student"  placeholder="0" >
                                     @error('nbr_student')
@@ -210,16 +210,8 @@
                                     @enderror
                                 </div>
 
-                                <div class="form-group col-md-3">
-                                    <label>Prix * :</label>
-                                    <input type="text"  class="form-control input-default @error('price') is-invalid @enderror" value="{{old('price')}}" name="price"  placeholder="0" required >
-                                    @error('price')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                    @enderror
-
-                                </div>
+                                
+                  
                                 <div class="form-group col-md-6">
                                     <label>Filière (optionnel) :</label>
                                     <input type="text"  class="form-control input-default @error('filiere') is-invalid @enderror" value=" {{old('filiere')}} "name="filiere" placeholder="filiere" >
@@ -230,7 +222,6 @@
                                     @enderror
                                 </div>
                             </div>
-                            
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Visibilité du formateur :</label>
@@ -255,6 +246,30 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-3">
+                                    <label>Prix * :</label>
+                                    <input type="text"  class="form-control input-default @error('price') is-invalid @enderror" value="{{old('price')}}" name="price"  placeholder="0" required >
+                                    @error('price')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                    @enderror
+
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Ancien Prix * :</label>
+                                    <input type="text"  class="form-control input-default @error('old_price') is-invalid @enderror" value="{{old('old_price')}}" name="old_price"  placeholder="0" required >
+                                    @error('old_price')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                    @enderror
+
+                                </div>
+                            </div>
+                            
+                            
                                 
                         </div>
                   

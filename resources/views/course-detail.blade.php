@@ -78,7 +78,9 @@
                         <div class="details-tab-menu">
                             <ul class="nav justify-content-center">
                                 <li><button class="active" data-bs-toggle="tab" data-bs-target="#description">Description</button></li>
+                                @if($course->check == 'oui')
                                 <li><button data-bs-toggle="tab" data-bs-target="#instructors">Formateur</button></li>
+                                @endif
                                 <li><button data-bs-toggle="tab" data-bs-target="#reviews">Commentaires</button></li>
                             </ul>
                         </div>
@@ -300,7 +302,11 @@
                             <span class="price">{{ $course->price }}DA <span><span class="price-detail">/2h</span>
                         </div>
                         <div class="info-price">
+                            @if($course->old_price == Null)
                             <span class="old-price-detail">750DA</span>
+                            @else
+                            <span class="price">{{$course->old_price}} DA</span>
+                            @endif
                         </div>
                         @endif
                         <div class="info-list">
@@ -331,6 +337,15 @@
                                      @endforeach
                                 
                                 </li>
+                                @if($course->filiere!= Null)
+                                <li>
+                                    <i class="icofont-book-alt"></i> <strong>Filière</strong> 
+                                   
+                                    <span >{{$course->filiere }} </span> 
+                                    
+                               
+                               </li>
+                               @endif
                                 @if($course->certificate != 'Indisponible')
                                  <li><i class="icofont-certificate-alt-1"></i> <strong>Type certificat</strong>
                                     @if($course->certificate == 'Diplome')
