@@ -219,16 +219,40 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
+                                    <label>Filière :</label>
+                                    <input type="text"  class="form-control input-default @error('filiere') is-invalid @enderror" value=" {{$course->filiere}} "name="filiere"  required>
+                                    @error('filiere')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                    @enderror
+                                </div>
+                               
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Acceptez-vous d'être filmé ou photographié?:</label>
+                                   
+                                         
+                                                <div class="form-group mb-0">
+                                                    <label class="radio-inline mr-3"><input type="radio" name="check" @if($course->check == 'oui') checked @endif> Oui</label>
+                                                    <label class="radio-inline mr-3"><input type="radio" name="check" @if($course->check == 'non') checked @endif> Non</label>
+                                                   
+                                                </div>
+                                           
+                                </div>
+                                
+                                <div class="form-group col-md-6">
                                     <label>Photos * :</label>
                                   
                                     <div class="basic-form custom_file_input">
                                         <div class="input-group mb-3">
-                                                <input type="file" multiple name="photos[]" accept="image/*">
+                                                <input type="file" multiple name="photos[]" accept="image/*" required>
                                                 <input class="button-primary" type="submit" value="Submit">
                                         </div>
                                     </div>
                                 </div>
-                               
                             </div>
                                 
                         </div>
