@@ -104,8 +104,9 @@
                                 <div class="tab-pane fade" id="instructors">
 
                                     <!-- Tab Instructors Start -->
-                               {{--  <div class="tab-instructors">
-                                        <h3 class="tab-title">Instructeur de formation:</h3>
+                                      <div class="tab-instructors">
+
+                                        @foreach ($course->instructors as $item)
 
                                         <div class="row">
                                             <div class="col-md-12 col-6">
@@ -115,21 +116,16 @@
                                                         <img src="{{asset('front/assets/images/author/pic1.jpg')}}" alt="Author">
                                                     </div>
                                                     <div class="team-content">
-                                                       
-                                                        <h4 class="name">{{$course->instructor->name}}</h4>
-                                                        <span class="designation">{{$course->instructor->function}} , {{$course->instructor->age()}} ans</span>
+                                                        <h4 class="name">{{$item->name }}</h4>
+                                                        <span class="designation">{{$item->function }}</span>
                                                     </div>
                                                 </div>
                                                 <!-- Single Team End -->
                                             </div>
-                                           
-                                          
-                                           
                                         </div>
-
-                                        
+                                        @endforeach
                                     </div>
-                                    <!-- Tab Instructors End -->--}} 
+                                    <!-- Tab Instructors End -->
 
                                 </div>
                             {{--  <div class="tab-pane fade" id="reviews">
@@ -301,7 +297,7 @@
                         </div>
                         @else
                         <div class="info-price">
-                            <span class="price">{{ $course->price }}DA <span><span class="price-detail">/séance</span>
+                            <span class="price">{{ $course->price }}DA <span><span class="price-detail">/2h</span>
                         </div>
                         <div class="info-price">
                             <span class="old-price-detail">750DA</span>
@@ -360,7 +356,7 @@
 
                         <ul class="social">
                             <li><a href="https://www.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
-                            <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                            <li><a href="https://www.instagram.com/dahliasinstitute/"><i class="flaticon-instagram"></i></a></li>
                         </ul>
                     </div>
                     <!-- Sidebar Widget Share End -->

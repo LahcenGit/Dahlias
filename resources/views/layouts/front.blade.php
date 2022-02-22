@@ -124,7 +124,7 @@
                 <div class="header-top-right">
                     <ul class="social">
                         <li><a href="https://www.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
-                        <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                        <li><a href="https://www.instagram.com/dahliasinstitute/"><i class="flaticon-instagram"></i></a></li>
                     </ul>
                 </div>
                 <!-- Header Top Right End -->
@@ -184,7 +184,9 @@
                 <!-- Header Menu End -->
 
                 <!-- Header Sing In & Up Start -->
-                <div class="header-sign-in-up d-none d-lg-block">
+
+                {{--
+                       <div class="header-sign-in-up d-none d-lg-block">
                     <ul>
                         @auth
                         <li><a class="sign-up" href="{{asset('/dashboard-admin')}}">Dashboard</a></li>
@@ -193,7 +195,8 @@
                         @endauth
                         
                     </ul>
-                </div>
+                </div>  --}}
+             
                 <!-- Header Sing In & Up End -->
 
                 <!-- Header Mobile Toggle Start -->
@@ -233,11 +236,12 @@
     <!-- Mobile Top Medal End -->
 
     <!-- Mobile Sing In & Up Start -->
-    <div class="mobile-sign-in-up">
+    {{--  <div class="mobile-sign-in-up">
         <ul>
             <li><a class="sign-Up" href="{{asset('/login')}}">Connexion</a></li>
         </ul>
-    </div>
+    </div> --}}
+  
     <!-- Mobile Sing In & Up End -->
 
     <!-- Mobile Menu Start -->
@@ -279,8 +283,8 @@
     <!-- Mobile Menu End -->
     <div class="mobile-social">
         <ul class="social">
-            <li><a href="#"><i class="flaticon-facebook"></i></a></li>
-            <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+            <li><a href="https://web.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/dahliasinstitute/"><i class="flaticon-instagram"></i></a></li>
         </ul>
     </div>
     <!-- Mobile Menu End -->
@@ -332,8 +336,9 @@
                                 </ul>
 
                                 <ul class="widget-social">
-                                    <li><a href="https://www.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                                    <li><a href="https://web.facebook.com/dahliasinstitute"><i class="flaticon-facebook"></i></a></li>
+                                    <li><a href="https://www.instagram.com/dahliasinstitute/"><i class="flaticon-instagram"></i></a></li>
+                             
                                 </ul>
                             </div>
                             <!-- Footer Widget End -->
