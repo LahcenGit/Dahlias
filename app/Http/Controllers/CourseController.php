@@ -47,7 +47,8 @@ class CourseController extends Controller
         $course->status = $request->status;
         $course->description = $request->description;
         $course->certificate = $request->certificate;
-       
+        $course->check = $request->check;
+        $course->filiere = $request->filiere;
         $course->save();
 
 
@@ -111,6 +112,8 @@ class CourseController extends Controller
         $course->status = $request->status;
         $course->description = $request->description;
         $course->certificate = $request->certificate;
+        $course->check = $request->check;
+        $course->filiere = $request->filiere;
         $course->save();
        
         if($request->instructors){

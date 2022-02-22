@@ -221,8 +221,8 @@
 
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label>Filière :</label>
-                                    <input type="text"  class="form-control input-default @error('filiere') is-invalid @enderror" value=" {{old('filiere')}} "name="filiere" placeholder="filiere" required>
+                                    <label>Filière (optionnel) :</label>
+                                    <input type="text"  class="form-control input-default @error('filiere') is-invalid @enderror" value=" {{old('filiere')}} "name="filiere" placeholder="filiere" >
                                     @error('filiere')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -233,12 +233,12 @@
                             
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>Acceptez-vous d'être filmé ou photographié?:</label>
+                                    <label>Visibilité du formateur :</label>
                                    
                                          
                                                 <div class="form-group mb-0">
-                                                    <label class="radio-inline mr-3"><input type="radio" name="optradio"> Oui</label>
-                                                    <label class="radio-inline mr-3"><input type="radio" name="optradio"> Non</label>
+                                                    <label class="radio-inline mr-3"><input type="radio" name="check" value="oui"> Oui</label>
+                                                    <label class="radio-inline mr-3"><input type="radio" name="check" value="non"> Non</label>
                                                    
                                                 </div>
                                            

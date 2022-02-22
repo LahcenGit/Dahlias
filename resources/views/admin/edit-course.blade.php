@@ -220,7 +220,7 @@
 
                                 <div class="form-group col-md-6">
                                     <label>Filière :</label>
-                                    <input type="text"  class="form-control input-default @error('filiere') is-invalid @enderror" value=" {{$course->filiere}} "name="filiere"  required>
+                                    <input type="text"  class="form-control input-default @error('filiere') is-invalid @enderror" value=" {{$course->filiere}} "name="filiere" >
                                     @error('filiere')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -236,8 +236,8 @@
                                    
                                          
                                                 <div class="form-group mb-0">
-                                                    <label class="radio-inline mr-3"><input type="radio" name="check" @if($course->check == 'oui') checked @endif> Oui</label>
-                                                    <label class="radio-inline mr-3"><input type="radio" name="check" @if($course->check == 'non') checked @endif> Non</label>
+                                                    <label class="radio-inline mr-3"><input type="radio" name="check" value="oui" @if($course->check == 'oui') checked @endif> Oui</label>
+                                                    <label class="radio-inline mr-3"><input type="radio" name="check" value="non" @if($course->check == 'non') checked @endif> Non</label>
                                                    
                                                 </div>
                                            
