@@ -223,50 +223,40 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Visibilité du formateur :</label>
-                                   
-                                         
-                                                <div class="form-group mb-0">
-                                                    <label class="radio-inline mr-3"><input type="radio" name="check" value="oui" @if($course->check == 'oui') checked @endif> Oui</label>
-                                                    <label class="radio-inline mr-3"><input type="radio" name="check" value="non" @if($course->check == 'non') checked @endif> Non</label>
-                                                   
-                                                </div>
-                                           
+                                        <div class="form-group mb-0">
+                                            <label class="radio-inline mr-3"><input type="radio" name="check" value="oui" @if($course->check == 'oui') checked @endif> Oui</label>
+                                            <label class="radio-inline mr-3"><input type="radio" name="check" value="non" @if($course->check == 'non') checked @endif> Non</label>
+                                        </div>
                                 </div>
-                                
+
                                 <div class="form-group col-md-6">
-                                    <label>Photos * :</label>
-                                  
-                                    <div class="basic-form custom_file_input">
-                                        <div class="input-group mb-3">
-                                                <input type="file" multiple name="photos[]" accept="image/*" required>
-                                                <input class="button-primary" type="submit" value="Submit">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>Prix * :</label>
+                                            <input type="text"  class="form-control input-default @error('price') is-invalid @enderror" value="{{$course->price}}" name="price"  placeholder="0" required >
+                                            @error('price')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                            @enderror
+        
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>Ancien Prix * :</label>
+                                            <input type="text"  class="form-control input-default @error('old_price') is-invalid @enderror" value="{{$course->old_price}}" name="old_price"  placeholder="0" required >
+                                            @error('old_price')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                            @enderror
+        
                                         </div>
                                     </div>
                                 </div>
+                              
                             </div>
 
-                            <div class="form-row">
-                                <div class="form-group col-md-3">
-                                    <label>Prix * :</label>
-                                    <input type="text"  class="form-control input-default @error('price') is-invalid @enderror" value="{{$course->price}}" name="price"  placeholder="0" required >
-                                    @error('price')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                    @enderror
-
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label>Ancien Prix * :</label>
-                                    <input type="text"  class="form-control input-default @error('old_price') is-invalid @enderror" value="{{$course->old_price}}" name="old_price"  placeholder="0" required >
-                                    @error('old_price')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                    @enderror
-
-                                </div>
-                            </div>
+                       
                                 
                         </div>
                     </div>
@@ -274,23 +264,47 @@
                 </div>
                 
             </div>
-           
-            <div class="col-xl-12 col-lg-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">
-                             Description* : </h4>
-                    </div>
-                    <div class="card-body">
-                        <textarea class="summernote" class="form-control input-default @error('description') is-invalid @enderror"  name="description" id="">{{$course->description}}</textarea>
-                        @error('description')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                            @enderror
+
+            <div class="col-xl-12 col-lg-12 row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                 Description* : </h4>
+                        </div>
+                        <div class="card-body">
+                            <textarea class="summernote" class="form-control input-default @error('description') is-invalid @enderror"  name="description" id="">{{$course->description}}</textarea>
+                            @error('description')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
+                        </div>
                     </div>
                 </div>
-        </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">
+                                 Photos* : </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="basic-form custom_file_input">
+                                <div class="input-group mb-3">
+                                        <input type="file" multiple name="photos[]" accept="image/*" required>
+                                </div>
+                            </div>
+                            @foreach ($course->images as $image)
+                            <img src="{{asset('storage/'.$image->lien)}}" width="243px " height="126px">
+                            @endforeach
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+          
             
 
             <div class="col-xl-12 col-lg-12">
