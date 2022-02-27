@@ -305,7 +305,7 @@
                             @if($course->old_price == Null)
                             <span class="old-price-detail">750DA</span>
                             @else
-                            <span class="price">{{$course->old_price}} DA</span>
+                            <span class="old-price-detail">{{$course->old_price}} DA</span>
                             @endif
                         </div>
                         @endif
