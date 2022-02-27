@@ -433,6 +433,40 @@
 
 
 
+<script>
+	
+    $(document).ready(function(){
+        $('input[type=file]').drop_uploader({
+            uploader_text: 'Drop file to upload, or',
+            browse_text: 'Browse',
+            only_one_error_text: 'Only one file allowed',
+            not_allowed_error_text: 'File type is not allowed',
+            big_file_before_error_text: 'Files, bigger than',
+            big_file_after_error_text: 'is not allowed',
+            allowed_before_error_text: 'Only',
+            allowed_after_error_text: 'files allowed',
+            browse_css_class: 'button button-primary',
+            browse_css_selector: 'file_browse',
+            uploader_icon: '',
+            file_icon: '',
+            progress_color: '#4a90e2',
+            time_show_errors: 5,
+            layout: 'thumbnails',
+            method: 'normal',
+            chunk_size: 1000000, 
+            concurrent_uploads: 5, 
+            show_percentage: true, 
+            existing_files: false,
+            existing_files_removable: true,
+            send_existing_files: false,
+            url: 'ajax_upload.php',
+            delete_url: 'ajax_delete.php',
+        });
+    });
+    </script>
+
+
+
 
 
 
