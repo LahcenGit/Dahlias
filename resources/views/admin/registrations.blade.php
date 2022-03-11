@@ -42,6 +42,7 @@
                                         <th>Age</th>
                                         <th>Date</th>
                                         <th>Accepter</th>
+                                        <th>Remarque</th>
                                         <th>Statut</th>
                                         <th>Action</th>
                                     </tr>
@@ -56,6 +57,7 @@
                                         <td><strong>{{$registration->age}} ans </strong></td>
                                         <td><strong>{{$registration->created_at}} </strong></td>
                                         <td><strong>{{$registration->accept}} </strong></td>
+                                        <td><strong>{{$registration->remarque}} </strong></td>
                                         @if ($registration->status == 1 )
                                         <td><span class="badge badge-warning">En Attente</span></td>
                                         @elseif($registration->status == 2)

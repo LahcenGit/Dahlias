@@ -19,7 +19,7 @@ class AdminController extends Controller
         $instructors = Instructor::count();
         $allRegistrations = Registration::count();
         $registrationsWaiting = Registration::where('status','1')->count();
-        $registrations = Registration::limit('5')->get();
+        $registrations = Registration::limit('5')->orderBy('created_at','desc')->get();
         $registrationValid = Registration::where('status','2')->count();
         $registrationReimburse = Registration::where('status','3')->count();
         $registrationCancel = Registration::where('status','4')->count();

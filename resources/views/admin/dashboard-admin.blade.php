@@ -131,6 +131,7 @@
                                                 <th><strong>Name</strong></th>
                                                 <th><strong>Téléphone</strong></th>
                                                 <th><strong>Accepter</strong></th>
+                                                <th><strong>Remarque</strong></th>
                                                 <th><strong>Statut</strong></th>
 
                                                 
@@ -146,6 +147,7 @@
                                                 <td><strong>{{$registration->phone}} </strong></td>
                                                 
                                                 <td><strong>{{$registration->accept}} </strong></td>
+                                                <td><strong>{{$registration->remarque}} </strong></td>
                                                 @if ($registration->status == 1 )
                                                 <td><span class="badge badge-warning">En Attente</span></td>
                                                 @elseif($registration->status == 2)
