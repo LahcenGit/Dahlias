@@ -254,7 +254,7 @@
                     @foreach ($categories as $categorie)
                         @if( $categorie->parent_id == NULL)
                             <li>
-                                <a href="{{asset('category-courses/'.$categorie->id)}}" class="cat-text">{{$categorie->name}}</a>
+                                <a href="#" class="cat-text">{{$categorie->name}}</a>
                             
                             @if( count($categorie->childCategories) != 0)
                             <ul class="sub-menu">
