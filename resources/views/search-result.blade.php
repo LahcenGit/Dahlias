@@ -13,9 +13,9 @@
         <div class="page-banner-content">
             <ul class="breadcrumb">
                 <li><a href="#">Accueil</a></li>
-                <li class="active">catégorie</li>
+                <li class="active">Recherche</li>
             </ul>
-            <h2 class="title">{{$category->name}}</h2>
+            <h2 class="title">Resultat pour : "{{$keyword}}"</h2>
         </div>
         <!-- Page Banner End -->
     </div>
@@ -57,7 +57,7 @@
             </div>
 
             <ul class="category-menu">
-                <li><a class="active" href="#">Tous les cours</a></li>
+                <li><a class="active" href="#">"4" Cours trouvé(s) ! </a></li>
             </ul>
         </div>
         <!-- Courses Category Wrapper End  -->

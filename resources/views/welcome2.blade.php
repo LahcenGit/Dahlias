@@ -181,7 +181,7 @@
         <div class="call-to-action-wrapper">
 
             <img class="cat-shape-01 animation-round" src="{{asset('front/assets/images/shape/shape-12.png')}}" alt="Shape">
-            <img class="cat-shape-02" src="{{asset('front/assets/images/shape/shape-13.svg')}}" alt="Shape">
+            <img class="cat-shape-02" style="left: 45% ! important" src="{{asset('front/assets/images/shape/shape-13.svg')}}" alt="Shape">
             <img class="cat-shape-03 animation-round" src="{{asset('front/assets/images/shape/shape-12.png')}}" alt="Shape">
 
             <div class="row align-items-center">
@@ -189,16 +189,14 @@
 
                     <!-- Section Title Start -->
                     <div class="section-title shape-02">
-                        <h5 class="sub-title">Devenir formateur</h5>
-                        <h2 class="main-title">Vous pouvez rejoindre Dahlias institute en tant que<span> formateur</span></h2>
+                        <h5 class="sub-title">Vidéo de présentation </h5>
+                        <h2 class="main-title">Présentation de l'Institut<span> DI</span></h2>
                     </div>
                     <!-- Section Title End -->
 
                 </div>
-                <div class="col-md-6">
-                    <div class="call-to-action-btn">
-                        <a class="btn btn-primary btn-hover-dark" href="{{asset('/contact')}}">Contactez-nous</a>
-                    </div>
+                <div class="col-md-6 mt-3">
+                    <iframe width="100%" height="258" src="https://www.youtube.com/embed/kTiERGiY9QA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -207,6 +205,7 @@
     </div>
 </div>
 <!-- Call to Action End -->
+
 
 <!-- How It Work End -->
 <div class="section section-padding mt-n1">
@@ -281,6 +280,45 @@
     </div>
 </div>
 <!-- How It Work End -->
+
+<!-- Call to Action Start -->
+<div class="section mb-4">
+    <div class="container">
+
+        <!-- Call to Action Wrapper Start -->
+        <div class="call-to-action-wrapper">
+
+            <img class="cat-shape-01 animation-round" src="{{asset('front/assets/images/shape/shape-12.png')}}" alt="Shape">
+            <img class="cat-shape-02" src="{{asset('front/assets/images/shape/shape-13.svg')}}" alt="Shape">
+            <img class="cat-shape-03 animation-round" src="{{asset('front/assets/images/shape/shape-12.png')}}" alt="Shape">
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+
+                    <!-- Section Title Start -->
+                    <div class="section-title shape-02">
+                        <h5 class="sub-title">Devenir formateur</h5>
+                        <h2 class="main-title">Vous pouvez rejoindre Dahlias institute en tant que<span> formateur</span></h2>
+                    </div>
+                    <!-- Section Title End -->
+
+                </div>
+                <div class="col-md-6">
+                    <div class="call-to-action-btn">
+                        <a class="btn btn-primary btn-hover-dark" href="{{asset('/contact')}}">Contactez-nous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call to Action Wrapper End -->
+
+    </div>
+</div>
+<!-- Call to Action End -->
+
+
+
+
 
 <!-- Download App Start -->
 <div class="section section-padding download-section">
