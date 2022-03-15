@@ -85,6 +85,10 @@
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->
                                 <div class="single-form">
+                                    <label>Email* :</label>
+                                    <input type="email" placeholder="mohammed@gmail.com " name="email" required>
+                                </div>
+                                <div class="single-form">
                                     <label>Téléphone* :</label>
                                     <input type="text" placeholder="+213 xx xx xx xx xx " name="phone" required>
                                 </div>
@@ -93,6 +97,10 @@
                                 <div class="single-form">
                                     <label>Age* :</label>
                                     <input type="text" placeholder="Age" name="age" required>
+                                </div>
+                                <div class="single-form">
+                                    <label>Filière (Si vous êtes universitaire ) :</label>
+                                    <input type="text" placeholder="MI,ST,SM..." name="filiere" required>
                                 </div>
                                 <div class="single-form">
                                     <label>Acceptez-vous d'être filmé ou photographié?:</label>
