@@ -108,9 +108,10 @@
 
             <!-- Courses Search Start -->
             <div class="courses-search">
-                <form action="#">
-                    <input type="text" placeholder="Chercher une formation">
-                    <button><i class="flaticon-magnifying-glass"></i></button>
+                <form action="{{asset('search')}}" method="GET">
+                    @csrf
+                    <input type="text" name="keyword" placeholder="Chercher une formation">
+                    <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
                 </form>
             </div>
             <!-- Courses Search End -->

@@ -47,17 +47,19 @@
 <div class="section section-padding">
     <div class="container">
 
-        <h6 class="mb-4" style="font-weight: 400">{{$category->description}}</h6>
 
         <!-- Courses Category Wrapper Start  -->
         <div class="courses-category-wrapper">
-            <div class="courses-search search-2">
-                <input type="text" placeholder="Cherhcer ici">
-                <button><i class="icofont-search"></i></button>
+            <div class="courses-search">
+                <form action="{{asset('search')}}" method="GET">
+                    @csrf
+                    <input type="text" name="keyword" placeholder="Essayer de nouveau">
+                    <button type="submit"><i class="flaticon-magnifying-glass"></i></button>
+                </form>
             </div>
 
             <ul class="category-menu">
-                <li><a class="active" href="#">"4" Cours trouvé(s) ! </a></li>
+                <li><a class="active" style="width: auto!important" href="#">'{{$courses->count()}}' Cour(s) trouvé(s)</a></li>
             </ul>
         </div>
         <!-- Courses Category Wrapper End  -->

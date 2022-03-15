@@ -44,6 +44,9 @@ Route::resource('/contact',ContactController::class);
 Route::get('/category-courses/{id}',[App\Http\Controllers\CourseController::class,'categoryCourses']);
 
 
+//search 
+Route::get('/search',[App\Http\Controllers\SearchController::class,'globalSearch']);
+
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

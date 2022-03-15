@@ -17,6 +17,11 @@
                 </ol>
             </div>
         </div>
+
+        <form action="{{url('dashboard-admin/courses/'.$course->id)}}" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_method" value="PUT">
+        @csrf
+
         <div class="row d-flex justify-content-center">
             <div class="col-xl-12 col-lg-12">
                 <div class="card">
@@ -26,11 +31,7 @@
                     <div class="card-body">
                         <div class="basic-form">
 
-                            <form action="{{url('dashboard-admin/courses/'.$course->id)}}" method="POST" enctype="multipart/form-data">
-                                <input type="hidden" name="_method" value="PUT">
-                                @csrf
-
-                                @csrf
+                           
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>Name* :</label>
@@ -292,7 +293,7 @@
                         <div class="card-body">
                             <div class="basic-form custom_file_input">
                                 <div class="input-group mb-3">
-                                        <input type="file" multiple name="photos[]" accept="image/*" required>
+                                    <input type="file" multiple name="photos[]" accept="image/*" data-maxfilesize="1000000" >
                                 </div>
                             </div>
                             @foreach ($course->images as $image)
@@ -314,9 +315,15 @@
                    </div>
                 </div>
             </div>
-             </form>
+        </form>
         </div>
     </div>
 </div>   
+
+
+<form action="" method="post">
+
+
+</form>
     
 @endsection
