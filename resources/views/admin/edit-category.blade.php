@@ -49,7 +49,7 @@
                                       
                                             @foreach($categories as $cat)
                                            
-                                            <option value="{{$category->id}}" @if ( $cat->id == $category->parent_id  ) selected @endif>{{$cat->name}}</option>
+                                            <option value="{{$cat->id}}" @if ( $cat->id == $category->parent_id  ) selected @endif>{{$cat->name}}</option>
                                             @foreach($cat->childCategories as $sub)
                                            
                                             <option  value="{{$sub->id}}" @if ( $sub->id ==  $category->parent_id  ) selected @endif> &nbsp &nbsp{{$sub->name}}</option>
