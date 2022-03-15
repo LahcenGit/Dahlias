@@ -18,6 +18,8 @@ class RegistrationController extends Controller
          $registration = new Registration();
          $registration->course_id = $request->course;
          $registration->name = $request->name;
+         $registration->email = $request->email;
+         $registration->filiere = $request->filiere;
          $registration->age = $request->age;
          $registration->remarque = $request->remarque;
          $registration->phone = $request->phone;
