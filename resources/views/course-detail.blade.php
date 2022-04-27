@@ -299,7 +299,10 @@
                         </div>
                         @else
                         <div class="info-price">
-                            <span class="price">{{ $course->price }}DA <span><span class="price-detail">/2h</span>
+                            <span class="price">{{ $course->price }}DA <span>
+                                @if($course->id != 87)
+                                <span class="price-detail">/2h</span>
+                                @endif
                         </div>
                         <div class="info-price">
                             @if($course->old_price == Null)
