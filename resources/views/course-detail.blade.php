@@ -358,8 +358,16 @@
                                     @endif
                                 </li>
                                     
-                                 </li>
+                                 
                                 @endif
+                                @if($course->start_date != Null && $course->end_date != NULL)
+                                <li><i class="icofont-calendar"></i> <strong>Date Début</strong>
+                                   <span>{{$course->start_date}}</span>
+                                </li>
+                                <li><i class="icofont-calendar"></i> <strong>Date Fin</strong>
+                                    <span>{{$course->end_date}}</span>
+                                 </li>
+                               @endif
                              </ul>
                         </div>
                         <div class="info-btn">
