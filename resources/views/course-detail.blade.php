@@ -299,7 +299,10 @@
                         </div>
                         @else
                         <div class="info-price">
-                            <span class="price">{{ $course->price }}DA <span><span class="price-detail">/2h</span>
+                            <span class="price">{{ $course->price }}DA <span>
+                                @if($course->id != 87)
+                                <span class="price-detail">/2h</span>
+                                @endif
                         </div>
                         <div class="info-price">
                             @if($course->old_price == Null)
@@ -355,8 +358,16 @@
                                     @endif
                                 </li>
                                     
-                                 </li>
+                                 
                                 @endif
+                                @if($course->start_date != Null && $course->end_date != NULL)
+                                <li><i class="icofont-calendar"></i> <strong>Date Début</strong>
+                                   <span>{{$course->start_date}}</span>
+                                </li>
+                                <li><i class="icofont-calendar"></i> <strong>Date Fin</strong>
+                                    <span>{{$course->end_date}}</span>
+                                 </li>
+                               @endif
                              </ul>
                         </div>
                         <div class="info-btn">

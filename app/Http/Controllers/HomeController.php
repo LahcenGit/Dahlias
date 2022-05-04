@@ -23,7 +23,7 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $courses = Course::all();
+        $courses = Course::orderBy('created_at','desc')->get();
         return view('welcome2',compact('categories','courses'));
     }
 }
