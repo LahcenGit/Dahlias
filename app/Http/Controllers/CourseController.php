@@ -50,6 +50,7 @@ class CourseController extends Controller
         $course->check = $request->check;
         $course->filiere = $request->filiere;
         $course->old_price = $request->old_price;
+        $course->slug = $request->slug;
         $course->save();
 
 
@@ -116,6 +117,7 @@ class CourseController extends Controller
         $course->check = $request->check;
         $course->filiere = $request->filiere;
         $course->old_price = $request->old_price;
+        $course->slug = $request->slug;
         $course->save();
        
         if($request->instructors){

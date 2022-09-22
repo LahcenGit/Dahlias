@@ -300,14 +300,12 @@
                         @else
                         <div class="info-price">
                             <span class="price">{{ $course->price }}DA <span>
-                                @if($course->categorie_id != 228)
-                                <span class="price-detail">/2h</span>
-                                @endif
+                               
+                                <span class="price-detail">@if($course->slug)/{{$course->slug}}@endif</span>
+                               
                         </div>
                         <div class="info-price">
-                            @if($course->old_price == Null)
-                            <span class="old-price-detail">750DA</span>
-                            @else
+                            @if($course->old_price)
                             <span class="old-price-detail">{{$course->old_price}} DA</span>
                             @endif
                         </div>

@@ -53,7 +53,7 @@
                                         <td><strong>{{$course->duration}} </strong></td>
                                         
                                         <td>
-                                            @if($course->level == 'Debutant')
+                                            @if($course->level == 'Débutant')
                                             <strong>
                                             Débutant 
                                             </strong>
@@ -69,7 +69,7 @@
                                             </td>
                                         <td><strong>{{$course->price}} DA </strong></td>
                                         <td>
-                                            @if($course->status == 'lancee')
+                                            @if($course->status == 'Lancee')
                                             <strong>
                                             Lancée
                                             </strong>

@@ -76,9 +76,9 @@
                                 @csrf
                                 <!-- Single Form Start -->
                                 <div class="single-form">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
+                                    <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus placeholder="username">
 
-                                @error('email')
+                                @error('username')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -94,6 +94,15 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                </div>
+                                <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox ml-1">
+                                            <input class="form-check-input" type="checkbox" name="remember_me" value="1" id="basic_checkbox_1">
+                                            <label class="custom-control-label" for="basic_checkbox_1">Se souvenir de moi</label>
+                                        </div>
+                                    </div>
+                                            
                                 </div>
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->

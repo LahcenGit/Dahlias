@@ -20,6 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('slug')->nullable();
             $table->string('flug')->nullable();
+            
             $table->softDeletes($column = 'deleted_at', $precision = 0);
             
             $table->timestamps();

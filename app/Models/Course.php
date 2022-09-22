@@ -43,6 +43,10 @@ class Course extends Model
         return $this->belongsTo(Category::class,'categorie_id');
     }
 
+    public function groups(){
+        return $this->hasMany(Group::class);
+
+    }
    public function getInstructor(){
        $instructor = null;
        $instructorcourse = Courseinstructor::where('course_id',$this->id)->get();

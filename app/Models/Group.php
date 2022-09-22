@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Courseinstructor extends Model
+class Group extends Model
 {
     use HasFactory;
 
@@ -14,15 +13,19 @@ class Courseinstructor extends Model
     {
         return $this->belongsTo(Course::class);
     }
-
+    
     public function instructor()
     {
-        return $this->belongsTo(Instructor::class ,'instructor_id');
+        return $this->belongsTo(Instructor::class);
     }
     public function returninstructor(){
         $instructor = null;
-        $instructor = Instructor::where('id',$this->instructor_id)->first();
-      
-        return $instructor->name;
+        $instructor = Instructor::find($this->instructor_id);
+        return $instructor;
+    }
+     
+    public function payment()
+    {
+        return $this->hasMany(Payment::class);
     }
 }

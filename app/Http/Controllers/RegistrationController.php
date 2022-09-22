@@ -45,6 +45,26 @@ class RegistrationController extends Controller
         return view('register-course',compact('course','categories'));
     }
 
+    public function modalRegistration(){
+        $courses = Course::all();
+        return view('admin.modal-registration',compact('courses'));
+    }
+    public function addRegistration(Request $request){
+
+        $registration = new Registration();
+        $registration->course_id = $request->course;
+        $registration->name = $request->name;
+        $registration->email = $request->email;
+        $registration->age = $request->age;
+        $registration->remarque = $request->remarque;
+        $registration->phone = $request->telephone;
+        $registration->status = 1;
+        $registration->save();
+
+        
+        return $registration;
+   }
+
 
   
 }
