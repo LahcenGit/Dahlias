@@ -21,6 +21,7 @@ class CreateFinalregistrationsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }

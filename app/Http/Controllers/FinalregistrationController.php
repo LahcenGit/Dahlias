@@ -30,6 +30,30 @@ class FinalregistrationController extends Controller
 
         return redirect('dashboard-admin/final-registrations');
     }
+
+    public function edit($id){
+        $registration = Finalregistration::find($id);
+        $courses = Course::all();
+        $students = User::where('type','student')->get();
+        $editions = Group::where('course_id',$registration->course_id)->get();
+      
+        return view('admin.edit-final-registration',compact('registration','courses','students','editions'));
+    }
+
+    public function update(Request $request , $id){
+        $registration = Finalregistration::find($id);
+        $registration->group_id = $request->edition;
+        $registration->user_id = $request->student;
+        $registration->course_id = $request->course;
+        $registration->save();
+        return redirect('dashboard-admin/final-registrations');
+    }
+
+    public function destroy($id){
+        $registration = Finalregistration::find($id);
+        $registration->delete();
+        return redirect('dashboard-admin/final-registrations');
+    }
     
     public function addFinalRegistration($id){
         $course = Course::find($id);

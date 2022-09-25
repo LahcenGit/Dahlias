@@ -244,7 +244,7 @@
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label>Ancien Prix * :</label>
-                                            <input type="text"  class="form-control input-default @error('old_price') is-invalid @enderror" value="{{$course->old_price}}" name="old_price"  placeholder="0" required >
+                                            <input type="text"  class="form-control input-default @error('old_price') is-invalid @enderror" value="{{$course->old_price}}" name="old_price"  placeholder="0" >
                                             @error('old_price')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

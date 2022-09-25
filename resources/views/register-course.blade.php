@@ -90,7 +90,8 @@
                                 </div>
                                 <div class="single-form">
                                     <label>Téléphone* :</label>
-                                    <input type="text" placeholder="+213 xx xx xx xx xx " name="phone" required>
+                                    <input type="text" placeholder="+213 xx xx xx xx xx " name="phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
+                                   
                                 </div>
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->

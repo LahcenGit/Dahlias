@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Models\Category;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -39,14 +40,17 @@ class Handler extends ExceptionHandler
         });
     }
 
-    public function render($request, Throwable $e)
-    {
-        if($this->isHttpException($e)){
-            $code = $e->getStatusCode();
-            if($code == '404'){
-                return response()->view('404');
-            }
+  
+
+
+    public function render($request, Throwable $exception)
+{
+        $response = parent::render($request, $exception);
+        $categories = Category::all();
+        if ($response->status() === 404) {
+            return response()->view('404',compact('categories'));
         }
-        return parent::render($request , $e);
-    }
+
+    return $response;
+}
 }

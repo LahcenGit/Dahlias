@@ -28,6 +28,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/welcome', function () {
     return view('welcome2');
 });
@@ -64,6 +65,8 @@ Route::get('/get-edition-course/{id}/{id_student}', [App\Http\Controllers\Paymen
 //search 
 Route::get('/search',[App\Http\Controllers\SearchController::class,'globalSearch']);
 
-Auth::routes();
-
+Auth::routes([
+    'register' => false,
+    
+]);
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
