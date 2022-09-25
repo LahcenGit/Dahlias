@@ -32,6 +32,32 @@ class PaymentController extends Controller
         return redirect('dashboard-admin/payments');
     }
 
+    public function edit($id){
+        $payment = Payment::find($id);
+        $courses = Course::all();
+        $edition = Group::where('id',$payment->group_id)->first();
+        $course = Course::where('id',$edition->course_id)->first();
+        $editions = Group::where('course_id',$course->id)->get();
+        $students = Finalregistration::where('group_id',$edition->id)->with('student')->get();
+        return view('admin.edit-payment',compact('payment','courses','editions','students','course'));
+    }
+
+    public function update(Request $request , $id){
+        $payment = Payment::find($id);
+        $payment->user_id = $request->student;
+        $payment->group_id = $request->edition;
+        $payment->amount = $request->amount;
+        $payment->n_bon = $request->n_bon;
+        $payment->save();
+        return redirect('dashboard-admin/payments');
+    }
+
+    public function destroy($id){
+        $payment = Payment::find($id);
+        $payment->delete();
+        return redirect('dashboard-admin/payments'); 
+    }
+
     public function getPrice($id){
         $course = Course::find($id);
         return $course;

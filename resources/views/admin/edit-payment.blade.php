@@ -7,13 +7,13 @@
             <div class="col-sm-6 p-md-0">
                 <div class="welcome-text">
                     <h4>Bonjour, bienvenue !</h4>
-                    <span>Ajouter Versement</span>
+                    <span>Modifier Versement</span>
                 </div>
             </div>
             <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Ajouter Versement</a></li>
+                    <li class="breadcrumb-item active"><a href="javascript:void(0)">Modifier Versement</a></li>
                 </ol>
             </div>
         </div>
@@ -21,35 +21,39 @@
             <div class="col-xl-10 col-lg-10">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Ajouter versement</h4>
+                        <h4 class="card-title">Modifier versement</h4>
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
 
-                            <form action="{{url('/dashboard-admin/payments')}}" method="POST" enctype="multipart/form-data">
-
+                            <form action="{{url('/dashboard-admin/payments/'.$payment->id)}}" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="_method" value="PUT">
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                             <label>Formation* :</label>
                                             <select type="text"  class="form-control invalid"  class="selectpicker"  data-live-search="true" name="course" id="select-course">
                                             <option>Nothing Selected</option>
-                                            @foreach($courses as $course)
-                                            <option value="{{$course->id}}">{{$course->name}}</option>
+                                            @foreach($courses as $c)
+                                            <option value="{{$c->id}}" @if($course->id == $c->id )selected @endif>{{$c->name}}</option>
                                             @endforeach
                                         </select>
                                         </div>
                                         <div class="form-group col-md-4">
                                             <label>Edition* :</label>
                                             <select type="text"  class="form-control invalid"  class="selectpicker"  data-live-search="true" name="edition" id="select-edition" required>
-                                            <option value="0">Nothing selected</option>
+                                                @foreach($editions as $edition)
+                                                <option value="{{$edition->id}}" @if($edition->id == $payment->group_id) selected @endif>{{$edition->group}}</option>
+                                                @endforeach
                                         </select>
                                             
                                        </div>
                                        <div class="form-group col-md-4">
                                         <label>Etudiant* :</label>
                                         <select type="text"  class="form-control invalid"  class="selectpicker" id="select-student"  data-live-search="true" name="student"  required>
-                                        <option value="0">Nothing selected</option>
+                                                @foreach($students as $student)
+                                                <option value="{{$student->student->id}}">{{$student->student->name}}</option>
+                                                @endforeach
                                         </select>
                                     </div>
                                 </div>         
@@ -58,12 +62,12 @@
                                 <div class="form-row">
                                        <div class="form-group col-md-4">
                                             <label>Montant:</label>
-                                            <input type="text"  class="form-control input-default" value="" id="amount" name="amount" placeholder="0.00" required >
+                                            <input type="text"  class="form-control input-default" value="{{$payment->amount}}" id="amount" name="amount" placeholder="0.00" required>
                                             
                                        </div>
                                        <div class="form-group col-md-4">
                                             <label>Le reste:</label>
-                                            <input type="text"  class="form-control input-default the-rest"   placeholder="0.00"  >
+                                            <input type="text"  class="form-control input-default the-rest"   placeholder="0.00" required >
                                             
                                        </div>
 
@@ -75,11 +79,11 @@
                                 <div class="form-row">
                                        <div class="form-group col-md-4">
                                             <label>N° de bon:</label>
-                                            <input type="text"  class="form-control input-default" value="" name="n_bon" placeholder="0" required >
+                                            <input type="text"  class="form-control input-default" value="{{$payment->N_bon}}" name="n_bon" placeholder="0" required >
                                             
                                        </div>
                                 </div>                           
-                                <button type="submit" class="btn btn-primary mt-3 text-center" >Ajouter</button>
+                                <button type="submit" class="btn btn-primary mt-3 text-center" >Enregistrer</button>
                             </form>
                         </div>
                     </div>
