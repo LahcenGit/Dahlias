@@ -1,13 +1,5 @@
 @extends('layouts.dashboard-admin')
-
-<style>
-.fontawesome {
-    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", sans-serif;
-    font-weight: 900;
-  }
-</style>
 @section('content')
-
 <div class="content-body">
     <div class="container-fluid">
         <div class="row page-titles mx-0">

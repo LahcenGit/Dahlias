@@ -19,4 +19,10 @@ class Courseinstructor extends Model
     {
         return $this->belongsTo(Instructor::class ,'instructor_id');
     }
+    public function returninstructor(){
+        $instructor = null;
+        $instructor = Instructor::where('id',$this->instructor_id)->first();
+      
+        return $instructor->name;
+    }
 }

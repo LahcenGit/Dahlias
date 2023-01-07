@@ -300,14 +300,12 @@
                         @else
                         <div class="info-price">
                             <span class="price">{{ $course->price }}DA <span>
-                                @if($course->id != 87)
-                                <span class="price-detail">/2h</span>
-                                @endif
+                               
+                                <span class="price-detail">@if($course->slug)/{{$course->slug}}@endif</span>
+                               
                         </div>
                         <div class="info-price">
-                            @if($course->old_price == Null)
-                            <span class="old-price-detail">750DA</span>
-                            @else
+                            @if($course->old_price)
                             <span class="old-price-detail">{{$course->old_price}} DA</span>
                             @endif
                         </div>
@@ -371,7 +369,7 @@
                              </ul>
                         </div>
                         <div class="info-btn">
-                            <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary btn-hover-dark">S'inscrire</a>
+                            <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary btn-hover-dark">Je m'inscris</a>
                         </div>
                     </div>
                     <!-- Sidebar Widget Information End -->

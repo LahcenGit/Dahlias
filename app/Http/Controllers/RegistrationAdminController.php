@@ -29,6 +29,7 @@ class RegistrationAdminController extends Controller
           $registration->phone = $request->phone;
           $registration->age = $request->age;
           $registration->status = $request->status;
+          $registration->remark = $request->remark;
           $registration->save();
           
           return redirect('dashboard-admin/registrations');

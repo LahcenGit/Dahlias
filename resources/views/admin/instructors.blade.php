@@ -27,7 +27,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Table des formateurs</h4>
-                        <a href="{{url('/dashboard-admin/instructors/create')}}" type="button" >Ajouter</a>
+                        <a href="{{url('/dashboard-admin/instructors/create')}}" type="button" class="btn btn-primary mt-3">Ajouter</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

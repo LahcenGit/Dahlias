@@ -16,6 +16,10 @@ use App\Models\Language;
 class CourseController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
   
     public function create(){
 
@@ -50,6 +54,8 @@ class CourseController extends Controller
         $course->check = $request->check;
         $course->filiere = $request->filiere;
         $course->old_price = $request->old_price;
+        $course->slug = $request->slug;
+        $course->flug = $request->nbr_session;
         $course->save();
 
 
@@ -116,6 +122,8 @@ class CourseController extends Controller
         $course->check = $request->check;
         $course->filiere = $request->filiere;
         $course->old_price = $request->old_price;
+        $course->slug = $request->slug;
+        $course->flug = $request->nbr_session;
         $course->save();
        
         if($request->instructors){
@@ -224,5 +232,9 @@ class CourseController extends Controller
 
      }
 
+    public function getSession($id){
+        $course = Course::find($id);
+        return $course->flug;
+    }
     
 }
