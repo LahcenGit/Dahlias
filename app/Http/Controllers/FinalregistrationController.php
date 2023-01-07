@@ -5,14 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Finalregistration;
 use App\Models\Group;
+use App\Models\Registration;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class FinalregistrationController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
-        $registrations = Finalregistration::all();
+        $registrations = Finalregistration::all()->reverse();
         return view('admin.final-registrations',compact('registrations'));
     }
     public function create(){
@@ -56,24 +61,54 @@ class FinalregistrationController extends Controller
     }
     
     public function addFinalRegistration($id){
-        $course = Course::find($id);
-        $editions = Group::where('course_id',$id)->get();
+        $registration = Registration::find($id);
+        $editions = Group::where('course_id',$registration->course_id)->get();
         $students = User::where('type',"student")->get();
         
-        return view('admin.modal-final-registration',compact('course','editions','students'));
+        return view('admin.modal-final-registration',compact('registration','editions','students'));
     }
 
     public function storeFinlRegistration(Request $request){
-        $registration = new Finalregistration();
-        $registration->group_id = $request->edition;
-        $registration->user_id = $request->student;
-        $course = Group::find($request->edition);
-        $registration->course_id = $course->course_id;
-        $registration->save();
+       
+        if($request->email == null || $request->phone == null){
+            $registration = new Finalregistration();
+            $registration->group_id = $request->edition;
+            $registration->user_id = $request->student;
+            $course = Group::find($request->edition);
+            $registration->course_id = $course->course_id;
+            $registration->save();
+        }
+        else{
+            $user = User::where('email',$request->email)->orWhere('phone',$request->phone)->first();
+            if($user){
+                return false;
+            }
+            else{
+                $user = new User();
+                $user->name = $request->name;
+                $user->email = $request->email;
+                $user->date_birth = $request->date_birth;
+                $user->place_birth = $request->place_birth;
+                $user->phone = $request->phone;
+                $user->type = 'student'; 
+                $user->save();
+                $registration = new Finalregistration();
+                $registration->group_id = $request->edition;
+                $registration->user_id = $user->id;
+                $course = Group::find($request->edition);
+                $registration->course_id = $course->course_id;
+                $registration->save();
+            }
+        }
+        return true;
+        
     }
 
     public function getEdition($id){
         $editions = Group::where('course_id',$id)->get();
         return $editions;
     }
+
+    
+
 }

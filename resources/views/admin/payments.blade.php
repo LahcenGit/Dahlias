@@ -27,7 +27,8 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Table des versements</h4>
-                        <a href="{{url('/dashboard-admin/payments/create')}}" type="button" class="btn btn-primary mt-3">Ajouter</a>
+                        <a href="{{url('/dashboard-admin/report-payment')}}" type="button" class="btn btn-primary ">Rapport versement</a>
+                       
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -48,8 +49,8 @@
                                     @foreach($payments as $payment)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$payment->student->name}}</td>
-                                        <td>{{$payment->student->phone}}</td>
+                                        <td>{{$payment->user->name}}</td>
+                                        <td>{{$payment->user->phone}}</td>
                                         <td><strong>{{$payment->returnCourse()->name}}</strong></td>
                                         <td><strong>{{$payment->group->group}}</strong></td>
                                         <td><strong>{{$payment->amount}} </strong></td>

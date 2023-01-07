@@ -43,6 +43,7 @@
                                         <th>Accepter</th>
                                         <th>Remarque</th>
                                         <th>Statut</th>
+                                        <th>Nombre d'appels et sms</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -67,19 +68,31 @@
                                         @endif
                                         @if ($registration->status == 1 )
                                         <td><span class="badge badge-warning">En Attente</span></td>
+                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
                                         @elseif($registration->status == 2)
-                                        <td><span class="badge badge-success">Validé</span></td>
+                                        <td><span class="badge badge-light">Va passer</span></td>
+                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
                                         @elseif($registration->status == 3)
-                                        <td><span class="badge badge-info">Rembourser</span></td>
+                                        <td><span class="badge badge-info">Interessé(e)</span></td>
+                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        @elseif($registration->status == 4)
+                                        <td><span class="badge badge-dark">Injoignable</span></td>
+                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        @elseif($registration->status == 5)
+                                        <td><span class="badge badge-secondary">Appels + sms</span></td>
+                                        <td><strong>{{$registration->remark}} </strong></td>
+                                         @elseif($registration->status == 6)
+                                        <td><span class="badge badge-success">Validé</span></td>
+                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
                                         @else
-                                        <td><span class="badge badge-danger">Annulé</span></td>
-                                        
+                                        <td><span class="badge badge-danger">Annuler</span></td>
+                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
                                         @endif
                                        
                                         <td>
                                              <div class="d-flex">
-                                                @if($registration->status == 2)
-                                                <button class=" btn btn-primary shadow btn-xs sharp mr-1 add-final-registration" data-id="{{$registration->course_id}}"><i class="fa fa-plus"></i></button>
+                                                @if($registration->status == 6)
+                                                <button class=" btn btn-primary shadow btn-xs sharp mr-1 add-final-registration" data-id="{{$registration->id}}"><i class="fa fa-plus"></i></button>
                                                 @endif
                                                 <form action="{{url('dashboard-admin/registrations/'.$registration->id)}}" method="post">
                                                 {{csrf_field()}}
@@ -146,20 +159,20 @@ $("#add-registration").click(function() {
   }
 });
 
-$(".add-final-registration").click(function() {
+$("body").on('click','.add-final-registration',function() {
 
   var id = $(this).data('id');
   
- $.ajax({
-    url: '/add-final-registration/'+id ,
-    type: "GET",
-    success: function (res) {
-      $('#modal-final-registration').html(res);
-      $('#modal-final-registration').find("#student").selectpicker();
-      $('#modal-final-registration').find("#edition").selectpicker();
-      $("#exampleModal2").modal('show');
-    }
-  });
+  $.ajax({
+      url: '/add-final-registration/'+id ,
+      type: "GET",
+      success: function (res) {
+        $('#modal-final-registration').html(res);
+        $('#modal-final-registration').find("#student").selectpicker();
+        $('#modal-final-registration').find("#edition").selectpicker();
+        $("#exampleModal2").modal('show');
+      }
+    });
   
 });
 
@@ -178,32 +191,73 @@ $(".add-final-registration").click(function() {
   $("#modal-final-registration").on('click','#submitFinalRegistration',function(e){
        
         e.preventDefault();
-       
-        let student = $('#student').val();
-        let edition = $('#edition').val();
-        
-        $.ajax({
+        if($('#is-checked').is(':checked')){
+          let student = null;
+          let edition = $('#edition').val();
+          let name = $('#name').val();
+          let phone = $('#phone').val();
+          let email = $('#email').val();
+          let date_birth = $('#date_birth').val();
+          let address = $('#address').val();
+
+            $.ajax({
+              type:"POST",  
+              url: "/final-registration",
+              data:{
+                "_token": "{{ csrf_token() }}",
+                student:student,
+                edition:edition,
+                name:name,
+                phone:phone,
+                email:email,
+                date_birth:date_birth,
+                address:address,
+                
+              },
+              success:function(res){
+               if(res == false){
+                   $("#alert").css("display", "block");
+                }
+                else{
+                  $('#exampleModal2').modal('hide'); 
+                  window.location.replace('/dashboard-admin/final-registrations');
+                }
+              },
+            });
+          }
           
-          type:"POST",  
-          url: "/final-registration",
-          data:{
-            "_token": "{{ csrf_token() }}",
-             student:student,
-             edition:edition,
-             
-           },
-        
-          success:function(response){
-          
-            $('#exampleModal2').modal('hide'); 
-            
-            console.log(response);
-            location.reload(); 
-          },
-         
+        else{
+          let student = $('#student').val();
+          let edition = $('#edition').val();
+          let name = null;
+          let phone =null;
+          let email = null;
+          let date_birth = null;
+          let address = null;
+
+          $.ajax({
+            type:"POST",  
+            url: "/final-registration",
+            data:{
+              "_token": "{{ csrf_token() }}",
+              student:student,
+              edition:edition,
+              name:name,
+              phone:phone,
+              email:email,
+              date_birth:date_birth,
+              address:address,
+              
+            },
+            success:function(res){
+              $('#exampleModal2').modal('hide'); 
+              window.location.replace('/dashboard-admin/final-registrations');
+              
+            },
           });
-       
-   });
+        }
+      
+  });
 </script>   
  @endpush
 @push('form-scripts')
@@ -262,3 +316,20 @@ $(".add-final-registration").click(function() {
    });
 </script>   
  @endpush
+@push('show-input-add-student-scripts')
+<script>
+
+   $("#modal-final-registration").on('change','#is-checked',function(){
+    
+    if(this.checked) {
+        $("#check").css("display", "block");
+         $("#select-student").css("display", "none");
+    }
+    else{
+        $("#check").css("display", "none");
+        $("#select-student").css("display", "block");
+       }
+    });
+
+ </script>
+@endpush

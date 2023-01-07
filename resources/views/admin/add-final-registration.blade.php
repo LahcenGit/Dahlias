@@ -43,6 +43,7 @@
                                     <div class="form-group col-md-6">
                                         <label>Formation* :</label>
                                         <select type="text"  class="form-control invalid"  class="selectpicker"  data-live-search="true" name="course" id="select-course">
+                                        <option>Nothing selected</option>
                                           @foreach($courses as $course)
                                            <option value="{{$course->id}}">{{$course->name}}</option>
                                           @endforeach

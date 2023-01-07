@@ -30,8 +30,19 @@ class Finalregistration extends Model
     {
         return $this->belongsTo(Group::class ,'group_id');
     }
-      public function student()
-   {
-       return $this->belongsTo(User::class, 'user_id');
-   }
+    public function course()
+    {
+        return $this->belongsTo(Course::class ,'course_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function payment(){
+        $payment = Payment::where('user_id',$this->user_id)->where('group_id',$this->group_id)->sum('amount');
+        return $payment;
+    }
+
+   
 }

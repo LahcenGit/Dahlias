@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Courseinstructor;
+use App\Models\Finalregistration;
 use App\Models\Group;
 use App\Models\Instructor;
+use App\Models\Payment;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $editions = Group::with('course','instructor')->get();
         return view('admin.editions',compact('editions'));
@@ -56,6 +62,23 @@ class GroupController extends Controller
     public function getInstructor($id){
       $instructor = Courseinstructor::where('course_id',$id)->with('instructor')->get();
       return $instructor;
+    }
+
+    public function studentList($id){
+        $lists = Finalregistration::where('group_id',$id)->get();
+        $group = Group::find($id);
+        $course = Course::where('id',$group->course_id)->first();
+        $total = $lists->count();
+        $total_amount = Payment::where('group_id',$id)->sum('amount'); 
+        return view('admin.student-list',compact('lists','course','group','total','total_amount'));
+    }
+
+    public function presenceList($id){
+        $lists = Finalregistration::where('group_id',$id)->get();
+        $group = Group::find($id);
+        $course = Course::where('id',$group->course_id)->first();
+        $total = $lists->count();
+        return view('admin.presence-list',compact('lists','course','group','total'));
     }
   
 }

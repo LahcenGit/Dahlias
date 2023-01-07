@@ -12,6 +12,12 @@ use App\Http\Controllers\GroupController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\FinalregistrationController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\LoadController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\PresenceController;
+use App\Http\Controllers\EmailingController;
+use App\Http\Controllers\WorkerController;
+use App\Http\Controllers\SalaryController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -34,6 +40,8 @@ Route::get('/welcome', function () {
 });
 
 
+
+
 Route::resource('/dashboard-admin/registrations',RegistrationAdminController::class)->middleware('can:admin');
 
 Route::resource('/dashboard-admin/category',CategoryController::class)->middleware('can:admin');
@@ -43,8 +51,27 @@ Route::resource('/dashboard-admin/editions',GroupController::class)->middleware(
 Route::resource('/dashboard-admin/students',StudentController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/final-registrations',FinalregistrationController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/payments',PaymentController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/loads',LoadController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/vendors',VendorController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/workers',WorkerController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/salaries',SalaryController::class)->middleware('can:admin');
+Route::resource('/dashboard-admin/export-email',EmailingController::class)->middleware('can:admin');
+Route::get('dashboard-admin/report-payment' ,[App\Http\Controllers\PaymentController::class, 'reportView']);
+Route::get('get-course-group-report/{id}' ,[App\Http\Controllers\PaymentController::class, 'getCourseGroup']);
+Route::get('/dashboard-admin/report-student-payment/{group_id}/{user_id}' ,[App\Http\Controllers\PaymentController::class, 'generateReport']);
+Route::get('dashboard-admin/export-email/{id}', [App\Http\Controllers\EmailingController::class, 'exportEmail']);
+Route::get('dashboard-admin/export-all-email', [App\Http\Controllers\EmailingController::class, 'exportAllEmail']);
+Route::get('dashboard-admin/presence-list/{id}', [App\Http\Controllers\GroupController::class, 'presenceList'])->middleware('can:admin');
+Route::get('dashboard-admin/student-list/{id}', [App\Http\Controllers\GroupController::class, 'studentList'])->middleware('can:admin');
+Route::resource('dashboard-admin/sessions', PresenceController::class)->middleware('can:admin');
+Route::get('dashboard-admin/presences/{course_id}/{group_id}/{session}', [App\Http\Controllers\PresenceController::class, 'getPresences'])->middleware('can:admin');
+Route::get('dashboard-admin/edit-presences/{course_id}/{group_id}/{session}', [App\Http\Controllers\PresenceController::class, 'edit'])->middleware('can:admin');
+Route::post('dashboard-admin/update-presences', [App\Http\Controllers\PresenceController::class, 'update'])->middleware('can:admin');
+Route::get('dashboard-admin/add-presence-step-one', [App\Http\Controllers\PresenceController::class, 'stepOne']);
+Route::get('dashboard-admin/add-presence-step-two/{course_id}/{group_id}/{session}', [App\Http\Controllers\PresenceController::class, 'stepTwo']);
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
 
+Route::post('store-presence', [App\Http\Controllers\PresenceController::class, 'storPresence']);
 Route::resource('/registration-course',RegistrationController::class);
 Route::get('/register-course/{id}',[App\Http\Controllers\RegistrationController::class,'register']);
 Route::get('/register-success/{id}/{name}',[App\Http\Controllers\RegistrationController::class,'registerSuccess']);
@@ -58,12 +85,15 @@ Route::get('add-registration', [App\Http\Controllers\RegistrationController::cla
 Route::post('registration', [App\Http\Controllers\RegistrationController::class, 'addRegistration']);
 Route::get('/get-instructor/{id}', [App\Http\Controllers\GroupController::class, 'getInstructor']);
 Route::get('/get-edition/{id}', [App\Http\Controllers\FinalregistrationController::class, 'getEdition']);
+Route::get('/get-session/{id}', [App\Http\Controllers\CourseController::class, 'getSession']);
 Route::get('/get-student/{id}', [App\Http\Controllers\PaymentController::class, 'getStudent']);
 Route::get('/get-price-course/{id}', [App\Http\Controllers\PaymentController::class, 'getPrice']);
 Route::get('/get-edition-course/{id}/{id_student}', [App\Http\Controllers\PaymentController::class, 'getEditionCourse']);
 
 //search 
 Route::get('/search',[App\Http\Controllers\SearchController::class,'globalSearch']);
+
+
 
 Auth::routes([
     'register' => false,

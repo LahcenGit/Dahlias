@@ -130,7 +130,7 @@ $('#calculate-amount').click(function() {
 	$("#select-course").change(function() {
   
 		var id = $(this).val();
-		var data ="";
+		var data ="<option>Nothing selected</option>";
 	   
 		$.ajax({
 			url: '/get-edition/' + id,
@@ -167,7 +167,7 @@ $('#calculate-amount').click(function() {
   
 		var id = $(this).val();
       
-		var data ="";
+		var data ="<option>Nothing selected</option>";
 	   
 		$.ajax({
 			url: '/get-student/' + id,
@@ -177,10 +177,8 @@ $('#calculate-amount').click(function() {
 	
 				$.each(res, function(i, res) {
                     
-				data = data + '<option value="'+ res.student.id+ '" >'+ res.student.name+ '</option>';
-				});
-				
-				
+				data = data + '<option value="'+ res.user.id+ '" >'+ res.user.name+ ' - ' +res.user.date_birth+ '</option>';
+				}); 
 				$('#select-student').html(data);
 				$('#select-student').selectpicker('refresh');
 				$('#select-student').selectpicker('refresh');

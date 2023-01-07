@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $students = User::where('type','student')->get();
         return view('admin.students',compact('students'));

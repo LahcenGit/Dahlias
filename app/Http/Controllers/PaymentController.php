@@ -12,8 +12,12 @@ use Illuminate\Http\Request;
 class PaymentController extends Controller
 {
     //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
-        $payments = Payment::with('group','student')->get();
+        $payments = Payment::with('group','user')->get();
         return view('admin.payments',compact('payments'));
     }
     public function create(){
@@ -63,10 +67,27 @@ class PaymentController extends Controller
         return $course;
     }
 
-   
+   public function reportView(){
+    $students = User::where('type','student')->get();
+    return view('admin.report-view',compact('students'));
+   }
+
+   public function getCourseGroup($id){
+
+    $finalregistrations = Finalregistration::with('course')->with('group')->where('user_id',$id)->get();
+    return $finalregistrations;
+   }
 
     public function getStudent($id){
-        $students = Finalregistration::with('student')->where('group_id',$id)->get();
+        $students = Finalregistration::with('user')->where('group_id',$id)->get();
         return $students;
+    }
+
+    public function generateReport($group_id , $user_id){
+        $payments = Payment::where('user_id',$user_id)->where('group_id',$group_id)->get();
+        $group = Group::find($group_id);
+        $user = User::find($user_id);
+        $total = Payment::where('user_id',$user_id)->where('group_id',$group_id)->sum('amount');
+        return view('admin.report-student-payment',compact('payments','group','total','user'));
     }
 }

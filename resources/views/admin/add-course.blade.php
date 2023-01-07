@@ -266,10 +266,20 @@
                                     @enderror
 
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-3">
                                     <label>Duration * :</label>
                                     <input type="text"  class="form-control input-default @error('slug') is-invalid @enderror" value="{{old('slug')}}" name="slug"  placeholder="0" required >
                                     @error('slug')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                    @enderror
+
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Nombre de séance * :</label>
+                                    <input type="text"  class="form-control input-default @error('flug') is-invalid @enderror" value="{{old('flug')}}" name="nbr_session"  placeholder="0" required >
+                                    @error('flug')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>

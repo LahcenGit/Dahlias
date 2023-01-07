@@ -18,7 +18,6 @@
     <link href="{{asset('Dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
     <link href="{{asset('Dashboard/css/style.css')}}" rel="stylesheet">
 	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 	<link href="{{asset('Dashboard/vendor/summernote/summernote.css')}}" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -295,16 +294,12 @@
 							<span class="nav-text">Etudiants</span>
 						</a>
                         <ul aria-expanded="false">
-                          
-                            
-                                <ul aria-expanded="false">
+                            <ul aria-expanded="false">
                                     <li><a href="{{url('/dashboard-admin/students/create')}}">Ajouter</a></li>
                                     <li><a href="{{url('/dashboard-admin/students')}}">liste des etudiants</a></li>
                                     
                                 </ul>
                             </li>
-                            
-							
                         </ul>
                     </li>
                     
@@ -390,6 +385,119 @@
                                 <li><a href="{{url('/dashboard-admin/payments')}}">Liste des versements</a></li>
                             </ul>
                         </li>
+
+                        <li class="nav-label">L'assiduité</li>
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16"/>
+                                    <path d="M6,18 L9,18 C9.66666667,18.1143819 10,18.4477153 10,19 C10,19.5522847 9.66666667,19.8856181 9,20 L4,20 L4,15 C4,14.3333333 4.33333333,14 5,14 C5.66666667,14 6,14.3333333 6,15 L6,18 Z M18,18 L18,15 C18.1143819,14.3333333 18.4477153,14 19,14 C19.5522847,14 19.8856181,14.3333333 20,15 L20,20 L15,20 C14.3333333,20 14,19.6666667 14,19 C14,18.3333333 14.3333333,18 15,18 L18,18 Z M18,6 L15,6 C14.3333333,5.88561808 14,5.55228475 14,5 C14,4.44771525 14.3333333,4.11438192 15,4 L20,4 L20,9 C20,9.66666667 19.6666667,10 19,10 C18.3333333,10 18,9.66666667 18,9 L18,6 Z M6,6 L6,9 C5.88561808,9.66666667 5.55228475,10 5,10 C4.44771525,10 4.11438192,9.66666667 4,9 L4,4 L9,4 C9.66666667,4 10,4.33333333 10,5 C10,5.66666667 9.66666667,6 9,6 L6,6 Z" fill="#000000" fill-rule="nonzero"/>
+                                </g>
+                            </svg>
+                                <span class="nav-text">L'assiduité</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="{{url('dashboard-admin/add-presence-step-one')}}">Ajouter</a></li>
+                                <li><a href="{{url('/dashboard-admin/sessions')}}">Liste des séances</a></li>
+                            </ul>
+                        </li>
+
+                         <li class="nav-label">Employés</li>
+                        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
+                                </g>
+                            </svg>
+                                <span class="nav-text">Employés</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <ul aria-expanded="false">
+                                        <li><a href="{{url('/dashboard-admin/workers/create')}}">Ajouter</a></li>
+                                        <li><a href="{{url('/dashboard-admin/workers')}}">liste des employés</a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="nav-label">Versements des salaires</li>
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16"/>
+                                    <path d="M6,18 L9,18 C9.66666667,18.1143819 10,18.4477153 10,19 C10,19.5522847 9.66666667,19.8856181 9,20 L4,20 L4,15 C4,14.3333333 4.33333333,14 5,14 C5.66666667,14 6,14.3333333 6,15 L6,18 Z M18,18 L18,15 C18.1143819,14.3333333 18.4477153,14 19,14 C19.5522847,14 19.8856181,14.3333333 20,15 L20,20 L15,20 C14.3333333,20 14,19.6666667 14,19 C14,18.3333333 14.3333333,18 15,18 L18,18 Z M18,6 L15,6 C14.3333333,5.88561808 14,5.55228475 14,5 C14,4.44771525 14.3333333,4.11438192 15,4 L20,4 L20,9 C20,9.66666667 19.6666667,10 19,10 C18.3333333,10 18,9.66666667 18,9 L18,6 Z M6,6 L6,9 C5.88561808,9.66666667 5.55228475,10 5,10 C4.44771525,10 4.11438192,9.66666667 4,9 L4,4 L9,4 C9.66666667,4 10,4.33333333 10,5 C10,5.66666667 9.66666667,6 9,6 L6,6 Z" fill="#000000" fill-rule="nonzero"/>
+                                </g>
+                            </svg>
+                                <span class="nav-text">Versements des salaires</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="{{url('dashboard-admin/salaries/create')}}">Ajouter</a></li>
+                                <li><a href="{{url('/dashboard-admin/salaries')}}">Liste des versements</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-label">Fournisseurs</li>
+                        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <path d="M4,4 L11.6314229,2.5691082 C11.8750185,2.52343403 12.1249815,2.52343403 12.3685771,2.5691082 L20,4 L20,13.2830094 C20,16.2173861 18.4883464,18.9447835 16,20.5 L12.5299989,22.6687507 C12.2057287,22.8714196 11.7942713,22.8714196 11.4700011,22.6687507 L8,20.5 C5.51165358,18.9447835 4,16.2173861 4,13.2830094 L4,4 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M12,11 C10.8954305,11 10,10.1045695 10,9 C10,7.8954305 10.8954305,7 12,7 C13.1045695,7 14,7.8954305 14,9 C14,10.1045695 13.1045695,11 12,11 Z" fill="#000000" opacity="0.3"/>
+                                    <path d="M7.00036205,16.4995035 C7.21569918,13.5165724 9.36772908,12 11.9907452,12 C14.6506758,12 16.8360465,13.4332455 16.9988413,16.5 C17.0053266,16.6221713 16.9988413,17 16.5815,17 C14.5228466,17 11.463736,17 7.4041679,17 C7.26484009,17 6.98863236,16.6619875 7.00036205,16.4995035 Z" fill="#000000" opacity="0.3"/>
+                                </g>
+                            </svg>
+                                <span class="nav-text">Fournisseurs</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <ul aria-expanded="false">
+                                        <li><a href="{{url('/dashboard-admin/vendors/create')}}">Ajouter</a></li>
+                                        <li><a href="{{url('/dashboard-admin/vendors')}}">liste des fournisseurs</a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="nav-label">Charges</li>
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16"/>
+                                    <path d="M6,18 L9,18 C9.66666667,18.1143819 10,18.4477153 10,19 C10,19.5522847 9.66666667,19.8856181 9,20 L4,20 L4,15 C4,14.3333333 4.33333333,14 5,14 C5.66666667,14 6,14.3333333 6,15 L6,18 Z M18,18 L18,15 C18.1143819,14.3333333 18.4477153,14 19,14 C19.5522847,14 19.8856181,14.3333333 20,15 L20,20 L15,20 C14.3333333,20 14,19.6666667 14,19 C14,18.3333333 14.3333333,18 15,18 L18,18 Z M18,6 L15,6 C14.3333333,5.88561808 14,5.55228475 14,5 C14,4.44771525 14.3333333,4.11438192 15,4 L20,4 L20,9 C20,9.66666667 19.6666667,10 19,10 C18.3333333,10 18,9.66666667 18,9 L18,6 Z M6,6 L6,9 C5.88561808,9.66666667 5.55228475,10 5,10 C4.44771525,10 4.11438192,9.66666667 4,9 L4,4 L9,4 C9.66666667,4 10,4.33333333 10,5 C10,5.66666667 9.66666667,6 9,6 L6,6 Z" fill="#000000" fill-rule="nonzero"/>
+                                </g>
+                            </svg>
+                                <span class="nav-text">Charges</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="{{url('dashboard-admin/loads/create')}}">Ajouter</a></li>
+                                <li><a href="{{url('/dashboard-admin/loads')}}">Liste des charges</a></li>
+                            </ul>
+                        </li>
+                       
+                        <li class="nav-label">Emailing</li>
+                            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
+                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <rect x="0" y="0" width="24" height="24"/>
+                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16"/>
+                                    <path d="M6,18 L9,18 C9.66666667,18.1143819 10,18.4477153 10,19 C10,19.5522847 9.66666667,19.8856181 9,20 L4,20 L4,15 C4,14.3333333 4.33333333,14 5,14 C5.66666667,14 6,14.3333333 6,15 L6,18 Z M18,18 L18,15 C18.1143819,14.3333333 18.4477153,14 19,14 C19.5522847,14 19.8856181,14.3333333 20,15 L20,20 L15,20 C14.3333333,20 14,19.6666667 14,19 C14,18.3333333 14.3333333,18 15,18 L18,18 Z M18,6 L15,6 C14.3333333,5.88561808 14,5.55228475 14,5 C14,4.44771525 14.3333333,4.11438192 15,4 L20,4 L20,9 C20,9.66666667 19.6666667,10 19,10 C18.3333333,10 18,9.66666667 18,9 L18,6 Z M6,6 L6,9 C5.88561808,9.66666667 5.55228475,10 5,10 C4.44771525,10 4.11438192,9.66666667 4,9 L4,4 L9,4 C9.66666667,4 10,4.33333333 10,5 C10,5.66666667 9.66666667,6 9,6 L6,6 Z" fill="#000000" fill-rule="nonzero"/>
+                                </g>
+                            </svg>
+                                <span class="nav-text">Emamiling</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                <li><a href="{{url('dashboard-admin/export-email')}}">Exporter</a></li>
+                                
+                            </ul>
+                        </li>
                     
 
 					<li class="nav-label">Setting</li>
@@ -466,17 +574,12 @@
 	<!-- Svganimation scripts -->
 	<script src="{{asset('Dashboard/vendor/svganimation/vivus.min.js')}}"></script>
     <script src="{{asset('Dashboard/vendor/svganimation/svg.animation.js')}}"></script>
-	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-
 	<script src="{{asset('Dashboard/vendor/summernote/js/summernote.min.js')}}"></script>
     <!-- Summernote init -->
     <script src="{{asset('Dashboard/js/plugins-init/summernote-init.js')}}"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	
-  
-        
-	<script src="{{asset('Dashboard/uploader/drop_uploader.js')}}"></script>
+	<script src="{{asset('/print/printThis.js')}}"></script>
+    <script src="{{asset('Dashboard/uploader/drop_uploader.js')}}"></script>
 
 	<script>
 
@@ -551,5 +654,10 @@
 @stack('calculat-amount-scripts')
 @stack('get-edition-scripts')
 @stack('select-student-scripts')
+@stack('list-student-scripts')
+@stack('show-input-add-student-scripts')
+@stack('select-status-scripts')
+@stack('export-email-scripts')
+@stack('select-course-payment-scripts')
 </body>
 </html>
