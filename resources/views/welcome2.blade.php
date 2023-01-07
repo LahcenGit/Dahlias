@@ -14,84 +14,44 @@
 </style>
 
 
-  <!-- Slider Start -->
-<div class="section slider-section">
-
-    <!-- Slider Shape Start -->
-    <div class="slider-shape">
-        <img class="shape-1 animation-round" src="{{asset('front/assets/images/shape/shape-8.png')}}" alt="Shape">
+<div class="container" style="margin-top: 230px;">
+    <!-- Slider Start -->
+  <div id="carouselExampleIndicators" style="border-radius: 30px;" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     </div>
-    <!-- Slider Shape End -->
 
-    <div class="container">
-
-        <!-- Slider Content Start -->
-        <div class="slider-content">
-            <h4 class="sub-title">Institut de formation pluridisciplinaire</h4>
-            <h2 class="main-title">Aussi bien en sciences et techniques appliquées qu’en culture et arts</h2>
-            <p>Dahlias Institute est dédié aux apprenants de tout âge, tous niveaux et domaines .</p>
-           {{--<a class="btn btn-primary btn-hover-dark" href="#">Découvrir</a>--}} 
-
-
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{asset('slide-1.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5><a href="" class="btn btn-primary">Découvrir</a>  </h5>
         </div>
-        <!-- Slider Content End -->
+      </div>
 
-    </div>
-
-    <!-- Slider Courses Box Start -->
-    <div class="slider-courses-box">
-
-        <img class="shape-1 animation-left" src="{{asset('front/assets/images/shape/shape-5.png')}}" alt="Shape">
-
-        <div class="box-content">
-            <div class="box-wrapper">
-                <i class="flaticon-open-book"></i>
-                <span class="count">+ 50</span>
-                <p>Formations</p>
-            </div>
+      <div class="carousel-item ">
+        <img src="{{asset('slide-2.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5><a href="" class="btn btn-primary">J'en profite</a>  </h5>
         </div>
-
-        <img class="shape-2" src="{{asset('front/assets/images/shape/shape-6.png')}}" alt="Shape">
-
+      </div>
+      
     </div>
-    <!-- Slider Courses Box End -->
-
-    <!-- Slider Rating Box Start -->
-    <div class="slider-rating-box">
-
-       {{--<div class="box-rating">
-            <div class="box-wrapper">
-                <span class="count">4.8 <i class="flaticon-star"></i></span>
-                <p>Avis (30)</p>
-            </div>
-        </div>--}} 
-
-        <img class="shape animation-up" src="{{asset('front/assets/images/shape/shape-7.png')}}" alt="Shape">
-
-    </div>
-    <!-- Slider Rating Box End -->
-
-    <!-- Slider Images Start -->
-    <div class="slider-images">
-        <div class="images">
-            <img src="{{asset('front/assets/images/slider/slider-1.png')}}" alt="Slider">
-        </div>
-    </div>
-    <!-- Slider Images End -->
-
-    <!-- Slider Video Start -->
-    <div class="slider-video">
-        <img class="shape-1" src="{{asset('front/assets/images/shape/shape-9.png')}}" alt="Shape">
-
-        <div class="video-play">
-            <img src="{{asset('front/assets/images/shape/shape-10.png')}}" alt="Shape">
-            <a href="https://www.youtube.com/watch?v=BRvyWfuxGuU" class="play video-popup"><i class="flaticon-play"></i></a>
-        </div>
-    </div>
-    <!-- Slider Video End -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!-- Slider End -->
 
 </div>
-<!-- Slider End -->
+
+  
 
 <!-- All Courses Start -->
 <div class="section section-padding-02">

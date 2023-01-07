@@ -88,6 +88,19 @@
   width: 300px !important;
 
 }
+
+
+.carousel-control-prev-icon {
+  background-image: url("/prev-icon.png");
+}
+.carousel-control-next-icon {
+  background-image: url("/next-icon.png");
+}
+
+.carousel-indicators [data-bs-target]{
+    background-image: linear-gradient(to right, rgb(144, 185, 166), rgb(54, 150, 105));
+}
+
 </style>
 
 <body>
@@ -456,6 +469,8 @@
     <script src="{{asset('front/assets/js/plugins/bootstrap.min.js')}}"></script>
 
     <script src="{{asset('front/assets/owl/js/owl.carousel.js')}}"></script>
+
+
 
     <script>
                 $('.owl-carousel').owlCarousel({
