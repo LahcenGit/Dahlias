@@ -11,46 +11,67 @@
     overflow: hidden;
     text-overflow: ellipsis;
     }
+
+    .img-one:hover{
+    
+      opacity: 0.1;
+      transition: 2s;
+      filter: alpha(opacity=30);
+    
+    }
 </style>
 
 
 <div class="container" style="margin-top: 230px;">
+
     <!-- Slider Start -->
-  <div id="carouselExampleIndicators" style="border-radius: 30px;" class="carousel slide" data-bs-ride="true">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    </div>
 
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="{{asset('slide-1.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-            <h5><a href="" class="btn btn-primary">Découvrir</a>  </h5>
+    <div id="carouselExampleIndicators" style="border-radius: 30px;" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         </div>
-      </div>
 
-      <div class="carousel-item ">
-        <img src="{{asset('slide-2.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-            <h5><a href="" class="btn btn-primary">J'en profite</a>  </h5>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{asset('slide-1.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5><a href="" class="btn btn-primary">Découvrir</a>  </h5>
+            </div>
         </div>
-      </div>
-      
+
+        <div class="carousel-item ">
+            <img src="{{asset('slide-2.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5><a href="" class="btn btn-primary">J'en profite</a>  </h5>
+            </div>
+        </div>
+        
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-<!-- Slider End -->
+    <!-- Slider End -->
 
-</div>
-
+    <div class="row mt-4">
+        <div class="col-lg-4" >
+            <img  class="img-one" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
+        </div>
+        <div class="col-lg-4" >
+            <img style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
+        </div>
+        <div class="col-lg-4" >
+            <img style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
+        </div>
+       
+        
+    </div>
   
 
 <!-- All Courses Start -->
