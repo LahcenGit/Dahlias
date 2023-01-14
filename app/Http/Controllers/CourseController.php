@@ -16,10 +16,7 @@ use App\Models\Language;
 class CourseController extends Controller
 {
     //
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+  
   
     public function create(){
 

@@ -14,7 +14,7 @@
         <!-- Page Banner Start -->
         <div class="page-banner-content">
             <ul class="breadcrumb">
-                <li><a href="#">Accueil</a></li>
+                <li><a href="{{asset('/')}}">Accueil</a></li>
                 <li class="active">Inscription</li>
             </ul>
             <h2 class="title"><span>S'inscrire : </span>{{$course->name}} </h2>
@@ -85,8 +85,8 @@
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->
                                 <div class="single-form">
-                                    <label>Email(optionnel):</label>
-                                    <input type="email" placeholder="mohammed@gmail.com " name="email" >
+                                    <label>Email*:</label>
+                                    <input type="email" placeholder="mohammed@gmail.com " name="email" required>
                                 </div>
                                 <div class="single-form">
                                     <label>Téléphone* :</label>
@@ -98,6 +98,10 @@
                                 <div class="single-form">
                                     <label>Date de naissance* :</label>
                                     <input type="date" placeholder="Age" name="age" required>
+                                </div>
+                                 <div class="single-form">
+                                    <label>Lieu de naissance* :</label>
+                                    <input type="text" placeholder="Tlemcen" name="place_birth" required>
                                 </div>
                                 
                                 <div class="single-form">
