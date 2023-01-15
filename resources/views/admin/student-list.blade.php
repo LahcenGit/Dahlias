@@ -32,7 +32,7 @@
                                 <img src="{{asset('front/assets/images/logo.png')}}" height="100px" width="300px">
                                 <div>
                                     <h3 >{{$course->name}}</h3> 
-                                    <p> Edition :<b>{{$group->group}}</b> <br>Total des étudiants : <b>{{$total}}</b> </p>
+                                    <p> Edition :<b>{{$group->group}}</b> <br>Total des étudiants : <b>{{$total}}</b> <br>Date: <b>{{$date->format('Y-m-d')}}</b></p>
                                 </div>
                         </div>
                         <table class="table table-striped">
@@ -45,6 +45,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php
+                                    $total_rest = 0;
+                                    @endphp
                                     @foreach ($lists as $list)
                                         @if($list->payment())
                                             @php
@@ -55,6 +58,9 @@
                                              $rest = $list->returnCourse()->price
                                             @endphp
                                         @endif
+                                        @php
+                                        $total_rest = $total_rest + $rest;
+                                        @endphp
                                         <tr>
                                             <th scope="row">{{$loop->iteration}}</th>
                                             <th>{{$list->user->name}}</th>
@@ -66,11 +72,12 @@
                                             <td>{{number_format($rest)}} Da</td>
                                         </tr>
                                     @endforeach
-                                     <tr>
-                                    <td><h3>Total</h3></td>
-                                    <td></td>
-                                    <td><b style="font-size: 17px">{{ number_format($total_amount) }}  Da</b></td>
-                                    <td>  </td>
+                                    <tr>
+                                    <td colspan="2 "style="text-align:right ; font-size: 17px;"><b>Total :</b></td>
+                                    
+                                    <td ><b style="font-size: 17px">{{ number_format($total_amount) }}  Da</b></td>
+                                    <td ><b style="font-size: 17px">{{ number_format($total_rest) }}  Da</b></td>
+                                    
                                 </tr>
                                 </tbody>
                         </table>

@@ -8,6 +8,7 @@ use App\Models\Finalregistration;
 use App\Models\Group;
 use App\Models\Instructor;
 use App\Models\Payment;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GroupController extends Controller
@@ -70,7 +71,8 @@ class GroupController extends Controller
         $course = Course::where('id',$group->course_id)->first();
         $total = $lists->count();
         $total_amount = Payment::where('group_id',$id)->sum('amount'); 
-        return view('admin.student-list',compact('lists','course','group','total','total_amount'));
+        $date = Carbon::now();
+        return view('admin.student-list',compact('lists','course','group','total','total_amount','date'));
     }
 
     public function presenceList($id){

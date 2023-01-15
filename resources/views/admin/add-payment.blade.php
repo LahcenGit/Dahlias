@@ -32,7 +32,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-4">
                                             <label>Formation* :</label>
-                                            <select type="text"  class="form-control invalid"  class="selectpicker"  data-live-search="true" name="course" id="select-course">
+                                            <select type="text"  class="form-control invalid"  class="selectpicker"  data-live-search="true" name="course" id="select-course" required>
                                             <option>Nothing Selected</option>
                                             @foreach($courses as $course)
                                             <option value="{{$course->id}}">{{$course->name}}</option>
@@ -102,15 +102,16 @@ $('#calculate-amount').click(function() {
      
          var rest = 0;
          amount = $('#amount').val();
-         id = $('#select-course').val();
+         course_id = $('#select-course').val();
+         edition_id = $('#select-edition').val();
+         student_id = $('#select-student').val();
         
          $.ajax({
-			url: '/get-price-course/' + id,
+			url: '/get-rest-amount/'+course_id +'/'+edition_id+'/'+student_id +'/'+amount,
 			type: "GET",
 
 			success: function (res) {
-	            rest = parseInt(res.price) - amount ;
-                $(".the-rest").val(rest);
+               $(".the-rest").val(res);
                }
 			});
 

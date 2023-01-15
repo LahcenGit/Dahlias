@@ -52,7 +52,7 @@
                                         <label>Etudiant* :</label>
                                         <select type="text"  class="form-control invalid"  class="selectpicker" id="select-student"  data-live-search="true" name="student"  required>
                                                 @foreach($students as $student)
-                                                <option value="{{$student->student->id}}">{{$student->student->name}}</option>
+                                                <option value="{{$student->user->id}}">{{$student->user->name}}</option>
                                                 @endforeach
                                         </select>
                                     </div>
@@ -67,7 +67,7 @@
                                        </div>
                                        <div class="form-group col-md-4">
                                             <label>Le reste:</label>
-                                            <input type="text"  class="form-control input-default the-rest"   placeholder="0.00" required >
+                                            <input type="text"  class="form-control input-default the-rest"   placeholder="0.00"  >
                                             
                                        </div>
 

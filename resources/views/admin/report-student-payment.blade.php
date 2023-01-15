@@ -32,7 +32,7 @@
                                 <img src="{{asset('front/assets/images/logo.png')}}" height="100px" width="300px">
                                 <div>
                                     <h3 >{{$user->name}} - {{$user->date_birth}}</h3> 
-                                    <p> Formation :<b>{{$group->course->name}}</b> , Edition :<b>{{$group->group}}</b> <br>Total : <b>{{number_format($total)}} Da</b> </p>
+                                    <p> Formation :<b>{{$group->course->name}}</b> , Edition :<b>{{$group->group}}</b> <br>Date : <b>{{$date->format('Y-m-d')}} </b> </p>
                                 </div>
                         </div>
                         <table class="table table-striped">
@@ -51,6 +51,14 @@
                                             <th>{{$payment->created_at}}</th>
                                        </tr>
                                     @endforeach
+                                    <tr>
+                                        <td style="text-align:right ; font-size: 17px;"><b>Total :</b></td>
+                                        <td colspan="2"><b style="font-size: 17px">{{ number_format($total) }}  Da</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right ; font-size: 17px;"><b>Reste : </b></td>
+                                        <td colspan="2"><b style="font-size: 17px">{{ number_format($rest) }}  Da</b></td>
+                                    </tr>
                                 </tbody>
                         </table>
                     </div>

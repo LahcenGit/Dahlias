@@ -8,7 +8,7 @@ use App\Models\Group;
 use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 class PaymentController extends Controller
 {
     //
@@ -32,6 +32,7 @@ class PaymentController extends Controller
         $payment->group_id = $request->edition;
         $payment->amount = $request->amount;
         $payment->n_bon = $request->n_bon;
+        $payment->course_id = $request->course;
         $payment->save();
         return redirect('dashboard-admin/payments');
     }
@@ -42,7 +43,7 @@ class PaymentController extends Controller
         $edition = Group::where('id',$payment->group_id)->first();
         $course = Course::where('id',$edition->course_id)->first();
         $editions = Group::where('course_id',$course->id)->get();
-        $students = Finalregistration::where('group_id',$edition->id)->with('student')->get();
+        $students = Finalregistration::where('group_id',$edition->id)->with('user')->get();
         return view('admin.edit-payment',compact('payment','courses','editions','students','course'));
     }
 
@@ -52,6 +53,7 @@ class PaymentController extends Controller
         $payment->group_id = $request->edition;
         $payment->amount = $request->amount;
         $payment->n_bon = $request->n_bon;
+        $payment->course_id = $request->course;
         $payment->save();
         return redirect('dashboard-admin/payments');
     }
@@ -62,14 +64,16 @@ class PaymentController extends Controller
         return redirect('dashboard-admin/payments'); 
     }
 
-    public function getPrice($id){
-        $course = Course::find($id);
-        return $course;
+    public function getRest($course_id , $edition_id , $student_id , $amount){
+        $course = Course::find($course_id);
+        $total_payment = Payment::where('course_id',$course_id)->where('group_id',$edition_id)->where('user_id',$student_id)->sum('amount');
+        $rest = $course->price - ($total_payment + $amount);
+        return $rest;
     }
 
    public function reportView(){
     $students = User::where('type','student')->get();
-    return view('admin.report-view',compact('students'));
+     return view('admin.report-view',compact('students'));
    }
 
    public function getCourseGroup($id){
@@ -87,7 +91,10 @@ class PaymentController extends Controller
         $payments = Payment::where('user_id',$user_id)->where('group_id',$group_id)->get();
         $group = Group::find($group_id);
         $user = User::find($user_id);
+        $course = Course::find($group->course_id);
         $total = Payment::where('user_id',$user_id)->where('group_id',$group_id)->sum('amount');
-        return view('admin.report-student-payment',compact('payments','group','total','user'));
+        $rest = $course->price - $total;
+        $date =  Carbon::now();
+        return view('admin.report-student-payment',compact('payments','group','total','user','date','rest'));
     }
 }
