@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDescriptionToCategoriesTable extends Migration
+class AddRemarkAndPlaceBirthToRegistrations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class AddDescriptionToCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->longText('description')->after('name')->nullable();
+        Schema::table('registrations', function (Blueprint $table) {
+            $table->string('remark')->nullable();
+            $table->string('place_birth')->nullable();
         });
     }
 
@@ -25,8 +26,8 @@ class AddDescriptionToCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn('description');
+        Schema::table('registrations', function (Blueprint $table) {
+            $table->dropColumn(['remark', 'place_birth']);
         });
     }
 }

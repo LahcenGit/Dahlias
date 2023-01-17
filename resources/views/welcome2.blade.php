@@ -22,11 +22,35 @@
     .bg-color{background-color: #EDF9F6 !important;}
     .bg-dahlias{background-color: #24413A !important;}
 
+    .cont-top{
+        margin-top: 230px;
+    }
+
+    .bottom-ads{
+        display: none;
+    }
+
+    @media screen and (max-width: 480px) {
+
+        .right-ads{
+            display: none;
+        }
+        .cont-top{
+             margin-top: 150px;
+        }
+        .bottom-ads{
+          display: block;
+        }
+
+    }
+
+
 </style>
 
 
-<div class="container" style="margin-top: 230px;">
-    <div class="container mt-3">
+<div class="container cont-top" >
+
+   {{-- <div class="container mt-3">
         <div class="row">
             <div class="col-md-12">
                 <div class="d-flex justify-content-between align-items-center breaking-news bg-color">
@@ -36,12 +60,10 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     
     <div class="row mt-4">
-
         <div class="col-md-10">
-
              <!-- Slider Start -->
             <div id="carouselExampleIndicators" style="border-radius: 30px;" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
@@ -76,14 +98,10 @@
             </div>
         </div>
 
-        <div class="col-md-2">
-
+        <div class="col-md-2 right-ads">
              <!-- Slider Start -->
-             
-                <img  class="img-one" height="450" width="200" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
-            
+                <img  class="img-one " height="450" width="200" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
         </div>
-
 
         <!-- Slider End -->
 
@@ -102,6 +120,11 @@
             
         </div>--}}
     </div>
+
+    <div class="row mt-4 bottom-ads">
+        <img  class="img-one" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias-bottom.jpg')}}"  alt="">
+    </div>
+
 </div>
   
 
