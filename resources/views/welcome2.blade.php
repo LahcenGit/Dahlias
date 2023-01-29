@@ -72,19 +72,23 @@
                 </div>
 
                 <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{asset('slide-1.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5><a href="" class="btn btn-primary">Découvrir</a>  </h5>
-                    </div>
-                </div>
+                    <a href="{{asset('course-detail/171')}}">
+                        <div class="carousel-item active">
+                            <img src="{{asset('slide-1.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5><a href="{{asset('course-detail/171')}}" class="btn btn-primary">Découvrir</a>  </h5>
+                            </div>
+                        </div> 
+                    </a> 
 
-                <div class="carousel-item ">
-                    <img src="{{asset('slide-2.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5><a href="" class="btn btn-primary">J'en profite</a>  </h5>
-                    </div>
-                </div>
+                    <a href="{{asset('course-detail/169')}}">
+                        <div class="carousel-item ">
+                            <img src="{{asset('slide-2.jpg')}}" style="border-radius: 20px;" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5><a href="{{asset('course-detail/169')}}" class="btn btn-primary">J'en profite</a>  </h5>
+                            </div>
+                        </div>
+                    </a>
                 
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -100,7 +104,7 @@
 
         <div class="col-md-2 right-ads">
              <!-- Slider Start -->
-                <img  class="img-one " height="450" width="200" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
+              <a href="{{asset('/category-courses/235')}}">  <img  class="img-one " height="450" width="200" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt=""></a>
         </div>
 
         <!-- Slider End -->
