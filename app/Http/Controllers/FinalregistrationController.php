@@ -88,7 +88,7 @@ class FinalregistrationController extends Controller
                 $user->name = $request->name;
                 $user->email = $request->email;
                 $user->date_birth = $request->date_birth;
-                $user->place_birth = $request->place_birth;
+                $user->place_birth = $request->address;
                 $user->phone = $request->phone;
                 $user->type = 'student'; 
                 $user->save();

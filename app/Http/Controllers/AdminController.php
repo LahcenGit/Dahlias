@@ -30,8 +30,8 @@ class AdminController extends Controller
             $sum_payment = Payment::where('course_id',$course->id)->sum('amount');
             $rest = $rest + ($course->price*$nbr_registration)-$sum_payment;
         }
-        $registrations = Registration::limit('5')->get()->reverse();
-        $final_registrations = Finalregistration::limit('5')->get()->reverse();
+        $registrations = Registration::limit('5')->orderBy('created_at','desc')->get();
+        $final_registrations = Finalregistration::limit('5')->orderBy('created_at','desc')->get();
         return view('admin.dashboard-admin',compact('total_payment','total_load','total_user','rest','registrations','final_registrations'));
     }
 }
