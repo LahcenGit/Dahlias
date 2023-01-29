@@ -28,9 +28,7 @@
                                 @csrf
                              
                                 <div class="form-group">
-                                    
                                     <label>Formation* :</label>
-                                    
                                     <select class="form-control  @error('course') is-invalid @enderror" id="select-course"  class="selectpicker" data-live-search="true" name="course">
                                       <option value=0>Nothing selected</option>
                                       @foreach($courses as $course)
@@ -47,15 +45,57 @@
                                      
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label>Edition* :</label>
-                                    <input type="text"  class="form-control input-default @error('name') is-invalid @enderror" value="{{old('name')}}" name="name" >
-                                        @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Edition* :</label>
+                                        <input type="text"  class="form-control input-default @error('name') is-invalid @enderror" value="{{old('name')}}" name="name" >
+                                            @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Nombre séances* :</label>
+                                        <input type="number"  class="form-control input-default @error('nbr_session') is-invalid @enderror" value="{{old('nbr_session')}}" name="nbr_session" placeholder="0" >
+                                            @error('nbr_session')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
                                 </div>
+                                <div class="form-row">
+                                    
+                                    <div class="form-group col-md-4">
+                                        <label>Prix 1* :</label>
+                                        <input type="number"  class="form-control input-default @error('price_one') is-invalid @enderror" value="{{old('price_one')}}" name="price_one"placeholder="0" required >
+                                            @error('price_one')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Prix 2 :</label>
+                                        <input type="number"  class="form-control input-default @error('price_two') is-invalid @enderror" value="{{old('price_two')}}" name="price_two"placeholder="0" >
+                                            @error('price_two')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
+                                     <div class="form-group col-md-4">
+                                        <label>Prix 3 :</label>
+                                        <input type="number"  class="form-control input-default @error('price_tree') is-invalid @enderror" value="{{old('price_tree')}}" name="price_tree"placeholder="0" >
+                                            @error('price_tree')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    </div>
+                                </div>
+                    
                                  <button type="submit"  class="btn btn-primary mt-3">Ajouter</button>
                             </form>
                         </div>

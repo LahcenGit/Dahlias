@@ -16,6 +16,8 @@ class AddRemarkAndPlaceBirthToRegistrations extends Migration
         Schema::table('registrations', function (Blueprint $table) {
             $table->string('remark')->nullable();
             $table->string('place_birth')->nullable();
+            $table->string('filiere')->nullable();
+            $table->string('email')->nullable();
         });
     }
 

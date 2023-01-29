@@ -52,6 +52,12 @@
                                     </select>
                                 </div>
                             </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Date* :</label>
+                                    <input type="date" name="date" class="form-control invalid" id="date" required>
+                                </div>
+                            </div>
                             <button  class="btn btn-primary mt-3 text-center btn-go" >Suivant</button>
                         </div>
                     </div>
@@ -74,8 +80,8 @@
 	$("#select-course").change(function() {
        
 		var id = $(this).val();
-        var data ="";
-	    var data_two = "";
+        var data ="<option>Nothing selected</option>";
+	   
 		$.ajax({
 			url: '/get-edition/' + id,
 			type: "GET",
@@ -95,7 +101,12 @@
 			}
 		});
 
-        $.ajax({
+       
+	});
+$("#select-edition").change(function() {
+    var id = $(this).val();
+     var data_two = "";
+    $.ajax({
 			url: '/get-session/' + id,
 			type: "GET",
 
@@ -105,21 +116,19 @@
                     
 				data_two = data_two + '<option value="'+ i+ '" >'+ 'Séance '+ i+'</option>';
 				}
-				
-				
 				$('#select-session').html(data_two);
 				$('#select-session').selectpicker('refresh');
 				$('#select-session').selectpicker('refresh');
 
 			}
 		});
-
-            $( ".btn-go" ).click(function() {
+          $( ".btn-go" ).click(function() {
                 var course_id = $( "#select-course" ).val();
                 var group_id = $( "#select-edition" ).val();
                 var session = $( "#select-session" ).val();
-                window.location.replace('/dashboard-admin/add-presence-step-two/'+ course_id +'/'+group_id +'/'+session);
+                var date = $( "#date" ).val();
+                window.location.replace('/dashboard-admin/add-presence-step-two/'+ course_id +'/'+group_id +'/'+session +'/'+date);
             });
-	});
+});
 </script>
 @endpush

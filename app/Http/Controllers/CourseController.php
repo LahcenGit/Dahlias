@@ -229,9 +229,6 @@ class CourseController extends Controller
 
      }
 
-    public function getSession($id){
-        $course = Course::find($id);
-        return $course->flug;
-    }
+    
     
 }

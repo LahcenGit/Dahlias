@@ -32,11 +32,11 @@ class PresenceController extends Controller
         $courses = Course::all();
         return view('admin.add-presence-step-one',compact('courses'));
     }
-    public function stepTwo($course_id, $group_id ,$session){
+    public function stepTwo($course_id, $group_id ,$session,$date){
         $course = Course::find($course_id);
         $group = Group::find($group_id);
         $students = Finalregistration::where('course_id',$course_id)->where('group_id',$group_id)->get();
-        return view('admin.add-presence-step-two',compact('course','group','students','session'));
+        return view('admin.add-presence-step-two',compact('course','group','students','session','date'));
     }
 
     public function storPresence(Request $request){
@@ -48,6 +48,7 @@ class PresenceController extends Controller
             $presence->user_id = $student->user->id;
             $presence->course_id = $request->course;
             $presence->group_id = $request->group;
+            $presence->date = $request->date;
             $presence->session = $request->session;
             if($request[$user_id]){
                 $presence->present = 1;

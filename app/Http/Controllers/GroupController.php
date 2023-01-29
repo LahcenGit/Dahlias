@@ -33,6 +33,10 @@ class GroupController extends Controller
         $edition->course_id = $request->course;
         $edition->instructor_id = $request->instructor;
         $edition->group = $request->name;
+        $edition->nbr_session = $request->nbr_session;
+        $edition->price_one = $request->price_one;
+        $edition->price_two = $request->price_two;
+        $edition->price_tree = $request->price_tree;
         $edition->save();
         return redirect('dashboard-admin/editions');
     }
@@ -51,6 +55,10 @@ class GroupController extends Controller
         $edition->course_id = $request->course;
         $edition->instructor_id = $request->instructor;
         $edition->group = $request->name;
+        $edition->nbr_session = $request->nbr_session;
+        $edition->price_one = $request->price_one;
+        $edition->price_two = $request->price_two;
+        $edition->price_tree = $request->price_tree;
         $edition->save();
         return redirect('dashboard-admin/editions');
     }
@@ -81,6 +89,10 @@ class GroupController extends Controller
         $course = Course::where('id',$group->course_id)->first();
         $total = $lists->count();
         return view('admin.presence-list',compact('lists','course','group','total'));
+    }
+    public function getSession($id){
+        $group = Group::find($id);
+        return $group->nbr_session;
     }
   
 }

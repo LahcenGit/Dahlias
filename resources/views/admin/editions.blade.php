@@ -38,6 +38,10 @@
                                         <th>Edition</th>
                                         <th>Formation</th>
                                         <th>Formateur</th>
+                                        <th>Nombre de séances</th>
+                                        <th>Prix 1</th>
+                                        <th>Prix 2</th>
+                                        <th>Prix 3</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -48,6 +52,22 @@
                                             <td>{{$edition->group}}</td>
                                             <td><strong>{{$edition->course->name}}</strong></td>
                                             <td><strong>{{$edition->instructor->name}} </strong></td>
+                                            <td><strong>{{$edition->nbr_session}} </strong></td>
+                                            @if($edition->price_one)
+                                            <td><strong>{{$edition->price_one}} </strong></td>
+                                            @else
+                                             <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                            @endif
+                                            @if($edition->price_two)
+                                            <td><strong>{{$edition->price_two}} </strong></td>
+                                            @else
+                                             <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                            @endif
+                                             @if($edition->price_tree)
+                                            <td><strong>{{$edition->price_tree}} </strong></td>
+                                            @else
+                                             <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                            @endif
                                             <td>
                                                 <form action="{{url('dashboard-admin/editions/'.$edition->id)}}" method="post">
                                                     {{csrf_field()}}

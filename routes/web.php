@@ -68,7 +68,7 @@ Route::get('dashboard-admin/presences/{course_id}/{group_id}/{session}', [App\Ht
 Route::get('dashboard-admin/edit-presences/{course_id}/{group_id}/{session}', [App\Http\Controllers\PresenceController::class, 'edit'])->middleware('can:admin');
 Route::post('dashboard-admin/update-presences', [App\Http\Controllers\PresenceController::class, 'update'])->middleware('can:admin');
 Route::get('dashboard-admin/add-presence-step-one', [App\Http\Controllers\PresenceController::class, 'stepOne']);
-Route::get('dashboard-admin/add-presence-step-two/{course_id}/{group_id}/{session}', [App\Http\Controllers\PresenceController::class, 'stepTwo']);
+Route::get('dashboard-admin/add-presence-step-two/{course_id}/{group_id}/{session}/{date}', [App\Http\Controllers\PresenceController::class, 'stepTwo']);
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
 
 Route::post('store-presence', [App\Http\Controllers\PresenceController::class, 'storPresence']);
@@ -85,7 +85,7 @@ Route::get('add-registration', [App\Http\Controllers\RegistrationController::cla
 Route::post('registration', [App\Http\Controllers\RegistrationController::class, 'addRegistration']);
 Route::get('/get-instructor/{id}', [App\Http\Controllers\GroupController::class, 'getInstructor']);
 Route::get('/get-edition/{id}', [App\Http\Controllers\FinalregistrationController::class, 'getEdition']);
-Route::get('/get-session/{id}', [App\Http\Controllers\CourseController::class, 'getSession']);
+Route::get('/get-session/{id}', [App\Http\Controllers\GroupController::class, 'getSession']);
 Route::get('/get-student/{id}', [App\Http\Controllers\PaymentController::class, 'getStudent']);
 Route::get('/get-rest-amount/{course_id}/{edition_id}/{student_id}/{amount}', [App\Http\Controllers\PaymentController::class, 'getRest']);
 Route::get('/get-edition-course/{id}/{id_student}', [App\Http\Controllers\PaymentController::class, 'getEditionCourse']);

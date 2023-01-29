@@ -58,6 +58,7 @@
                                         <input type="hidden" value="{{$course->id}}" name="course">
                                         <input type="hidden" value="{{$group->id}}" name="group">
                                         <input type="hidden" value="{{$session}}" name="session">
+                                        <input type="hidden" value="{{$date}}" name="date">
                                     </tbody>
                                 </table>
                                 <button  class="btn btn-primary mt-3 text-center " >Envoyer</button>
