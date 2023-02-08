@@ -35,11 +35,12 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Name</th> 
+                                        <th>Désignation</th> 
                                         <th>Categorie</th>
                                         <th>Durée</th>
                                         <th>Niveau</th>
                                         <th>Prix</th>
+                                        <th>Date</th>
                                         <th>Statut</th>
                                         <th>Action</th>
                                     </tr>
@@ -68,6 +69,7 @@
                                             @endif
                                             </td>
                                         <td><strong>{{$course->price}} DA </strong></td>
+                                        <td><strong>{{$course->created_at->format('Y-m-d')}}  </strong></td>
                                         <td>
                                             @if($course->status == 'Lancee')
                                             <strong>

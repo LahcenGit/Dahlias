@@ -40,7 +40,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Etudiant</th>
-                                        <th scope="col">Date de naissance</th>
+                                        <th scope="col">Téléphone</th>
                                          @for($i=0 ; $i<$course->flug;$i++)
                                           <th scope="col">Séance {{$i+1}}</th>
                                          @endfor
@@ -51,7 +51,7 @@
                                         <tr>
                                             <th scope="row">{{$loop->iteration}}</th>
                                             <th>{{$list->user->name}}</th>
-                                            <th>{{$list->user->date_birth}}</th>
+                                            <th>{{$list->user->phone}}</th>
                                              @for($i=0 ; $i<$course->flug;$i++)
                                               <th scope="col"></th>
                                              @endfor

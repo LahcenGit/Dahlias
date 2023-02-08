@@ -281,6 +281,26 @@
 
                                 </div>
                             </div>
+                             <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Document (optionnel):</label>
+                                    <input type="file"  class="form-control input-default @error('file') is-invalid @enderror" value="{{$course->file}}" name="file">
+                                    @error('file')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Lien youtub (optionnel) :</label>
+                                    <input type="text"  class="form-control input-default @error('youtub_link') is-invalid @enderror" value="{{$course->youtub_link}}" name="youtub_link">
+                                    @error('youtub_link')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
                     </div>
                     

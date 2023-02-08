@@ -13,7 +13,7 @@ class WorkerController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $workers = Worker::all();
+        $workers = Worker::orderBy('created_at','desc')->get();
         return view('admin.workers',compact('workers'));
     }
     public function create(){

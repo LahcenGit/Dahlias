@@ -40,6 +40,7 @@
                                         <th>Téléphone</th>
                                         <th>Date de naissance</th>
                                         <th>Lieu de naissance</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -51,6 +52,7 @@
                                         <td><strong>{{$student->phone}}</strong></td>
                                         <td><strong>{{$student->date_birth}} </strong></td>
                                         <td><strong>{{$student->place_birth}} </strong></td>
+                                         <td><strong>{{$student->created_at->format('Y-m-d')}} </strong></td>
                                         <td>
                                             <form action="{{url('dashboard-admin/students/'.$student->id)}}" method="post">
                                                 {{csrf_field()}}

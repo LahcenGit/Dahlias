@@ -8,6 +8,7 @@ use App\Models\Group;
 use App\Models\Registration;
 use App\Models\User;
 use Illuminate\Http\Request;
+use TheHocineSaad\LaravelAlgereography\Models\Wilaya;
 
 class FinalregistrationController extends Controller
 {
@@ -17,7 +18,7 @@ class FinalregistrationController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $registrations = Finalregistration::all()->reverse();
+        $registrations = Finalregistration::orderBy('created_at','desc')->get();
         return view('admin.final-registrations',compact('registrations'));
     }
     public function create(){
@@ -63,9 +64,9 @@ class FinalregistrationController extends Controller
     public function addFinalRegistration($id){
         $registration = Registration::find($id);
         $editions = Group::where('course_id',$registration->course_id)->get();
-        $students = User::where('type',"student")->get();
-        
-        return view('admin.modal-final-registration',compact('registration','editions','students'));
+        $students = User::where('type',"student")->orderBy('created_at','desc')->get();
+        $wilayas = Wilaya::all();
+        return view('admin.modal-final-registration',compact('registration','editions','students','wilayas'));
     }
 
     public function storeFinlRegistration(Request $request){
@@ -91,6 +92,7 @@ class FinalregistrationController extends Controller
                 $user->place_birth = $request->address;
                 $user->phone = $request->phone;
                 $user->type = 'student'; 
+                $user->sexe = $request->sexe;
                 $user->save();
                 $registration = new Finalregistration();
                 $registration->group_id = $request->edition;

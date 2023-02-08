@@ -100,27 +100,48 @@
                                     <input type="date" placeholder="Age" name="age" required>
                                 </div>
                                  <div class="single-form">
-                                    <label>Lieu de naissance* :</label>
-                                    <input type="text" placeholder="Tlemcen" name="place_birth" required>
+                                    <label>Wilaya* :</label>
+                                    <select class="selectpicker "class="form-control"data-live-search="true" name="wilaya" required>
+                                        @foreach($wilayas as $wilaya)
+                                        <option value="{{$wilaya->name}}">{{$wilaya->name}}</option>
+                                        @endforeach
+                                    </select>
+                                 </div>
+                                 <div class="single-form">
+                                    <label>Fonction* :</label>
+                                    <input type="text" placeholder="Fonction" name="function" required>
+                                 </div>
+                                  <div class="single-form">
+                                    <label>Sexe*:</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"  id="flexRadioDefault1" value="Homme" name="sexe" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Homme
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"  id="flexRadioDefault2" value="Femme" name="sexe">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Femme
+                                    </label>
                                 </div>
                                 
                                 <div class="single-form">
                                     <label>Acceptez-vous d'être filmé ou photographié?:</label>
-                                   
-                                    </div>
-    
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio"  id="flexRadioDefault1" value="Oui" name="accept" checked>
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                          Oui
-                                        </label>
-                                      </div>
-                                      <div class="form-check">
-                                        <input class="form-check-input" type="radio"  id="flexRadioDefault2" value="Non" name="accept">
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                         Non
-                                        </label>
-                                      </div>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"  id="flexRadioDefault1" value="Oui" name="accept" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        Oui
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio"  id="flexRadioDefault2" value="Non" name="accept">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        Non
+                                    </label>
+                                </div>
 
                                 <div class="single-form">
                                     <label>Avez vous quelques chose a dire ? :</label>
@@ -133,7 +154,7 @@
                                 </div>
                                 
                                 <div class="single-form">
-                                    <button type="submit" class="btn btn-primary btn-hover-dark w-100">Envoyer</button>
+                                    <button type="submit" class="btn btn-primary btn-hover-dark w-100" >Envoyer</button>
                                 </div>
                                 <!-- Single Form End -->
                             </form>

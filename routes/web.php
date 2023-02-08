@@ -61,6 +61,7 @@ Route::get('get-course-group-report/{id}' ,[App\Http\Controllers\PaymentControll
 Route::get('/dashboard-admin/report-student-payment/{group_id}/{user_id}' ,[App\Http\Controllers\PaymentController::class, 'generateReport']);
 Route::get('dashboard-admin/export-email/{id}', [App\Http\Controllers\EmailingController::class, 'exportEmail']);
 Route::get('dashboard-admin/export-all-email', [App\Http\Controllers\EmailingController::class, 'exportAllEmail']);
+Route::get('dashboard-admin/export-email-pres-inscription', [App\Http\Controllers\EmailingController::class, 'exportEmailPresInscription']);
 Route::get('dashboard-admin/presence-list/{id}', [App\Http\Controllers\GroupController::class, 'presenceList'])->middleware('can:admin');
 Route::get('dashboard-admin/student-list/{id}', [App\Http\Controllers\GroupController::class, 'studentList'])->middleware('can:admin');
 Route::resource('dashboard-admin/sessions', PresenceController::class)->middleware('can:admin');

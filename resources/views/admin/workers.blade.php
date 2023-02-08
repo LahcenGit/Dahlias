@@ -39,6 +39,7 @@
                                         <th>Nom</th>
                                         <th>Téléphone</th>
                                         <th>Fonction</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -49,6 +50,7 @@
                                         <td>{{$worker->name}}</td>
                                         <td><strong>{{$worker->phone}}</strong></td>
                                         <td><strong>{{$worker->job}}</strong></td>
+                                        <td><strong>{{$worker->created_at->format('Y-m-d')}}</strong></td>
                                         <td>
                                             <form action="{{url('dashboard-admin/workers/'.$worker->id)}}" method="post">
                                                 {{csrf_field()}}

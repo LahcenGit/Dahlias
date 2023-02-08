@@ -14,7 +14,7 @@ class LoadController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $loads = Load::all();
+        $loads = Load::orderBy('created_at','desc')->get();
         return view('admin.loads',compact('loads'));
     }
 

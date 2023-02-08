@@ -19,17 +19,20 @@ class PresenceController extends Controller
         $sessions = Presence::selectRaw('session')
                               ->selectRaw('course_id')
                               ->selectRaw('group_id')
+                              ->selectRaw('date')
                               ->groupBy('session')
                               ->groupBy('course_id')
                               ->groupBy('group_id')
-                              ->get()
-                              ->reverse();
+                              ->groupBy('date')
+                              ->orderBy('date','desc')
+                              ->get();
+                              
         
         return view('admin.sessions',compact('sessions'));
     }
 
     public function stepOne(){
-        $courses = Course::all();
+        $courses = Course::orderBy('created_at','desc')->get();
         return view('admin.add-presence-step-one',compact('courses'));
     }
     public function stepTwo($course_id, $group_id ,$session,$date){

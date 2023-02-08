@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Faker\Guesser\Name;
 use Illuminate\Http\Request;
+use TheHocineSaad\LaravelAlgereography\Models\Wilaya;
 
 class StudentController extends Controller
 {
@@ -14,11 +15,12 @@ class StudentController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $students = User::where('type','student')->get();
+        $students = User::where('type','student')->orderBy('created_at','desc')->get();
         return view('admin.students',compact('students'));
     }
     public function create(){
-        return view('admin.add-student');
+        $wilayas = Wilaya::all();
+        return view('admin.add-student',compact('wilayas'));
     }
     public function store(Request $request){
         $student = new User();
@@ -28,6 +30,7 @@ class StudentController extends Controller
         $student->place_birth = $request->place_birth;
         $student->email = $request->email;
         $student->type = "student";
+        $student->sexe = $request->sexe;
         $student->save();
         return redirect('dashboard-admin/students');
 

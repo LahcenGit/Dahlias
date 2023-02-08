@@ -10,6 +10,7 @@ use App\Models\Load;
 use App\Models\Payment;
 use App\Models\Registration;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -20,8 +21,8 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $total_payment = Payment::sum('amount');
-        $total_load = Load::sum('amount');
+        $total_payment = Payment::where('created_at', Carbon::today())->sum('amount');
+        $total_load = Load::where('created_at', Carbon::today())->sum('amount');
         $total_user = User::where('type','student')->count();
         $courses = Course::all();
         $rest = 0;

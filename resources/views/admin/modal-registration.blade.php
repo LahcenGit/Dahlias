@@ -26,7 +26,7 @@
                      </div>
                     <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label> Nom Et prénom*:</label>
+                                <label> Nom complet*:</label>
                                 <input type="text"  class="form-control invalid" id="name"  placeholder="name">
                                
                                     <span class="invalid-feedback" id="nameError" role="alert">

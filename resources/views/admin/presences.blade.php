@@ -25,7 +25,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Table de présence</h4>
+                        <h4 class="card-title">Table de présence </h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -34,7 +34,7 @@
                                     <tr>
                                         <th>#</th> 
                                         <th>Etudiant</th>
-                                        <th>Date de naissance</th>
+                                        <th>Téléphone</th>
                                         <th>Présent ?</th>
                                         
                                     </tr>
@@ -44,7 +44,7 @@
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$presence->user->name}}</td>
-                                        <td>{{$presence->user->date_birth}}</td>
+                                        <td>{{$presence->user->phone}}</td>
                                         <td><strong>@if($presence->present == 1) Présent @else Absent @endif</strong></td>
                                     </tr>
                                    @endforeach

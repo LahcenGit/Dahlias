@@ -42,6 +42,7 @@
                                         <th>Group</th>
                                         <th>Montant</th>
                                         <th>N° de bon</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -55,7 +56,7 @@
                                         <td><strong>{{$payment->group->group}}</strong></td>
                                         <td><strong>{{$payment->amount}} </strong></td>
                                         <td><strong>{{$payment->N_bon}} </strong></td>
-                                        
+                                        <td><strong>{{$payment->created_at->format('Y-m-d')}} </strong></td>
                                        
                                         <td>
                                             <form action="{{url('dashboard-admin/payments/'.$payment->id)}}" method="post">

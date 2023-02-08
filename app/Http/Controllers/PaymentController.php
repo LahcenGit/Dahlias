@@ -17,7 +17,7 @@ class PaymentController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $payments = Payment::with('group','user')->get();
+        $payments = Payment::with('group','user')->orderBy('created_at','desc')->get();
         return view('admin.payments',compact('payments'));
     }
     public function create(){

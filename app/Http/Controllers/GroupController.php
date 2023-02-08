@@ -19,11 +19,11 @@ class GroupController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $editions = Group::with('course','instructor')->get();
+        $editions = Group::with('course','instructor')->orderBy('created_at','desc')->get();
         return view('admin.editions',compact('editions'));
     }
     public function create(){
-        $courses = Course::all();
+        $courses = Course::orderBy('created_at','desc')->get();
         $instructors = Instructor::all();
         return view('admin.add-edition',compact('courses','instructors'));
     }

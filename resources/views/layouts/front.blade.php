@@ -13,8 +13,8 @@
 
     <!-- CSS
 	============================================ -->
-
-      <link rel="stylesheet" href="{{asset('front/assets/owl/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.17/css/bootstrap-select.min.css"/>
+    <link rel="stylesheet" href="{{asset('front/assets/owl/css/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/owl/css/owl.theme.default.min.css')}}">
     <!-- Icon Font CSS -->
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/icofont.min.css')}}">
@@ -22,12 +22,11 @@
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/font-awesome.min.css')}}">
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/swiper-bundle.min.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('front/assets/css/plugins/nice-select.css')}}">
+    
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/apexcharts.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/plugins/jqvmap.min.css')}}">
 
@@ -498,11 +497,14 @@
     </script>
 
     <!-- Plugins JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.17/js/bootstrap-select.min.js"></script>
     <script src="{{asset('front/assets/js/plugins/swiper-bundle.min.js')}}"></script>
     <script src="{{asset('front/assets/js/plugins/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('front/assets/js/plugins/video-playlist.js')}}"></script>
-    <script src="{{asset('front/assets/js/plugins/jquery.nice-select.min.js')}}"></script>
+  
     <script src="{{asset('front/assets/js/plugins/ajax-contact.js')}}"></script>
+    
+
 
     <!--====== Use the minified version files listed below for better performance and remove the files listed above ======-->
     <!-- <script src="assets/js/plugins.min.js"></script> -->

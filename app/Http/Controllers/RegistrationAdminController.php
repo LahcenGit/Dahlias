@@ -13,7 +13,7 @@ class RegistrationAdminController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $registrations = Registration::with('course')->get()->reverse();
+        $registrations = Registration::with('course')->orderBy('created_at','desc')->get();
         return view('admin.registrations',compact('registrations'));
     }
 

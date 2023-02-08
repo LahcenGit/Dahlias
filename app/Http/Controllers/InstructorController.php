@@ -17,7 +17,7 @@ class InstructorController extends Controller
     }
 
     public function index(){
-        $instructors = Instructor::all();
+        $instructors = Instructor::orderBy('created_at','desc')->get();
         return view('admin.instructors',compact('instructors'));
     }
     public function store(Request $request){

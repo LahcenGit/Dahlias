@@ -36,6 +36,7 @@
                                         <th>Formation</th>
                                         <th>Edition</th>
                                         <th>Séance</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -46,6 +47,7 @@
                                         <td>{{$session->course->name}}</td>
                                         <td><strong>Edition {{$session->group->group}}</strong></td>
                                         <td><strong>Séance {{$session->session}} </strong></td>
+                                        <td><strong> {{$session->date}} </strong></td>
                                         <td>
                                              <div class="d-flex">
                                                <form action="" method="post">

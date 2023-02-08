@@ -37,14 +37,26 @@
                                     <input type="date"  class="form-control invalid" id="date_birth"   value="{{$registration->age}}">
                             </div>
                             <div class="form-group col-md-6">
-                                    <label>Lieu de naissance* :</label>
-                                    <input type="text"  class="form-control invalid" id="address"   value="{{$registration->place_birth}}">
+                            <label>Wilaya* :</label>
+                                <select type="text"  class="form-control input-default" id="address" class="selectpicker" data-live-search="true" name="place_birth" required>
+                                    @foreach($wilayas as $wilaya)
+                                    <option value={{$wilaya->name}}@if($registration->place_birth == $wilaya->name) selected @endif>{{$wilaya->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                         <div class="form-row mt-3">
-                            <div class="form-group col-md-12">
+                            <div class="form-group col-md-6">
                                     <label>Email* :</label>
                                     <input type="text"  class="form-control invalid" id="email"   value="{{$registration->email}}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Genre :</label>
+                                    <div class="form-group mb-0">
+                                        <label class="radio-inline mr-3"><input type="radio" name="sexe" value="Homme" @if($registration->sexe == 'Homme')checked @endif> Homme</label>
+                                        <label class="radio-inline mr-3"><input type="radio" name="sexe" value="Femme" @if($registration->sexe == 'Femme')checked @endif> Femme</label>
+                                        
+                                    </div>
                             </div>
                         </div>
                      </div>
@@ -79,6 +91,7 @@
                                 </select>
                               </div>
                     </div>
+                    
                 </div>
                  </div>
             </div>

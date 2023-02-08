@@ -63,26 +63,32 @@
                                             @enderror
                                         </div>
                                     <div class="form-group col-md-6">
-                                        <label>Lieu de naissance* :</label>
-                                        <input type="text"  class="form-control input-default @error('place_birth') is-invalid @enderror" value="{{old('place_birth')}}" name="place_birth" placeholder="Tlemcen" required>
-                                        @error('place_birth')
+                                        <label>Wilaya* :</label>
+                                        <select type="text"  class="form-control input-default @error('place_birth') is-invalid @enderror" value="{{old('place_birth')}}" id="sel1"  class="selectpicker" data-live-search="true" name="place_birth" required>
+                                            @foreach($wilayas as $wilaya)
+                                            <option value={{$wilaya->name}}>{{$wilaya->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>         
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Email*:</label>
+                                        <input type="text"  class="form-control input-default @error('email') is-invalid @enderror" value="{{old('email')}}" name="email" placeholder="mohamed@gmail.com" >
+                                        @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                         @enderror
                                     </div>
-                                </div>         
-                                <div class="form-row">
                                     <div class="form-group col-md-6">
-                                            <label>Email*:</label>
-                                            <input type="text"  class="form-control input-default @error('email') is-invalid @enderror" value="{{old('email')}}" name="email" placeholder="mohamed@gmail.com" >
-                                            @error('email')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                            @enderror
-                                        </div>
-                                
+                                        <label>Genre :</label>
+                                            <div class="form-group mb-0">
+                                                <label class="radio-inline mr-3"><input type="radio" name="sexe" value="Homme" checked> Homme</label>
+                                                <label class="radio-inline mr-3"><input type="radio" name="sexe" value="Femme"> Femme</label>
+                                                
+                                            </div>
+                                    </div>
                                 </div>                            
                                 <button type="submit" class="btn btn-primary mt-3 text-center" >Ajouter</button>
                             </form>

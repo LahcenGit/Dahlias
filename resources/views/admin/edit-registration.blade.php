@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
-                                        <label>Name* :</label>
+                                        <label>Nom complet* :</label>
                                         <input type="text"  class="form-control input-default @error('name') is-invalid @enderror" value="{{$registration->name}}" name="name" >
                                         @error('name')
                                                 <span class="invalid-feedback" role="alert">
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Téléphone :</label>
-                                        <input type="text"  class="form-control input-default @error('phone') is-invalid @enderror" value="{{$registration->phone}}"  name="phone" >
+                                        <input type="text"  class="form-control input-default @error('phone') is-invalid @enderror" value="{{$registration->phone}}"oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"  name="phone" >
                                         @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

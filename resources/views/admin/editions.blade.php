@@ -42,6 +42,7 @@
                                         <th>Prix 1</th>
                                         <th>Prix 2</th>
                                         <th>Prix 3</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -68,6 +69,7 @@
                                             @else
                                              <td><strong><i class="fa fa-minus"></i> </strong></td>
                                             @endif
+                                            <td><strong>{{$edition->created_at->format('Y-m-d')}} </strong></td>
                                             <td>
                                                 <form action="{{url('dashboard-admin/editions/'.$edition->id)}}" method="post">
                                                     {{csrf_field()}}

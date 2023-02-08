@@ -35,9 +35,8 @@
                                 <thead>
                                     <tr>
                                         <th>#</th> 
-                                        <th>Name</th>
+                                        <th>Nom</th>
                                         <th>Email</th>
-                                
                                         <th>Téléphone</th>
                                         <th>Date de naissance</th>
                                         <th>Fonction</th>
@@ -53,7 +52,6 @@
                                         <td><strong>{{$instructor->phone}} </strong></td>
                                         <td><strong>{{$instructor->date_of_birth}} </strong></td>
                                         <td><strong>{{$instructor->function}} </strong></td>
-                                       
                                         <td>
                                             <form action="{{url('dashboard-admin/instructors/'.$instructor->id)}}" method="post">
                                                 {{csrf_field()}}

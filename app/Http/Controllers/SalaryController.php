@@ -14,11 +14,11 @@ class SalaryController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $salaries = Salary::all();
+        $salaries = Salary::orderBy('created_at','desc')->get();
         return view('admin.salaries',compact('salaries'));
     }
     public function create(){
-        $workers = Worker::all();
+        $workers = Worker::orderBy('created_at','desc')->get();
         return view('admin.add-salary',compact('workers'));
     }
 

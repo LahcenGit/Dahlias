@@ -9,6 +9,10 @@
         font-size: 19px;
         text-decoration: line-through;
     }
+    
+    .btn-primary:hover {
+    color:#fff;
+    } 
 </style>
 
 <div class="section page-banner">
@@ -369,7 +373,7 @@
                              </ul>
                         </div>
                         <div class="info-btn">
-                            <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary btn-hover-dark">Je m'inscris</a>
+                            <a href="{{url('register-course/'.$course->id)}}" class="btn btn-primary"style="background-color:#fd7e14;">Je m'inscris</a>
                         </div>
                     </div>
                     <!-- Sidebar Widget Information End -->

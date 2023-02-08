@@ -38,6 +38,7 @@
                                         <th>Etudiant</th>
                                         <th>Formation</th>
                                         <th>Edition</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -48,7 +49,7 @@
                                         <td>{{$registration->returnStudent()->name}}</td>
                                         <td><strong>{{$registration->returnCourse()->name}}</strong></td>
                                         <td><strong>{{$registration->returnEdition()->group}} </strong></td>
-                                       
+                                         <td><strong>{{$registration->created_at->format('Y-m-d')}} </strong></td>
                                        
                                         <td>
                                             <form action="{{url('dashboard-admin/final-registrations/'.$registration->id)}}" method="post">

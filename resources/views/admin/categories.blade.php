@@ -51,12 +51,12 @@
                                     <?php $dash=''; ?>
                                     <td>{{$_SESSION['i']}}</td>
                                     <td>{{$category->name}}</td>
-                                     <td>{{$category->created_at}}</td>
+                                     <td>{{$category->created_at->format('Y-m-d')}}</td>
                                     <td>
                                         @if(isset($category->parent_id))
                                             {{$category->childCategories->name}}
                                         @else
-                                            None
+                                            <i class="fa fa-minus"></i>
                                         @endif
                                     </td>
                                     <td>

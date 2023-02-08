@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Course;
 use App\Models\Registration;
 use Illuminate\Http\Request;
+use TheHocineSaad\LaravelAlgereography\Models\Wilaya;
 
 class RegistrationController extends Controller
 {
@@ -14,7 +15,7 @@ class RegistrationController extends Controller
         return view('home');
     }
     public function store(Request $request){
-
+        
          $registration = new Registration();
          $registration->course_id = $request->course;
          $registration->name = $request->name;
@@ -23,11 +24,12 @@ class RegistrationController extends Controller
          $registration->age = $request->age;
          $registration->remarque = $request->remarque;
          $registration->phone = $request->phone;
-         $registration->place_birth = $request->place_birth;
+         $registration->place_birth = 'Tlemcen';
          $registration->status = 1;
          $registration->accept = $request->accept;
+         $registration->function = $request->function;
+         $registration->sexe = $request->sexe;
          $registration->save();
-
          $name = $request->name;
          $categories = Category::all();
          return view('register-success',compact('name','categories'));
@@ -36,7 +38,8 @@ class RegistrationController extends Controller
     public function register($id){
         $course = Course::find($id);
         $categories = Category::all();
-        return view('register-course',compact('course','categories'));
+        $wilayas = Wilaya::all();
+        return view('register-course',compact('course','categories','wilayas'));
     }
 
 

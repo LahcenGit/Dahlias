@@ -25,7 +25,8 @@
                     <div class="card-body">
                         <div class="basic-form">
                         <span class="btn btn-primary export-all-email-btn" >Exporter tous les emails </span>
-                            <div class="form-row mt-3">
+                        <span class="btn btn-primary export-email-pres-inscription-btn " >Exporter les emails des prés inscriptions </span>
+                            <div class="form-row mt-3"> 
                                     <div class="form-group col-md-6">
                                         <label>Formation :</label>
                                         <select type="text"  class="form-control invalid" class="selectpicker"  data-live-search="true" name="course" id="select-course" required>
@@ -57,6 +58,9 @@
 
 $( ".export-all-email-btn" ).click(function() {
       window.location.replace('/dashboard-admin/export-all-email/');
+});
+$( ".export-email-pres-inscription-btn" ).click(function() {
+      window.location.replace('/dashboard-admin/export-email-pres-inscription/');
 });
 </script>
 @endpush

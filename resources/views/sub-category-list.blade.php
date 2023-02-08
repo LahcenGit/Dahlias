@@ -4,7 +4,7 @@
     <tr id= "{{$subcategory->id}}">
         <td>{{$_SESSION['i']}}</td>
         <td>{{$dash}}{{$subcategory->name}}</td>
-        <td>{{$subcategory->created_at}}</td>
+        <td>{{$subcategory->created_at->format('Y-m-d')}}</td>
         <td>{{$subcategory->parent->name}}</td>
         <td>
             <form action="{{url('dashboard-admin/category/'.$subcategory->id)}}" method="post">

@@ -21,14 +21,11 @@
       
         <!-- row -->
         <div class="row ">
-
-
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Table des charges</h4>
                         <a href="{{url('/dashboard-admin/loads/create')}}" type="button"class="btn btn-primary mt-3" >Ajouter</a>
-                       
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -39,6 +36,7 @@
                                         <th>Désignation</th>
                                         <th>Fournisseur</th>
                                         <th>Montant</th>
+                                        <th>Date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -49,6 +47,7 @@
                                         <td>{{$load->designation}}</td>
                                         <td><strong>{{$load->vendor->designation}}</strong></td>
                                         <td><strong>{{$load->amount}}</strong></td>
+                                        <td><strong>{{$load->created_at->format('Y-m-d')}}</strong></td>
                                         <td>
                                             <form action="{{url('dashboard-admin/loads/'.$load->id)}}" method="post">
                                                 {{csrf_field()}}
@@ -60,8 +59,7 @@
                                             </form>											
                                         </td>												
                                     </tr>
-                                   
-                                  @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

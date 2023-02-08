@@ -22,7 +22,7 @@ class CategoryController extends Controller
 
     public function index(){
         
-        $categories = Category::where('parent_id',null)->orderby('name', 'asc')->get();
+        $categories = Category::where('parent_id',null)->orderby('created_at', 'desc')->get();
         $countcategory = Category::count();
         return view('admin/categories',compact('categories','countcategory'));
     }

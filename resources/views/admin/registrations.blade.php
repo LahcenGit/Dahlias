@@ -170,6 +170,7 @@ $("body").on('click','.add-final-registration',function() {
         $('#modal-final-registration').html(res);
         $('#modal-final-registration').find("#student").selectpicker();
         $('#modal-final-registration').find("#edition").selectpicker();
+        $('#modal-final-registration').find("#address").selectpicker();
         $("#exampleModal2").modal('show');
       }
     });
@@ -199,8 +200,9 @@ $("body").on('click','.add-final-registration',function() {
           let email = $('#email').val();
           let date_birth = $('#date_birth').val();
           let address = $('#address').val();
-
-            $.ajax({
+          let sexeTest = $("input[name='sexe']:checked").val();
+          let sexe = sexeTest;
+          $.ajax({
               type:"POST",  
               url: "/final-registration",
               data:{
@@ -212,6 +214,7 @@ $("body").on('click','.add-final-registration',function() {
                 email:email,
                 date_birth:date_birth,
                 address:address,
+                sexe:sexe,
                 
               },
               success:function(res){
@@ -234,7 +237,7 @@ $("body").on('click','.add-final-registration',function() {
           let email = null;
           let date_birth = null;
           let address = null;
-
+          let sexe = null;
           $.ajax({
             type:"POST",  
             url: "/final-registration",
@@ -247,6 +250,7 @@ $("body").on('click','.add-final-registration',function() {
               email:email,
               date_birth:date_birth,
               address:address,
+              sexe:sexe,
               
             },
             success:function(res){

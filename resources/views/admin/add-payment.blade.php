@@ -75,7 +75,7 @@
                                 <div class="form-row">
                                        <div class="form-group col-md-4">
                                             <label>N° de bon:</label>
-                                            <input type="text"  class="form-control input-default" value="" name="n_bon" placeholder="0" required >
+                                            <input type="text"  class="form-control input-default" minlength="6" maxlength="6" value="" name="n_bon" placeholder="0" required >
                                             
                                        </div>
                                 </div>                           

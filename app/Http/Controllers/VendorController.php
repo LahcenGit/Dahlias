@@ -13,7 +13,7 @@ class VendorController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $vendors = Vendor::all();
+        $vendors = Vendor::orderBy('created_at','desc')->get();
         return view('admin.vendors',compact('vendors'));
     }
 

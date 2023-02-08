@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Finalregistration;
+use App\Models\Registration;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -78,5 +79,35 @@ class EmailingController extends Controller
             };
 
             return response()->stream($callback, 200, $headers);
+    }
+
+    public function exportEmailPresInscription(){
+        $fileName = 'emailing.csv';
+        $registrations = Registration::all();
+           $headers = array(
+                "Content-type"        => "text/csv",
+                "Content-Disposition" => "attachment; filename=$fileName",
+                "Pragma"              => "no-cache",
+                "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+                "Expires"             => "0"
+            );
+
+            $columns = array('Emails :');
+
+            $callback = function() use($registrations, $columns) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, $columns);
+
+                foreach ($registrations as $registration) {
+                    $row['email']  = $registration->email;
+                    
+                    fputcsv($file, array($row['email']));
+                }
+
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+
     }
 }

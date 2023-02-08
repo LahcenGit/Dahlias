@@ -39,6 +39,7 @@
                                         <th>Désignation</th>
                                         <th>Téléphone</th>
                                         <th>Adresse</th>
+                                        <th>date</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -49,6 +50,7 @@
                                         <td>{{$vendor->designation}}</td>
                                         <td><strong>{{$vendor->phone}}</strong></td>
                                         <td><strong>{{$vendor->address}}</strong></td>
+                                        <td><strong>{{$vendor->created_at->format('Y-m-d')}}</strong></td>
                                         <td>
                                             <form action="{{url('dashboard-admin/vendors/'.$vendor->id)}}" method="post">
                                                 {{csrf_field()}}

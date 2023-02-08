@@ -27,7 +27,7 @@ class CourseController extends Controller
     }
 
     public function index(){
-        $courses = Course::with('category')->get();
+        $courses = Course::with('category')->orderBy('created_at','desc')->get();
         return view ('admin.courses',compact('courses'));
     }
     
@@ -53,6 +53,8 @@ class CourseController extends Controller
         $course->old_price = $request->old_price;
         $course->slug = $request->slug;
         $course->flug = $request->nbr_session;
+        $course->file = $request->file;
+        $course->youtub_link = $request->youtub_link;
         $course->save();
 
 
