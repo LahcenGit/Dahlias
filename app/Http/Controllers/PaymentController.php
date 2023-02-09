@@ -21,7 +21,7 @@ class PaymentController extends Controller
         return view('admin.payments',compact('payments'));
     }
     public function create(){
-        $courses = Course::all();
+        $courses = Course::orderBy('created_at','desc')->get();
         $students = User::where('type','student')->get();
         return view('admin.add-payment',compact('students','courses'));
     }
@@ -65,9 +65,9 @@ class PaymentController extends Controller
     }
 
     public function getRest($course_id , $edition_id , $student_id , $amount){
-        $course = Course::find($course_id);
+        $edition = Group::find($edition_id);
         $total_payment = Payment::where('course_id',$course_id)->where('group_id',$edition_id)->where('user_id',$student_id)->sum('amount');
-        $rest = $course->price - ($total_payment + $amount);
+        $rest = $edition->price_one - ($total_payment + $amount);
         return $rest;
     }
 

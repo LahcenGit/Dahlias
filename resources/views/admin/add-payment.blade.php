@@ -143,8 +143,6 @@ $('#calculate-amount').click(function() {
                     
 				data = data + '<option value="'+ res.id+ '" >'+ res.group+ '</option>';
 				});
-				
-				
 				$('#select-edition').html(data);
 				$('#select-edition').selectpicker('refresh');
 				$('#select-edition').selectpicker('refresh');

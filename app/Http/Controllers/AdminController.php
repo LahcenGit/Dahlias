@@ -21,16 +21,18 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
     public function index(){
+        $month = Carbon::now()->month;
         $total_payment = Payment::where('created_at', Carbon::today())->sum('amount');
         $total_load = Load::where('created_at', Carbon::today())->sum('amount');
         $total_user = User::where('type','student')->count();
         $courses = Course::all();
         $rest = 0;
         foreach($courses as $course){
-            $nbr_registration = Finalregistration::where('course_id',$course->id)->count();
-            $sum_payment = Payment::where('course_id',$course->id)->sum('amount');
+            $nbr_registration = Finalregistration::where('course_id',$course->id )->whereMonth('created_at',$month)->count();
+            $sum_payment = Payment::where('course_id',$course->id)->whereMonth('created_at',$month)->sum('amount');
             $rest = $rest + ($course->price*$nbr_registration)-$sum_payment;
         }
+       
         $registrations = Registration::limit('5')->orderBy('created_at','desc')->get();
         $final_registrations = Finalregistration::limit('5')->orderBy('created_at','desc')->get();
         return view('admin.dashboard-admin',compact('total_payment','total_load','total_user','rest','registrations','final_registrations'));
