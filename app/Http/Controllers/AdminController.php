@@ -22,8 +22,8 @@ class AdminController extends Controller
     }
     public function index(){
         $month = Carbon::now()->month;
-        $total_payment = Payment::where('created_at', Carbon::today())->sum('amount');
-        $total_load = Load::where('created_at', Carbon::today())->sum('amount');
+        $total_payment = Payment::whereDate('created_at', Carbon::today())->sum('amount');
+        $total_load = Load::whereDate('created_at', Carbon::today())->sum('amount');
         $total_user = User::where('type','student')->count();
         $courses = Course::all();
         $rest = 0;
