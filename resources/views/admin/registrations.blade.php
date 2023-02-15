@@ -1,8 +1,5 @@
 @extends('layouts.dashboard-admin')
 @section('content')
-
-
-
 <div class="content-body">
     <div class="container-fluid">
         <div class="row page-titles mx-0">
@@ -19,6 +16,9 @@
                 </ol>
             </div>
         </div>
+        <div id="show_alert">
+            
+        </div>
 
         <!-- row -->
         <div class="row ">
@@ -30,74 +30,54 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="example3" class="display" style="min-width: 845px">
+                            <table id="example3" class="display" >
                                 <thead>
                                     <tr>
                                         <th>#</th> 
                                         <th>Formation</th>
-                                        <th>Name</th>
-                                
+                                        <th>Nom complet</th>
+                                         <th>Email</th>
                                         <th>Téléphone</th>
-                                        <th>Date de naissance</th>
-                                        <th>Date</th>
-                                        <th>Accepter</th>
-                                        <th>Remarque</th>
                                         <th>Statut</th>
-                                        <th>Nombre d'appels et sms</th>
+                                        
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($registrations as $registration)
-                                    <tr>
+                                    <tr id="tr-{{$registration->id}}">
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$registration->course->name}}</td>
                                         <td><strong>{{$registration->name}}</strong></td>
+                                        <td><strong>{{$registration->email}} </strong></td>
                                         <td><strong>{{$registration->phone}} </strong></td>
-                                        <td><strong>{{$registration->age}}  </strong></td>
-                                        <td><strong>{{$registration->created_at}} </strong></td>
-                                        @if($registration->accept)
-                                        <td><strong>{{$registration->accept}} </strong></td>
-                                        @else
-                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
-                                        @endif
-                                        @if($registration->remarque != Null)
-                                        <td><strong>{{$registration->remarque}} </strong></td>
-                                        @else
-                                        <td><strong><i class="fa fa-minus"></i></strong></td>
-                                        @endif
+                                        
                                         @if ($registration->status == 1 )
-                                        <td><span class="badge badge-warning">En Attente</span></td>
-                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-warning">En Attente</span></td>
                                         @elseif($registration->status == 2)
-                                        <td><span class="badge badge-light">Va passer</span></td>
-                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-light">Va passer</span></td>
                                         @elseif($registration->status == 3)
-                                        <td><span class="badge badge-info">Interessé(e)</span></td>
-                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-info">Interessé(e)</span></td>
                                         @elseif($registration->status == 4)
-                                        <td><span class="badge badge-dark">Injoignable</span></td>
-                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-dark">Injoignable</span></td>
                                         @elseif($registration->status == 5)
-                                        <td><span class="badge badge-secondary">Appels + sms</span></td>
-                                        <td><strong>{{$registration->remark}} </strong></td>
-                                         @elseif($registration->status == 6)
-                                        <td><span class="badge badge-success">Validé</span></td>
-                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-secondary">Appels + sms</span></td>
+                                        @elseif($registration->status == 6)
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-success">Validé</span></td>
                                         @else
-                                        <td><span class="badge badge-danger">Annuler</span></td>
-                                        <td><strong><i class="fa fa-minus"></i> </strong></td>
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-danger">Annuler</span></td>
                                         @endif
-                                       
-                                        <td>
+                                       <td>
                                              <div class="d-flex">
                                                 @if($registration->status == 6)
                                                 <button class=" btn btn-primary shadow btn-xs sharp mr-1 add-final-registration" data-id="{{$registration->id}}"><i class="fa fa-plus"></i></button>
                                                 @endif
+                                                 <button data-id="{{$registration->id}}"  class="btn btn-secondary shadow btn-xs sharp mr-1 edit-status"><i class="fa fa-pencil"></i></button>
                                                 <form action="{{url('dashboard-admin/registrations/'.$registration->id)}}" method="post">
+                                                
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
-                                                <a href="{{url('dashboard-admin/registrations/'.$registration->id.'/edit')}}"  class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                               
                                                 <button   class=" btn btn-danger shadow btn-xs sharp mr-1"onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                             </div>	
                                             </form>											
@@ -120,6 +100,9 @@
 
 </div>
 <div id="modal-final-registration">
+
+</div>
+<div id="modal-edit-status">
 
 </div>
 @endsection
@@ -149,6 +132,103 @@ $("#add-registration").click(function() {
 
 
 </script>
+@endpush
+
+@push('modal-edit-status-scripts')
+<script>
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+
+$("body").on('click','.edit-status',function() {
+  var id = $(this).data('id');
+
+ $.ajax({
+    
+    url: '/edit-status/'+id ,
+    type: "GET",
+    success: function (res) {
+      $('#modal-edit-status').html(res);
+      $('#modal-edit-status').find("#status").selectpicker();
+      $("#exampleModal3").modal('show');
+    }
+  });
+  
+});
+</script>
+<script>
+  $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+  });
+
+  $("#modal-edit-status").on('click','#save-status',function(e){
+   
+        e.preventDefault();
+        let status = $('#status').val();
+       
+        let id =  $('#registration').val();
+        $.ajax({
+          
+          type:"POST",  
+          url: "/update-status/"+id,
+          data:{
+            "_token": "{{ csrf_token() }}",
+            status:status,
+            
+           },
+        
+          success:function(response){
+           $('#exampleModal3').modal('hide'); 
+           toastr.success("Statut modifié avec succès", "Succès", {
+                    timeOut: 5e3,
+                    closeButton: !0,
+                    debug: !1,
+                    newestOnTop: !0,
+                    progressBar: !0,
+                    positionClass: "toast-top-right",
+                    preventDuplicates: !0,
+                    onclick: null,
+                    showDuration: "300",
+                    hideDuration: "1000",
+                    extendedTimeOut: "1000",
+                    showEasing: "swing",
+                    hideEasing: "linear",
+                    showMethod: "fadeIn",
+                    hideMethod: "fadeOut",
+                    tapToDismiss: !1
+
+            })
+            if(status == 1){
+              $("#td-status-"+id).html('<span class="badge badge-warning">'+'En Attente'+'</span>');
+            }
+             else if(status == 2){
+              $("#td-status-"+id).html('<span class="badge badge-light">'+'Va passer'+'</span>');
+            }
+             else if(status == 3){
+              $("#td-status-"+id).html('<span class="badge badge-info">'+'Interessé(e)'+'</span>');
+            }
+             else if(status == 4){
+              $("#td-status-"+id).html('<span class="badge badge-dark">'+'Injoignable'+'</span>');
+            }
+             else if(status == 5){
+              $("#td-status-"+id).html('<span class="badge badge-secondary">'+'Appels + sms'+'</span>');
+            }
+             else if(status == 6){
+              $("#td-status-"+id).html('<span class="badge badge-success">'+'Validé'+'</span>');
+            }
+            else{
+              $("#td-status-"+id).html('<span class="badge badge-danger">'+'Annuler'+'</span>');
+            }
+          },
+          
+          });
+       
+   });
+</script>   
 @endpush
 
 @push('modal-add-final-registration-scripts')

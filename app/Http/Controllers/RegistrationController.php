@@ -53,6 +53,7 @@ class RegistrationController extends Controller
         $courses = Course::all();
         return view('admin.modal-registration',compact('courses'));
     }
+   
     public function addRegistration(Request $request){
 
         $registration = new Registration();

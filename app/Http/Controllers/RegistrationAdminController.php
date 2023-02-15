@@ -23,16 +23,12 @@ class RegistrationAdminController extends Controller
         return view('admin.edit-registration',compact('registration'));
     }
 
-    public function update(Request $request, $id){
+    public function updateStatus(Request $request, $id){
           $registration = Registration::find($id);
-          $registration->name = $request->name;
-          $registration->phone = $request->phone;
-          $registration->age = $request->age;
           $registration->status = $request->status;
-          $registration->remark = $request->remark;
           $registration->save();
           
-          return redirect('dashboard-admin/registrations');
+          return $registration;
     }
 
 
@@ -41,6 +37,11 @@ class RegistrationAdminController extends Controller
         $registration->delete();
         return redirect('dashboard-admin/registrations');
 
+    }
+
+    public function editStatus($id){
+        $registration = Registration::find($id);
+        return view('admin.modal-edit-status',compact('registration'));
     }
     
 

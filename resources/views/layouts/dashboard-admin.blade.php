@@ -21,7 +21,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 	<link href="{{asset('Dashboard/vendor/summernote/summernote.css')}}" rel="stylesheet">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-	
+	<link rel="stylesheet" href="{{asset('Dashboard/vendor/toastr/css/toastr.min.css')}}">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<link rel="stylesheet" href="{{asset('Dashboard/uploader/pe-icon-7-stroke.css')}}">
@@ -545,7 +545,11 @@
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="{{asset('/print/printThis.js')}}"></script>
     <script src="{{asset('Dashboard/uploader/drop_uploader.js')}}"></script>
+    <!-- Toastr -->
+    <script src="{{asset('Dashboard/vendor/toastr/js/toastr.min.js')}}"></script>
 
+    <!-- All init script -->
+    <script src="{{asset('Dashboard/js/plugins-init/toastr-init.js')}}"></script>
 	<script>
 
 
@@ -624,5 +628,6 @@
 @stack('select-status-scripts')
 @stack('export-email-scripts')
 @stack('select-course-payment-scripts')
+@stack('modal-edit-status-scripts')
 </body>
 </html>

@@ -83,6 +83,8 @@ Route::resource('/contact',ContactController::class);
 
 Route::get('/category-courses/{id}',[App\Http\Controllers\CourseController::class,'categoryCourses']);
 Route::get('add-registration', [App\Http\Controllers\RegistrationController::class, 'modalRegistration']);
+Route::get('/edit-status/{id}', [App\Http\Controllers\RegistrationAdminController::class, 'editStatus']);
+Route::post('/update-status/{id}', [App\Http\Controllers\RegistrationAdminController::class, 'UpdateStatus']);
 Route::post('registration', [App\Http\Controllers\RegistrationController::class, 'addRegistration']);
 Route::get('/get-instructor/{id}', [App\Http\Controllers\GroupController::class, 'getInstructor']);
 Route::get('/get-edition/{id}', [App\Http\Controllers\FinalregistrationController::class, 'getEdition']);
