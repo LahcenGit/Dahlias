@@ -178,7 +178,7 @@
                                     <img src="{{asset('Dashboard/images/profile/pic1.jpg')}}" width="20" alt=""/>
 									<div class="header-info">
 										<span>Bonjour, <strong>{{Auth::user()->name}}</strong></span>
-										<small>Admin Profile</small>
+										<small>@if(Auth::user()->type == 'admin')Admin Profile @else Receptioniste Profil @endif</small>
 									</div>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
@@ -350,6 +350,7 @@
                                 <li><a href="{{url('/dashboard-admin/final-registrations')}}">Liste des inscriptions finales</a></li>
                             </ul>
                         </li>
+                        @if(Auth::user()->type == 'admin')
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -365,6 +366,7 @@
                                 <li><a href="{{url('/dashboard-admin/payments')}}">Liste des versements</a></li>
                             </ul>
                         </li>
+                        @endif
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -400,6 +402,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @if(Auth::user()->type == 'admin')
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -414,6 +417,7 @@
                                 <li><a href="{{url('/dashboard-admin/salaries')}}">Liste des versements</a></li>
                             </ul>
                         </li>
+                        @endif
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -434,7 +438,7 @@
                                 </li>
                             </ul>
                         </li>
-                         
+                         @if(Auth::user()->type == 'admin')
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -451,6 +455,7 @@
                                 <li><a href="{{url('/dashboard-admin/loads')}}">Liste des charges</a></li>
                             </ul>
                         </li>
+                        @endif
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
                                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

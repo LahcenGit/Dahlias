@@ -10,7 +10,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-9 col-lg-12">
+           
                 <div class="row">
+                 @if(Auth::user()->type == 'admin')
                     <div class="col-xl-3 col-xxl-3 col-lg-6 col-sm-6">
                         <div class="card overflow-hidden">
                             <div class="card-body pb-0 px-3 pt-2">
@@ -63,7 +65,7 @@
                             
                         </div>
                     </div>
-                    
+                    @endif
                     <div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-header border-0 pb-0">

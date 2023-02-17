@@ -45,7 +45,7 @@ class LoginController extends Controller
         
         if(auth()->attempt(array($fieldType => $input['username'], 'password' => $input['password']),$remember_me))
         {
-            if(auth::user()->type == 'admin'){
+            if(auth::user()->type == 'admin' || auth::user()->type == 'receptioniste'){
                 return redirect('dashboard-admin');
             }
            

@@ -76,7 +76,9 @@
                                                     {{method_field('DELETE')}}
                                                 <div class="d-flex">
                                                 <a href="{{url('dashboard-admin/presence-list/'.$edition->id)}}"  class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-print"></i></a>
+                                                    @if(Auth::user()->type == 'admin')
                                                     <a href="{{url('dashboard-admin/student-list/'.$edition->id)}}"  class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
+                                                    @endif
                                                 <a href="{{url('dashboard-admin/editions/'.$edition->id.'/edit')}}"  class="btn btn-warning shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                 <button class=" btn btn-danger shadow btn-xs sharp  "onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
                                                 </div>	

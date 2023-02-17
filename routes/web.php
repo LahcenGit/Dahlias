@@ -98,8 +98,5 @@ Route::get('/search',[App\Http\Controllers\SearchController::class,'globalSearch
 
 
 
-Auth::routes([
-    'register' => false,
-    
-]);
+Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
