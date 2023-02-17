@@ -100,6 +100,9 @@ class FinalregistrationController extends Controller
                 $course = Group::find($request->edition);
                 $registration->course_id = $course->course_id;
                 $registration->save();
+                $pres_registration = Registration::find($request->id);
+                $pres_registration->flag = 1;
+                $pres_registration->save();
             }
         }
         return true;

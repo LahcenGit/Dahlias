@@ -70,7 +70,9 @@
                                        <td>
                                              <div class="d-flex">
                                                 @if($registration->status == 6)
+                                                 @if($registration->flag != 1)
                                                 <button class=" btn btn-primary shadow btn-xs sharp mr-1 add-final-registration" data-id="{{$registration->id}}"><i class="fa fa-plus"></i></button>
+                                                 @endif
                                                 @endif
                                                  <button data-id="{{$registration->id}}"  class="btn btn-secondary shadow btn-xs sharp mr-1 edit-status"><i class="fa fa-pencil"></i></button>
                                                 <form action="{{url('dashboard-admin/registrations/'.$registration->id)}}" method="post">
@@ -282,6 +284,8 @@ $("body").on('click','.add-final-registration',function() {
           let address = $('#address').val();
           let sexeTest = $("input[name='sexe']:checked").val();
           let sexe = sexeTest;
+          let id = $('#id').val();
+          
           $.ajax({
               type:"POST",  
               url: "/final-registration",
@@ -295,6 +299,7 @@ $("body").on('click','.add-final-registration',function() {
                 date_birth:date_birth,
                 address:address,
                 sexe:sexe,
+                 id:id,
                 
               },
               success:function(res){
@@ -318,6 +323,7 @@ $("body").on('click','.add-final-registration',function() {
           let date_birth = null;
           let address = null;
           let sexe = null;
+          let id = $('#id').val();
           $.ajax({
             type:"POST",  
             url: "/final-registration",
@@ -331,6 +337,7 @@ $("body").on('click','.add-final-registration',function() {
               date_birth:date_birth,
               address:address,
               sexe:sexe,
+              id:id,
               
             },
             success:function(res){

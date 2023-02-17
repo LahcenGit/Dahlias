@@ -91,7 +91,7 @@
                                 </select>
                               </div>
                     </div>
-                    
+                    <input type="hidden" value ="{{$registration->id}}" id="id">
                 </div>
                  </div>
             </div>
