@@ -64,10 +64,19 @@ class PaymentController extends Controller
         return redirect('dashboard-admin/payments'); 
     }
 
-    public function getRest($course_id , $edition_id , $student_id , $amount){
+    public function getRest($course_id , $edition_id , $student_id , $amount ,$price){
         $edition = Group::find($edition_id);
         $total_payment = Payment::where('course_id',$course_id)->where('group_id',$edition_id)->where('user_id',$student_id)->sum('amount');
-        $rest = $edition->price_one - ($total_payment + $amount);
+        if($price == 'price_one'){
+            $rest = $edition->price_one - ($total_payment + $amount);
+        }
+        elseif($price == 'price_two'){
+            $rest = $edition->price_two - ($total_payment + $amount);
+        }
+        else{
+            $rest = $edition->price_tree - ($total_payment + $amount);
+        }
+        
         return $rest;
     }
 

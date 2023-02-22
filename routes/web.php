@@ -90,7 +90,7 @@ Route::get('/get-instructor/{id}', [App\Http\Controllers\GroupController::class,
 Route::get('/get-edition/{id}', [App\Http\Controllers\FinalregistrationController::class, 'getEdition']);
 Route::get('/get-session/{id}', [App\Http\Controllers\GroupController::class, 'getSession']);
 Route::get('/get-student/{id}', [App\Http\Controllers\PaymentController::class, 'getStudent']);
-Route::get('/get-rest-amount/{course_id}/{edition_id}/{student_id}/{amount}', [App\Http\Controllers\PaymentController::class, 'getRest']);
+Route::get('/get-rest-amount/{course_id}/{edition_id}/{student_id}/{amount}/{price}', [App\Http\Controllers\PaymentController::class, 'getRest']);
 Route::get('/get-edition-course/{id}/{id_student}', [App\Http\Controllers\PaymentController::class, 'getEditionCourse']);
 
 //search 

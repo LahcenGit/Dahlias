@@ -53,8 +53,16 @@
                                         </select>
                                     </div>
                                 </div>         
-                               
-                               
+                                <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label>Prix* :</label>
+                                           <div class="form-group mb-0">
+                                                <label class="radio-inline mr-3 "><input type="radio" name="check" value="price_one" checked> Prix 1</label>
+                                                <label class="radio-inline mr-3 "><input type="radio" name="check" value="price_two"> Prix 2</label>
+                                                <label class="radio-inline mr-3 "><input type="radio" name="check" value="price_tree"> Prix 3</label>
+                                           </div>
+                                        </div>
+                                </div>         
                                 <div class="form-row">
                                        <div class="form-group col-md-4">
                                             <label>Montant:</label>
@@ -105,9 +113,9 @@ $('#calculate-amount').click(function() {
          course_id = $('#select-course').val();
          edition_id = $('#select-edition').val();
          student_id = $('#select-student').val();
-        
+         price = $("input[name='check']:checked").val();
          $.ajax({
-			url: '/get-rest-amount/'+course_id +'/'+edition_id+'/'+student_id +'/'+amount,
+			url: '/get-rest-amount/'+course_id +'/'+edition_id+'/'+student_id +'/'+amount +'/'+price,
 			type: "GET",
 
 			success: function (res) {
