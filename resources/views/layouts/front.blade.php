@@ -101,6 +101,16 @@
 }
 
 
+@media only screen and (max-width: 767px) {
+  /* Global Style
+    <<<<=====================>>>>*/
+ 
+    .cont-top{
+        margin-top: 150px!important;
+    }
+
+  }
+
 </style>
 
 <body>

@@ -26,23 +26,6 @@
         margin-top: 230px;
     }
 
-    .bottom-ads{
-        display: none;
-    }
-
-    @media screen and (max-width: 480px) {
-
-        .right-ads{
-            display: none;
-        }
-        .cont-top{
-             margin-top: 150px;
-        }
-        .bottom-ads{
-          display: block;
-        }
-
-    }
 
 
 </style>
@@ -63,7 +46,7 @@
     </div> --}}
     
     <div class="row mt-4">
-        <div class="col-md-10">
+        <div class="col-md-12">
              <!-- Slider Start -->
             <div id="carouselExampleIndicators" style="border-radius: 30px;" class="carousel slide" data-bs-ride="true">
                 <div class="carousel-indicators">
@@ -101,33 +84,6 @@
                 </button>
             </div>
         </div>
-
-        <div class="col-md-2 right-ads">
-             <!-- Slider Start -->
-              <a href="{{asset('/category-courses/235')}}">  <img  class="img-one " height="450" width="200" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt=""></a>
-        </div>
-
-        <!-- Slider End -->
-
-        {{--
-        <div class="row mt-4">
-            <div class="col-lg-4" >
-                <img  class="img-one" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
-            </div>
-            <div class="col-lg-4" >
-                <img style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
-            </div>
-            <div class="col-lg-4" >
-                <img style="border-radius: 20px;" src="{{asset('/cuisine-dahlias.jpg')}}"  alt="">
-            </div>
-        
-            
-        </div>--}}
-    </div>
-
-    <div class="row mt-4 bottom-ads">
-        <img  class="img-one" style="border-radius: 20px;" src="{{asset('/cuisine-dahlias-bottom.jpg')}}"  alt="">
-    </div>
 
 </div>
   
