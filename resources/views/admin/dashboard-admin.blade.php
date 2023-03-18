@@ -69,7 +69,7 @@
                     <div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-header border-0 pb-0">
-                                <h4 class="card-title">Les dernières prés-inscriptions</h4>
+                                <h4 class="card-title">Prés-inscriptions</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -133,7 +133,7 @@
                     <div class="col-xl-6 col-xxl-6 col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-header border-0 pb-0">
-                                <h4 class="card-title">Les dernières inscriptions</h4>
+                                <h4 class="card-title">Inscriptions</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">

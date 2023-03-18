@@ -9,26 +9,28 @@
 
 
 	<link href="{{asset('Dashboard/vendor/datatables/css/jquery.dataTables.min.css')}}" rel="stylesheet">
-
     <!-- Favicon icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('icon.png')}}">
     <link href="{{asset('Dashboard/vendor/jqvmap/css/jqvmap.min.css')}}" rel="stylesheet">
 
 	<link rel="stylesheet" href="{{asset('Dashboard/vendor/chartist/css/chartist.min.css')}}">
     <link href="{{asset('Dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet">
-    <link href="{{asset('Dashboard/css/style.css')}}" rel="stylesheet">
+    <link href="{{asset('Dashboard/css/style.css')}}" rel="stylesheet" >
 	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 	<link href="{{asset('Dashboard/vendor/summernote/summernote.css')}}" rel="stylesheet">
-	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 	<link rel="stylesheet" href="{{asset('Dashboard/vendor/toastr/css/toastr.min.css')}}">
 	<meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('Dashboard/css/print.css')}}" media="print">
 
 	<link rel="stylesheet" href="{{asset('Dashboard/uploader/pe-icon-7-stroke.css')}}">
 	<link rel="stylesheet" href="{{asset('Dashboard/uploader/drop_uploader.css')}}">
 
 	
 </head>
+
 
 
 
@@ -71,15 +73,13 @@
 		background:#2B4942 !important;
 	}
 
-	.total-order {
-      background-color: Black; 
-      font-family: 'Orbitron', sans-serif;
-      font-size:25px; 
-      color:#2B4942; 
-      font-weight : bold;
-	  pointer-events: none;
-	  height: 50px;
-    }
+
+
+ 
+
+
+  
+
 	
 </style>
 
@@ -333,7 +333,7 @@
                                 <rect fill="#000000" opacity="0.3" x="10" y="17" width="7" height="2" rx="1"/>
                             </g>
                         </svg>
-						<span class="nav-text">Liste des prés inscriptions</span>
+						<span class="nav-text">Prés-inscriptions</span>
 					</a></li>
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="svg-main-icon">
@@ -364,6 +364,7 @@
                             <ul aria-expanded="false">
                                 <li><a href="{{url('/dashboard-admin/payments/create')}}">Ajouter</a></li>
                                 <li><a href="{{url('/dashboard-admin/payments')}}">Liste des versements</a></li>
+                                <li><a href="{{url('/dashboard-admin/report-payment')}}">Rapport</a></li>
                             </ul>
                         </li>
                         @endif

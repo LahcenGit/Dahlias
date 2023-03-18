@@ -41,8 +41,8 @@
                                         @enderror
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Téléphone* :</label>
-                                        <input type="text"  class="form-control input-default @error('phone') is-invalid @enderror" value="{{old('phone')}}" name="phone" placeholder="+213 xx xx xx xx xx" required>
+                                        <label>N° Tél* :</label>
+                                        <input type="text"  class="form-control input-default @error('phone') is-invalid @enderror" value="{{old('phone')}}" name="phone" placeholder="n° télephone" required>
                                         @error('phone')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -66,7 +66,7 @@
                                         <label>Wilaya* :</label>
                                         <select type="text"  class="form-control input-default @error('place_birth') is-invalid @enderror" value="{{old('place_birth')}}" id="sel1"  class="selectpicker" data-live-search="true" name="place_birth" required>
                                             @foreach($wilayas as $wilaya)
-                                            <option value={{$wilaya->name}}>{{$wilaya->name}}</option>
+                                            <option value={{$wilaya->name}} @if($wilaya->name =='Tlemcen') selected @endif>{{$wilaya->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -74,7 +74,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label>Email*:</label>
-                                        <input type="text"  class="form-control input-default @error('email') is-invalid @enderror" value="{{old('email')}}" name="email" placeholder="mohamed@gmail.com" >
+                                        <input type="text"  class="form-control input-default @error('email') is-invalid @enderror" value="{{old('email')}}" name="email" placeholder="email" >
                                         @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

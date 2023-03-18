@@ -1,5 +1,11 @@
 @extends('layouts.dashboard-admin')
 @section('content')
+
+<style>
+
+  
+</style>
+
 <div class="content-body">
     <div class="container-fluid">
         <div class="row page-titles mx-0">
@@ -24,10 +30,10 @@
               </button>
             </div>
           </div>
-          <div class="row mt-3">
+          <div class="row mt-3 ">
             <div class="col-md-12 grid-margin">
                 <div class="card">
-                    <div class="card-body print-section" id="printable">
+                    <div class="card-body print-section rotated" id="printable">
                         <div class="d-flex justify-content-between mb-2">
                                 <img src="{{asset('front/assets/images/logo.png')}}" height="100px" width="300px">
                                 <div>
@@ -35,29 +41,25 @@
                                     <p> Edition :<b>{{$group->group}}</b> <br>Total des étudiants : <b>{{$total}}</b> </p>
                                 </div>
                         </div>
-                        <table class="table table-bordered">
-                                <thead>
+                        <table class=" table table-bordered tab-border" >
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Etudiant</th>
-                                        <th scope="col">Téléphone</th>
-                                         @for($i=0 ; $i<$course->flug;$i++)
-                                          <th scope="col">Séance {{$i+1}}</th>
+                                        <th >#</th>
+                                        <th  >Etudiant</th>
+                                        <th >Téléphone</th>
+                                         @for($i=0 ; $i<$group->nbr_session;$i++)
+                                          <th>S{{$i+1}}</th>
                                          @endfor
                                     </tr>
-                                </thead>
-                                <tbody>
                                     @foreach ($lists as $list)
                                         <tr>
-                                            <th scope="row">{{$loop->iteration}}</th>
-                                            <th>{{$list->user->name}}</th>
-                                            <th>{{$list->user->phone}}</th>
-                                             @for($i=0 ; $i<$course->flug;$i++)
-                                              <th scope="col"></th>
-                                             @endfor
+                                            <th >{{$loop->iteration}}</th>
+                                            <td>{{$list->user->name}}</td>
+                                            <td>{{$list->user->phone}}</td>
+                                            @for($i=0 ; $i<$group->nbr_session;$i++)
+                                                <td ></td>
+                                            @endfor
                                         </tr>
                                     @endforeach
-                                </tbody>
                         </table>
                         <div class="float-right"><h5> Formateur : <b>{{$group->instructor->name}}</b></h5></div>
                     </div>

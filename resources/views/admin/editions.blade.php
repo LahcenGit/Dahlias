@@ -74,14 +74,14 @@
                                                 <form action="{{url('dashboard-admin/editions/'.$edition->id)}}" method="post">
                                                     {{csrf_field()}}
                                                     {{method_field('DELETE')}}
-                                                <div class="d-flex">
-                                                <a href="{{url('dashboard-admin/presence-list/'.$edition->id)}}"  class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-print"></i></a>
-                                                    @if(Auth::user()->type == 'admin')
-                                                    <a href="{{url('dashboard-admin/student-list/'.$edition->id)}}"  class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
-                                                    @endif
-                                                <a href="{{url('dashboard-admin/editions/'.$edition->id.'/edit')}}"  class="btn btn-warning shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                <button class=" btn btn-danger shadow btn-xs sharp  "onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
-                                                </div>	
+                                                    <div class="d-flex">
+                                                        @if(Auth::user()->type == 'admin')
+                                                        <a title="Liste des paiements" href="{{url('dashboard-admin/student-list/'.$edition->id)}}"  class="btn btn-secondary shadow btn-xs sharp mr-1"><i class="fa fa-usd"></i></a>
+                                                        @endif
+                                                        <a  title="Liste de présence" href="{{url('dashboard-admin/presence-list/'.$edition->id)}}"  class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-street-view"></i></a>
+                                                        <a href="{{url('dashboard-admin/editions/'.$edition->id.'/edit')}}"  class="btn btn-warning shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                        <button class=" btn btn-danger shadow btn-xs sharp  "onclick="return confirm('Vous voulez vraiment supprimer?')"><i class="fa fa-trash"></i></button>
+                                                    </div>	
                                                 </form>											
                                             </td>												
                                         </tr>

@@ -63,7 +63,10 @@ Route::get('dashboard-admin/export-email/{id}', [App\Http\Controllers\EmailingCo
 Route::get('dashboard-admin/export-all-email', [App\Http\Controllers\EmailingController::class, 'exportAllEmail']);
 Route::get('dashboard-admin/export-email-pres-inscription', [App\Http\Controllers\EmailingController::class, 'exportEmailPresInscription']);
 Route::get('dashboard-admin/presence-list/{id}', [App\Http\Controllers\GroupController::class, 'presenceList'])->middleware('can:admin');
+
+//la liste des etudiants par editions 
 Route::get('dashboard-admin/student-list/{id}', [App\Http\Controllers\GroupController::class, 'studentList'])->middleware('can:admin');
+
 Route::resource('dashboard-admin/sessions', PresenceController::class)->middleware('can:admin');
 Route::get('dashboard-admin/presences/{course_id}/{group_id}/{session}', [App\Http\Controllers\PresenceController::class, 'getPresences'])->middleware('can:admin');
 Route::get('dashboard-admin/edit-presences/{course_id}/{group_id}/{session}', [App\Http\Controllers\PresenceController::class, 'edit'])->middleware('can:admin');
@@ -71,6 +74,8 @@ Route::post('dashboard-admin/update-presences', [App\Http\Controllers\PresenceCo
 Route::get('dashboard-admin/add-presence-step-one', [App\Http\Controllers\PresenceController::class, 'stepOne']);
 Route::get('dashboard-admin/add-presence-step-two/{course_id}/{group_id}/{session}/{date}', [App\Http\Controllers\PresenceController::class, 'stepTwo']);
 Route::resource('/dashboard-admin',AdminController::class)->middleware('can:admin');
+
+
 
 Route::post('store-presence', [App\Http\Controllers\PresenceController::class, 'storPresence']);
 Route::resource('/registration-course',RegistrationController::class);

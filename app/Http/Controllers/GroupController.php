@@ -94,5 +94,8 @@ class GroupController extends Controller
         $group = Group::find($id);
         return $group->nbr_session;
     }
+
+
+
   
 }
