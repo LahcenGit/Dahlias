@@ -2,6 +2,13 @@
 
 @section('content')
 
+<style>
+    .nice-select{
+        height: 60px;
+        width: 100%;
+    }
+</style>
+
     
 <!-- Page Banner Start -->
 <div class="section page-banner">
@@ -101,13 +108,13 @@
                                 </div>
                                  <div class="single-form">
                                     <label>Wilaya* :</label>
-                                    <select class="selectpicker "class="form-control"data-live-search="true" name="wilaya" required>
+                                    <select name="wilaya" required>
                                         @foreach($wilayas as $wilaya)
                                         <option value="{{$wilaya->name}}">{{$wilaya->name}}</option>
                                         @endforeach
                                     </select>
                                  </div>
-                                 <div class="single-form">
+                                 <div class="single-form" >
                                     <label>Fonction* :</label>
                                     <input type="text" placeholder="Fonction" name="function" required>
                                  </div>

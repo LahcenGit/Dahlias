@@ -41,7 +41,6 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Etudiant</th>
                                         <th scope="col"> Montant versé</th>
-                                        <th scope="col"> Le reste</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,34 +48,21 @@
                                     $total_rest = 0;
                                     @endphp
                                     @foreach ($lists as $list)
-                                        @if($list->payment())
-                                            @php
-                                            $rest = $list->returnCourse()->price-$list->payment() ;
-                                            @endphp
-                                        @else
-                                            @php
-                                             $rest = $list->returnCourse()->price
-                                            @endphp
-                                        @endif
-                                        @php
-                                        $total_rest = $total_rest + $rest;
-                                        @endphp
+                                    
                                         <tr>
                                             <th scope="row">{{$loop->iteration}}</th>
                                             <th>{{$list->user->name}}</th>
                                             @if($list->payment())
-                                            <td>{{number_format($list->payment())}} Da</td>
+                                                 <td>{{number_format($list->payment())}} Da</td>
                                             @else
-                                            <td><i class="fa fa-minus"></i></td>
+                                                 <td><i class="fa fa-minus"></i></td>
                                             @endif
-                                            <td>{{number_format($rest)}} Da</td>
                                         </tr>
                                     @endforeach
                                     <tr>
-                                    <td colspan="2 "style="text-align:right ; font-size: 17px;"><b>Total :</b></td>
+                                    <td colspan="2" style="text-align:right ; font-size: 17px;"><b>Total :</b></td>
                                     
                                     <td ><b style="font-size: 17px">{{ number_format($total_amount) }}  Da</b></td>
-                                    <td ><b style="font-size: 17px">{{ number_format($total_rest) }}  Da</b></td>
                                     
                                 </tr>
                                 </tbody>
