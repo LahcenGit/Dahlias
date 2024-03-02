@@ -36,7 +36,6 @@
                                         <th>#</th> 
                                         <th>Formation</th>
                                         <th>Nom complet</th>
-                                         <th>Email</th>
                                         <th>Téléphone</th>
                                         <th>Statut</th>
                                         
@@ -49,7 +48,6 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$registration->course->name}}</td>
                                         <td><strong>{{$registration->name}}</strong></td>
-                                        <td><strong>{{$registration->email}} </strong></td>
                                         <td><strong>{{$registration->phone}} </strong></td>
                                         
                                         @if ($registration->status == 1 )

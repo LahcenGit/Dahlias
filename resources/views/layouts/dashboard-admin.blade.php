@@ -35,6 +35,8 @@
 
 
 <style>
+
+    
 	.email-left-box .intro-title {
     background:#EDF9F9;
  
