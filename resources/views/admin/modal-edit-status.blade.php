@@ -33,7 +33,7 @@
                       
                          <div class="form-row ">
                             <div class="form-group col-md-6">
-                                <label>Wilaya :</label>
+                                <label>Lieu de naissance :</label>
                                 <input type="text" class="form-control input-default"  value="{{$registration->place_birth}}" disabled >
                             </div>
                             <div class="form-group col-md-6">
@@ -72,6 +72,7 @@
                                 <option value="3" @if ($registration->status == 3 ) selected @endif>Intéressé</option>
                                 <option value="4" @if ($registration->status == 4 ) selected @endif>Injoignable</option>
                                 <option value="5" @if ($registration->status == 5 ) selected @endif>Appel + sms</option>
+                                <option value="8" @if ($registration->status == 8 ) selected @endif>Prochaine session</option>
                                 <option value="6" @if ($registration->status == 6 ) selected @endif>Validé</option>
                                 <option value="7" @if ($registration->status == 7 ) selected @endif>Annuler</option>
                                 </select>

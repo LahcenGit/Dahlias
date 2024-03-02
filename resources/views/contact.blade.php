@@ -49,10 +49,18 @@
 <!-- Contact Map Start -->
   <div class="section section-padding-02">
     <div class="container">
-
         <!-- Contact Map Wrapper Start -->
-        <div class="contact-map-wrapper">
-            <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13089.409957341593!2d-1.3313094!3d34.8976027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x711746111ab58aba!2sDahlias%20Institute!5e0!3m2!1sfr!2sdz!4v1644068755876!5m2!1sfr!2sdz"  allowfullscreen="" loading="lazy"></iframe>
+        <div class ="row">
+            <div class="col-6">
+                <div class="contact-map-wrapper">
+                    <iframe id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13089.409957341593!2d-1.3313094!3d34.8976027!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x711746111ab58aba!2sDahlias%20Institute!5e0!3m2!1sfr!2sdz!4v1644068755876!5m2!1sfr!2sdz"  allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="contact-map-wrapper">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.0732426033214!2d-0.6000409!3d35.699815199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7e6386002b49ed%3A0xbcff3a1534a713fa!2sDahlias%20Institute%20ORAN!5e0!3m2!1sfr!2sdz!4v1709417565966!5m2!1sfr!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </div>
         <!-- Contact Map Wrapper End -->
 
@@ -95,7 +103,11 @@
                             </div>
                             <div class="info-content">
                                 <h6 class="title">Adresse.</h6>
-                                <p>1026 Les Dahlias, Kiffan Tlemcen, Algérie</p>
+                                 <a href="https://maps.app.goo.gl/ppShW83RLakv8orAA" target="_blank">
+                                 <p><b>Tlemcen :</b> 1026 Les Dahlias, Kiffan Tlemcen, Algérie</p>
+                                 </a>
+                                 <a href="https://maps.app.goo.gl/ymnnksiJrtgBh94Z6?g_st=ic" target="_blank">
+                                 <p><b>Oran :</b> local N102 sièges des affaires CRMA USTO</p></a>
                             </div>
                         </div>
                         <!-- Single Contact Info End -->

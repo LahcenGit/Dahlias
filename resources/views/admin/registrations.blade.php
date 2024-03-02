@@ -64,8 +64,10 @@
                                         <td id="td-status-{{$registration->id}}"><span class="badge badge-secondary">Appels + sms</span></td>
                                         @elseif($registration->status == 6)
                                         <td id="td-status-{{$registration->id}}"><span class="badge badge-success">Validé</span></td>
-                                        @else
+                                        @elseif($registration->status == 7)
                                         <td id="td-status-{{$registration->id}}"><span class="badge badge-danger">Annuler</span></td>
+                                        @else
+                                        <td id="td-status-{{$registration->id}}"><span class="badge badge-primary">Prochaine session</span></td>
                                         @endif
                                        <td>
                                              <div class="d-flex">
@@ -222,9 +224,13 @@ $("body").on('click','.edit-status',function() {
              else if(status == 6){
               $("#td-status-"+id).html('<span class="badge badge-success">'+'Validé'+'</span>');
             }
-            else{
+            else if(status == 7){
               $("#td-status-"+id).html('<span class="badge badge-danger">'+'Annuler'+'</span>');
             }
+            else{
+              $("#td-status-"+id).html('<span class="badge badge-primary">'+'Prochaine session'+'</span>');
+            }
+            
           },
           
           });

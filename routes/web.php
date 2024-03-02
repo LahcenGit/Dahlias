@@ -55,11 +55,12 @@ Route::resource('/dashboard-admin/loads',LoadController::class)->middleware('can
 Route::resource('/dashboard-admin/vendors',VendorController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/workers',WorkerController::class)->middleware('can:admin');
 Route::resource('/dashboard-admin/salaries',SalaryController::class)->middleware('can:admin');
+Route::get('dashboard-admin/export-email/{id}', [App\Http\Controllers\EmailingController::class, 'exportEmail']);
 Route::resource('/dashboard-admin/export-email',EmailingController::class)->middleware('can:admin');
 Route::get('dashboard-admin/report-payment' ,[App\Http\Controllers\PaymentController::class, 'reportView']);
 Route::get('get-course-group-report/{id}' ,[App\Http\Controllers\PaymentController::class, 'getCourseGroup']);
 Route::get('/dashboard-admin/report-student-payment/{group_id}/{user_id}' ,[App\Http\Controllers\PaymentController::class, 'generateReport']);
-Route::get('dashboard-admin/export-email/{id}', [App\Http\Controllers\EmailingController::class, 'exportEmail']);
+
 Route::get('dashboard-admin/export-all-email', [App\Http\Controllers\EmailingController::class, 'exportAllEmail']);
 Route::get('dashboard-admin/export-email-pres-inscription', [App\Http\Controllers\EmailingController::class, 'exportEmailPresInscription']);
 Route::get('dashboard-admin/presence-list/{id}', [App\Http\Controllers\GroupController::class, 'presenceList'])->middleware('can:admin');

@@ -281,7 +281,7 @@
                     @foreach ($categories as $categorie)
                         @if( $categorie->parent_id == NULL)
                             <li>
-                                <a href="#" class="cat-text">{{$categorie->name}}</a>
+                                <a href="{{asset('category-courses/'.$categorie->id)}}" class="cat-text">{{$categorie->name}}</a>
                             
                             @if( count($categorie->childCategories) != 0)
                             <ul class="sub-menu">
@@ -291,7 +291,6 @@
                             </ul>
                             @endif
                             </li>
-                        
                         @endif
                     @endforeach
                 </ul>
@@ -349,8 +348,12 @@
                                 </div>
 
                                 <div class="widget-address">
-                                    <h4 class="footer-widget-title"> Algerie, Tlemcen</h4>
-                                    <p>1026 Les Dahlias, Kiffan Tlemcen, Algérie</p>
+                                    <h4 class="footer-widget-title"> Algerie</h4>
+                                    <a href="https://maps.app.goo.gl/ppShW83RLakv8orAA" target="_blank">
+                                    <p><b>Tlemcen :</b> 1026 Les Dahlias, Kiffan Tlemcen, Algérie</p>
+                                    </a>
+                                    <a href="https://maps.app.goo.gl/ymnnksiJrtgBh94Z6?g_st=ic" target="_blank">
+                                    <p><b>Oran :</b> local N102 sièges des affaires CRMA USTO</p></a>
                                 </div>
 
                                 <ul class="widget-info">
@@ -378,32 +381,34 @@
 
                                 <!-- Footer Widget Start -->
                                 <div class="footer-widget">
+                                @php
+                                    $totalCategories = count($categories);
+                                    $halfCategories = ceil($totalCategories / 2);
+                                @endphp
+
                                     <h4 class="footer-widget-title">Rubriques</h4>
-
                                     <ul class="widget-link">
-                                        <li><a href="#">Informatique </a></li>
-                                        <li><a href="#">Young Developer </a></li>
-                                        <li><a href="#">3D Arts </a></li>
-                                        <li><a href="#">Energie Créative</a></li>
-                                        <li><a href="#">Langues </a></li>
+                                      @foreach ($categories as $index => $categorie)
+                                        @if ($categorie->parent_id == NULL && $index < $halfCategories)
+                                            <li>
+                                                <a href="{{ asset('category-courses/' . $categorie->id) }}">{{ $categorie->name }}</a>
+                                            </li>
+                                        @endif
+                                      @endforeach
                                     </ul>
-
                                 </div>
-                                <!-- Footer Widget End -->
-
-                                <!-- Footer Widget Start -->
                                 <div class="footer-widget">
-                                    <h4 class="footer-widget-title">Liens rapides</h4>
-
+                                <h4></h4>
                                     <ul class="widget-link">
-                                        <li><a href="#">Formations </a></li>
-                                        <li><a href="#">A propos de nous</a></li>
-                                        <li><a href="#">Contactez-nous</a></li>
+                                        @foreach ($categories as $index => $categorie)
+                                            @if ($categorie->parent_id == NULL && $index >= $halfCategories)
+                                                <li>
+                                                    <a href="{{ asset('category-courses/' . $categorie->id) }}">{{ $categorie->name }}</a>
+                                                </li>
+                                            @endif
+                                        @endforeach
                                     </ul>
-
                                 </div>
-                                <!-- Footer Widget End -->
-
                             </div>
                             <!-- Footer Widget Link End -->
 

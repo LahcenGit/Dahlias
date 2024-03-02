@@ -107,12 +107,8 @@
                                     <input type="date" placeholder="Age" name="age" required>
                                 </div>
                                  <div class="single-form">
-                                    <label>Wilaya* :</label>
-                                    <select name="wilaya" required>
-                                        @foreach($wilayas as $wilaya)
-                                        <option value="{{$wilaya->name}}">{{$wilaya->name}}</option>
-                                        @endforeach
-                                    </select>
+                                    <label>Lieu de naissance* :</label>
+                                    <input type="text" placeholder="lieu de naissance" name="place_birth" required>
                                  </div>
                                  <div class="single-form" >
                                     <label>Fonction* :</label>
