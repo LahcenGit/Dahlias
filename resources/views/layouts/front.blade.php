@@ -352,7 +352,7 @@
                                     <a href="https://maps.app.goo.gl/ppShW83RLakv8orAA" target="_blank">
                                     <p><b>Tlemcen :</b> 1026 Les Dahlias, Kiffan Tlemcen, Algérie</p>
                                     </a>
-                                    <a href="https://maps.app.goo.gl/ymnnksiJrtgBh94Z6?g_st=ic" target="_blank">
+                                    <a href="https://maps.app.goo.gl/ymnnksiJrtgBh94Z6?g_st=ic" target="_blank" >
                                     <p><b>Oran :</b> local N102 sièges des affaires CRMA USTO</p></a>
                                 </div>
 
