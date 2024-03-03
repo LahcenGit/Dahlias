@@ -23,9 +23,20 @@ class RegistrationAdminController extends Controller
         return view('admin.edit-registration',compact('registration'));
     }
 
-    public function updateStatus(Request $request, $id){
+    public function updateRegistration(Request $request, $id){
           $registration = Registration::find($id);
+          $registration->name = $request->name;
+          $registration->email = $request->email;
+          $registration->age = $request->age;
+          $registration->remarque = $request->remarque;
+          $registration->phone = $request->phone;
+          $registration->place_birth = $request->place_birth;
+          $registration->status = 1;
+          $registration->accept = $request->accept;
+          $registration->function = $request->fonction;
+          $registration->sexe = $request->genre;
           $registration->status = $request->status;
+          $registration->remark = $request->remark;
           $registration->save();
           
           return $registration;

@@ -13,53 +13,53 @@
                        <div class="form-row ">
                             <div class="form-group col-md-6">
                                 <label>Nom :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->name}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->name}}" id="name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Email :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->email}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->email}}" id="email">
                             </div>
                         </div>
                         <div class="form-row ">
                             <div class="form-group col-md-6">
                                 <label>Téléphone :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->phone}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->phone}}" id="phone">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Date de naissance :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->age}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->age}}" id="age">
                             </div>
                         </div>
                       
                          <div class="form-row ">
                             <div class="form-group col-md-6">
                                 <label>Lieu de naissance :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->place_birth}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->place_birth}}" id="place_birth">
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Fonction :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->finction}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->function}}" id="fonction">
                             </div>
                         </div>
                         <div class="form-row ">
                             <div class="form-group col-md-12">
                                 <label>Remarque :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->remarque}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->remarque}}" id="remarque">
                             </div>
                         </div>
                         <div class="form-row ">
                             <div class="form-group col-md-6">
                                 <label>Genre :</label>
                                  <div class="form-group mb-0">
-                                        <label class="radio-inline mr-3"><input type="radio"  value="Homme" @if($registration->sexe == 'Homme')checked @endif disabled> Homme</label>
-                                        <label class="radio-inline mr-3"><input type="radio"  value="Femme" @if($registration->sexe == 'Femme')checked @endif disabled> Femme</label>
+                                        <label class="radio-inline mr-3"><input type="radio"  value="Homme" @if($registration->sexe == 'Homme')checked @endif name="genre"> Homme</label>
+                                        <label class="radio-inline mr-3"><input type="radio"  value="Femme" @if($registration->sexe == 'Femme')checked @endif name="genre"> Femme</label>
                                  </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Accepte :</label>
                                  <div class="form-group mb-0">
-                                        <label class="radio-inline mr-3"><input type="radio"  value="Oui" @if($registration->accept == 'Oui')checked @endif disabled> Oui</label>
-                                        <label class="radio-inline mr-3"><input type="radio" value="Non" @if($registration->accept == 'Non')checked @endif disabled> Non</label>
+                                        <label class="radio-inline mr-3"><input type="radio"  value="Oui" @if($registration->accept == 'Oui')checked @endif name="accept"> Oui</label>
+                                        <label class="radio-inline mr-3"><input type="radio" value="Non" @if($registration->accept == 'Non')checked @endif name="accept" > Non</label>
                                  </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                         <div class="form-row ">
                             <div class="form-group col-md-12">
                                 <label>Remarque :</label>
-                                <input type="text" class="form-control input-default"  value="{{$registration->remark}}" disabled >
+                                <input type="text" class="form-control input-default"  value="{{$registration->remark}}" id="remark">
                             </div>
                         </div>
                         @endif

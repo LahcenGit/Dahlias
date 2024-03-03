@@ -37,6 +37,9 @@
                                         <th>Formation</th>
                                         <th>Nom complet</th>
                                         <th>Téléphone</th>
+                                        <th>date naiss.</th>
+                                        <th>remarque</th>
+                                        <th>date</th>
                                         <th>Statut</th>
                                         
                                         <th>Action</th>
@@ -47,8 +50,13 @@
                                     <tr id="tr-{{$registration->id}}">
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$registration->course->name}}</td>
-                                        <td><strong>{{$registration->name}}</strong></td>
-                                        <td><strong>{{$registration->phone}} </strong></td>
+                                        <td id="td-name-{{$registration->id}}"><strong>{{$registration->name}}</strong></td>
+                                        <td id="td-phone-{{$registration->id}}"><strong>{{$registration->phone}} </strong></td>
+                                        <td id="td-age-{{$registration->id}}"><strong>{{$registration->age}}</strong></td>
+                                        <td id="td-remarque-{{$registration->id}}"><strong>{{$registration->remarque}}</strong></td>
+                                        <td><strong>{{$registration->created_at->format('d-m-Y')}}</strong></td>
+                                       
+                                       
                                         
                                         @if ($registration->status == 1 )
                                         <td id="td-status-{{$registration->id}}"><span class="badge badge-warning">En Attente</span></td>
@@ -171,15 +179,37 @@ $("body").on('click','.edit-status',function() {
    
         e.preventDefault();
         let status = $('#status').val();
-       
+         let name = $('#name').val();
+        let email = $('#email').val();
+        let phone = $('#phone').val();
+        let age = $('#age').val();
+        let place_birth = $('#place_birth').val();
+        let fonction = $('#fonction').val();
+        let genre = $("input[name='genre']:checked").val();
+        let remarque = $('#remarque').val();
+        let accept =  $("input[name='accept']:checked").val();
+        let remark = $('#remark').val();
+        
         let id =  $('#registration').val();
+       
+        
         $.ajax({
           
           type:"POST",  
-          url: "/update-status/"+id,
+          url: "/update-registration/"+id,
           data:{
             "_token": "{{ csrf_token() }}",
             status:status,
+            name:name,
+            email:email,
+            phone:phone,
+            age:age,
+            place_birth:place_birth,
+            fonction:fonction,
+            genre:genre,
+            remarque:remarque,
+            accept:accept,
+            remark:remark,
             
            },
         
@@ -204,7 +234,7 @@ $("body").on('click','.edit-status',function() {
                     tapToDismiss: !1
 
             })
-            if(status == 1){
+         if(status == 1){
               $("#td-status-"+id).html('<span class="badge badge-warning">'+'En Attente'+'</span>');
             }
              else if(status == 2){
@@ -228,7 +258,10 @@ $("body").on('click','.edit-status',function() {
             else{
               $("#td-status-"+id).html('<span class="badge badge-primary">'+'Prochaine session'+'</span>');
             }
-            
+              $("#td-name-"+id).html(name);
+              $("#td-phone-"+id).html(phone);
+              $("#td-age-"+id).html(age);
+              $("#td-remarque-"+id).html(remarque);
           },
           
           });
@@ -262,8 +295,6 @@ $("body").on('click','.add-final-registration',function() {
     });
   
 });
-
-
 
 </script>
 @endpush
