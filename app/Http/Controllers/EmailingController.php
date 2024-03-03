@@ -83,8 +83,8 @@ class EmailingController extends Controller
 
     public function exportEmailPresInscription(){
         $fileName = 'emailing.csv';
-        $registrations = Registration::all();
-           $headers = array(
+        $registrations = Registration::where('email','!=',NULL)->get();
+         $headers = array(
                 "Content-type"        => "text/csv",
                 "Content-Disposition" => "attachment; filename=$fileName",
                 "Pragma"              => "no-cache",
@@ -99,7 +99,7 @@ class EmailingController extends Controller
                 fputcsv($file, $columns);
 
                 foreach ($registrations as $registration) {
-                    $row['email']  = $registration->email;
+                   $row['email']  = $registration->email;
                     
                     fputcsv($file, array($row['email']));
                 }
