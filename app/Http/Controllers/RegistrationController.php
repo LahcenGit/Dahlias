@@ -29,6 +29,7 @@ class RegistrationController extends Controller
          $registration->accept = $request->accept;
          $registration->function = $request->function;
          $registration->sexe = $request->sexe;
+         $registration->cause = $request->cause;
          $registration->flag = 0;
          $registration->save();
          $name = $request->name;

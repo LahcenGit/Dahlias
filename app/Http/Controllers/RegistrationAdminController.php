@@ -36,6 +36,7 @@ class RegistrationAdminController extends Controller
           $registration->function = $request->fonction;
           $registration->sexe = $request->genre;
           $registration->status = $request->status;
+          $registration->cause = $request->cause;
           $registration->remark = $request->remark;
           $registration->save();
           

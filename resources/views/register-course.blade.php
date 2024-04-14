@@ -58,27 +58,12 @@
 
         <!-- Register & Login Wrapper Start -->
         <div class="register-login-wrapper">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-
-                    <!-- Register & Login Images Start -->
-                    <div class="register-login-images">
-                        <div class="shape-1">
-                            <img src="{{asset('front/assets/images/shape/shape-26.png')}}" alt="Shape">
-                        </div>
-
-
-                        <div class="images">
-                            <img src="{{asset('front/assets/images/register-login.png')}}" alt="Register Login">
-                        </div>
-                    </div>
-                    <!-- Register & Login Images End -->
-
-                </div>
-                <div class="col-lg-6">
+            <div class="row align-items-center d-flex justify-content-center">
+                
+                <div class="col-md-6">
 
                     <!-- Register & Login Form Start -->
-                    <div class="register-login-form">
+                    <div class="register-login-form" style="max-width: 100%;">
                         <h3 class="title">Merci de remplir le<span> formulaire</span></h3>
 
                         <div class="form-wrapper">
@@ -129,28 +114,14 @@
                                         Femme
                                     </label>
                                 </div>
-                                
-                                <div class="single-form">
-                                    <label>Acceptez-vous d'être filmé ou photographié?:</label>
+                                  <div class="single-form">
+                                    <label>Pourquoi souhaitez-vous participer à cette formation ? :</label>
+                                    <input type="text" placeholder="..." name="cause" >
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio"  id="flexRadioDefault1" value="Oui" name="accept" checked>
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Oui
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio"  id="flexRadioDefault2" value="Non" name="accept">
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Non
-                                    </label>
-                                </div>
-
                                 <div class="single-form">
                                     <label>Avez vous quelques chose a dire ? :</label>
                                     <input type="text" placeholder="..." name="remarque" >
                                 </div>
-
                                 <div class="single-form">
                                    
                                     <input type="hidden"  name="course" value="{{$course->id}}">

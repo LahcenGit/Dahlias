@@ -38,6 +38,7 @@
                                         <th>Nom complet</th>
                                         <th>Téléphone</th>
                                         <th>date naiss.</th>
+                                        <th>Cause</th>
                                         <th>remarque</th>
                                         <th>date</th>
                                         <th>Statut</th>
@@ -53,6 +54,7 @@
                                         <td id="td-name-{{$registration->id}}"><strong>{{$registration->name}}</strong></td>
                                         <td id="td-phone-{{$registration->id}}"><strong>{{$registration->phone}} </strong></td>
                                         <td id="td-age-{{$registration->id}}"><strong>{{$registration->age}}</strong></td>
+                                        <td id="td-cause-{{$registration->id}}"><strong>{{$registration->cause}}</strong></td>
                                         <td id="td-remarque-{{$registration->id}}"><strong>{{$registration->remarque}}</strong></td>
                                         <td><strong>{{$registration->created_at->format('d-m-Y')}}</strong></td>
                                        
@@ -209,6 +211,7 @@ $("body").on('click','.edit-status',function() {
             genre:genre,
             remarque:remarque,
             accept:accept,
+            cause:cause,
             remark:remark,
             
            },
@@ -262,6 +265,7 @@ $("body").on('click','.edit-status',function() {
               $("#td-phone-"+id).html(phone);
               $("#td-age-"+id).html(age);
               $("#td-remarque-"+id).html(remarque);
+              $("#td-cause-"+id).html(cause);
           },
           
           });
