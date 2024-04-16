@@ -72,47 +72,86 @@
                                 <!-- Single Form Start -->
                                 <div class="single-form">
                                     <label>Nom et Prenom* :</label>
-                                    <input type="text" placeholder="Nom et prénom" name="name" required>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" placeholder="Nom et prénom" name="name" required>
+                                        @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->
                                 <div class="single-form">
                                     <label>Email*:</label>
-                                    <input type="email" placeholder="mohammed@gmail.com " name="email" required>
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" placeholder="mohammed@gmail.com " name="email" required>
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="single-form">
                                     <label>Téléphone* :</label>
-                                    <input type="text" placeholder="+213 xx xx xx xx xx " name="phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
-                                   
+                                    <input type="text" class="form-control @error('phone') is-invalid @enderror" value="{{old('phone')}}" placeholder="+213 xx xx xx xx xx " name="phone" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required/>
+                                        @error('phone')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <!-- Single Form End -->
                                 <!-- Single Form Start -->
                                 <div class="single-form">
                                     <label>Date de naissance* :</label>
-                                    <input type="date" placeholder="Age" name="age" required>
+                                    <input class="form-control @error('age') is-invalid @enderror" value="{{old('age')}}" type="date" placeholder="Age" name="age" required>
+                                        @error('age')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                  <div class="single-form">
                                     <label>Lieu de naissance* :</label>
-                                    <input type="text" placeholder="lieu de naissance" name="place_birth" required>
+                                    <input  type="text" class="form-control @error('place_birth') is-invalid @enderror" value="{{old('place_birth')}}" placeholder="lieu de naissance" name="place_birth" required>
+                                        @error('place_birth')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                  </div>
                                  <div class="single-form" >
                                     <label>Fonction* :</label>
-                                    <input type="text" placeholder="Fonction" name="function" required>
+                                    <input type="text" class="form-control @error('function') is-invalid @enderror" value="{{old('function')}}" placeholder="Fonction" name="function" required>
+                                        @error('function')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                  </div>
                                   <div class="single-form">
                                     <label>Sexe*:</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio"  id="flexRadioDefault1" value="Homme" name="sexe" checked>
+                                    <input class="form-check-input" class="form-control @error('sexe') is-invalid @enderror" value="{{old('sexe')}}" type="radio"  id="flexRadioDefault1" value="Homme" name="sexe" checked>
                                     <label class="form-check-label" for="flexRadioDefault1">
                                         Homme
                                     </label>
+                                        @error('sexe')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio"  id="flexRadioDefault2" value="Femme" name="sexe">
+                                    <input class="form-check-input" class="form-control @error('sexe') is-invalid @enderror" value="{{old('sexe')}}" type="radio"  id="flexRadioDefault2" value="Femme" name="sexe">
                                     <label class="form-check-label" for="flexRadioDefault2">
                                         Femme
                                     </label>
+                                        @error('sexe')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
                                 </div>
                                   <div class="single-form">
                                     <label>Pourquoi souhaitez-vous participer à cette formation ? :</label>

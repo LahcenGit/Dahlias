@@ -57,15 +57,8 @@
                             <div class="form-group col-md-6">
                                 <label>Genre :</label>
                                  <div class="form-group mb-0">
-                                        <label class="radio-inline mr-3"><input type="radio"  value="Homme" @if($registration->sexe == 'Homme')checked @endif name="genre"> Homme</label>
-                                        <label class="radio-inline mr-3"><input type="radio"  value="Femme" @if($registration->sexe == 'Femme')checked @endif name="genre"> Femme</label>
-                                 </div>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label>Accepte :</label>
-                                 <div class="form-group mb-0">
-                                        <label class="radio-inline mr-3"><input type="radio"  value="Oui" @if($registration->accept == 'Oui')checked @endif name="accept"> Oui</label>
-                                        <label class="radio-inline mr-3"><input type="radio" value="Non" @if($registration->accept == 'Non')checked @endif name="accept" > Non</label>
+                                        <label class="radio-inline mr-3"><input type="radio"  value="Homme" @if($registration->sexe == "Homme")checked @endif name="genre"> Homme</label>
+                                        <label class="radio-inline mr-3"><input type="radio"  value="Femme" @if($registration->sexe == "Femme")checked @endif name="genre"> Femme</label>
                                  </div>
                             </div>
                         </div>

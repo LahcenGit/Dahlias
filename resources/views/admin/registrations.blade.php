@@ -191,7 +191,7 @@ $("body").on('click','.edit-status',function() {
         let remarque = $('#remarque').val();
         let accept =  $("input[name='accept']:checked").val();
         let remark = $('#remark').val();
-        
+        let cause = $('#cause').val();
         let id =  $('#registration').val();
        
         
